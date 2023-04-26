@@ -1,2 +1,2 @@
 # Ignoring git module
-node_modules
+**/node_modules
