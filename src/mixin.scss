@@ -1,0 +1,58 @@
+@mixin backgroundImage {
+  background-image: url(".././src/Images/bgImage.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: top;
+}
+
+@mixin button {
+  background: #0094da;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  padding: 12px 30px;
+  box-shadow: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+@mixin remembercheck {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #858585;
+  margin-top: 2rem;
+}
+
+@mixin imggirl {
+  display: flex;
+  height: 80vh;
+  position: absolute;
+  margin-top: 8rem;
+  margin-left: 44rem;
+}
+
+@mixin logo {
+  display: flex;
+  position: relative;
+  margin-top: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2rem;
+}
+
+@mixin password {
+  background: rgba(205, 239, 255, 0.3);
+  border-radius: 4px;
+  width: 59%;
+  margin: 5px 0px;
+  padding: 12px 20px;
+  display: flex;
+  box-sizing: border-box;
+  font-style: normal;
+  border: 1px solid transparent;
+  font-family: serif;
+}
