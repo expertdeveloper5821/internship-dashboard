@@ -1,6 +1,7 @@
 import * as React from "react";
 import styles from "./Login.module.scss";
 import technologo from "../../Images/Technologo.png";
+import eyepassword from "../../Images/view.png";
 // import background from "../../Images/girlImage.svg";
 
 export function Login() {
@@ -30,11 +31,16 @@ export function Login() {
             <div className={styles.inputdesc}>
               <label className={styles.password}>Password</label>
               <br></br>
-              <input
-                type="password"
-                className={styles.passworddesc}
-                placeholder="Enter password"
-              ></input>
+              <div className={styles.inputtype}>
+                <input
+                  type="password"
+                  className={styles.passworddesc}
+                  placeholder="Enter password"
+                ></input>
+                <div className={styles.eyepassword}>
+                  <img src={eyepassword} alt="eye-passwod"></img>
+                </div>
+              </div>
             </div>
             <div className={styles.remembercheck}>
               <input type="checkbox"></input>
@@ -54,11 +60,6 @@ export function Login() {
             </div>
           </div>
         </div>
-
-        <div className={styles.dot}></div>
-        {/* <div className={styles.imggirl}>
-          <img src={background} alt="girl-bg"></img>
-        </div> */}
       </div>
     </div>
   );

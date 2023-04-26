@@ -2,7 +2,7 @@
   background-image: url(".././src/Images/bgImage.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position-y: top;
+  height: 100vh;
 }
 
 @mixin button {
@@ -24,35 +24,34 @@
   font-size: 14px;
   line-height: 16px;
   color: #858585;
-  margin-top: 2rem;
-}
-
-@mixin imggirl {
+  margin-top: 0.5rem;
   display: flex;
-  height: 80vh;
-  position: absolute;
-  margin-top: 8rem;
-  margin-left: 44rem;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 
 @mixin logo {
   display: flex;
-  position: relative;
+
   margin-top: 2rem;
   justify-content: center;
   align-items: center;
-  margin-right: 2rem;
 }
 
-@mixin password {
+@mixin passworddesc {
   background: rgba(205, 239, 255, 0.3);
   border-radius: 4px;
-  width: 59%;
-  margin: 5px 0px;
+  width: 82%;
   padding: 12px 20px;
   display: flex;
-  box-sizing: border-box;
   font-style: normal;
   border: 1px solid transparent;
   font-family: serif;
+  letter-spacing: 0.05em;
+  font-family: "Open Sans";
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 14px;
+
+  // margin-top: 0.5rem;
 }
