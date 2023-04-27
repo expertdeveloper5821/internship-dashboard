@@ -1,17 +1,13 @@
-@use 'src/styles/mixins.scss';
-@import 'src/styles/Variables.scss';
-
-
+@use "src/styles/mixins.scss";
+@import "src/styles/Variables.scss";
 
 .App {
   @include mixins.color;
   text-align: center;
 
-  @media (max-width: $break1){
+  @media (max-width: $break1) {
     display: none;
   }
-    
-  
 }
 
 .App-logo {

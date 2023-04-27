@@ -1,0 +1,146 @@
+@import "../../mixin.scss";
+
+.maincontainer {
+  @include backgroundImage;
+}
+
+.bgcontainer {
+  display: flex;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #003554;
+  margin-top: 4rem;
+  padding: 2rem;
+
+  width: 90vh;
+  //   margin-left: 10%;
+}
+
+.logo {
+  @include logo;
+}
+
+.contentwrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  width: 50%;
+  margin-top: 1rem;
+
+  // border: 1px solid;
+}
+
+h2 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 12px;
+  margin-top: 1rem;
+}
+
+.parareset {
+  color: #858585;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 0.5rem 0rem;
+  // border: 1px solid;
+}
+
+.inputdescription {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #003554;
+}
+
+// .email {
+//   font-family: "Roboto";
+//   font-style: normal;
+//   font-weight: 400;
+//   font-size: 16px;
+//   color: #003554;
+//   border: 1px solid;
+//   border-style: none;
+// }
+
+.emaildesc {
+  background: rgba(205, 239, 255, 0.3);
+  border-radius: 4px;
+  width: 86%;
+  padding: 12px 20px;
+  font-style: normal;
+  border: 1px solid transparent;
+  font-family: serif;
+}
+
+.inputdesc {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #003554;
+}
+
+.passworddesc {
+  background: rgba(205, 239, 255, 0.3);
+  border-radius: 4px;
+  width: 100%;
+  margin: 0px 0px;
+  padding: 12px 20px;
+  display: flex;
+  box-sizing: border-box;
+  font-style: normal;
+  border: 1px solid transparent;
+  font-family: serif;
+}
+
+.remembercheck {
+  @include remembercheck;
+}
+
+.buttoncontainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.forgetbutton {
+  @include button;
+}
+
+.signin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  //   margin-right: 100px;
+  color: #858585;
+  cursor: pointer;
+}
+
+a {
+  color: #898b8b;
+}
+.inputtypepassword {
+  display: flex;
+  // justify-content: space-between;
+  align-items: center;
+
+  background: rgba(205, 239, 255, 0.3);
+}
+
+.eyeicon {
+  // height: 20px;
+  display: flex;
+  // left: 20;
+
+  // border: 1px solid;
+}
