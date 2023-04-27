@@ -1,10 +1,11 @@
-import * as React from "react";
+import React from "react";
 import styles from "./Login.module.scss";
 import technologo from "../../Images/Technologo.png";
 import eyepassword from "../../Images/view.png";
-// import background from "../../Images/girlImage.svg";
 
-export function Login() {
+type Props = {};
+
+const Login = (props: Props) => {
   return (
     <div className={styles.maincontainer}>
       <div className={styles.bgcontainer}>
@@ -28,20 +29,24 @@ export function Login() {
                 placeholder="Enter Email"
               ></input>
             </div>
+
             <div className={styles.inputdesc}>
               <label className={styles.password}>Password</label>
               <br></br>
+
               <div className={styles.inputtype}>
                 <input
                   type="password"
                   className={styles.passworddesc}
                   placeholder="Enter password"
                 ></input>
+
                 <div className={styles.eyepassword}>
                   <img src={eyepassword} alt="eye-passwod"></img>
                 </div>
               </div>
             </div>
+
             <div className={styles.remembercheck}>
               <input type="checkbox"></input>
               <span>Remember for 30 days</span>
@@ -63,4 +68,6 @@ export function Login() {
       </div>
     </div>
   );
-}
+};
+
+export default Login;

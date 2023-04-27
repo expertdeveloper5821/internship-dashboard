@@ -1,10 +1,8 @@
 import * as React from "react";
 import styles from "../Login/Login.module.scss";
 import technologo from "../../Images/Technologo.png";
-import background from "../../Images/girlImage.svg";
 
-// export interface IAppProps {
-// }
+export interface IAppProps {}
 
 export function ResetPassword() {
   return (
@@ -14,7 +12,6 @@ export function ResetPassword() {
           {/* Tg_logo */}
           <div className={styles.container}>
             <div className={styles.logo}>
-              {/* <img src={logo} alt="Tg-logo"></img> */}
               <img src={technologo} alt="Tg-logo"></img>
             </div>
             {/* Pass Desc */}
@@ -52,9 +49,7 @@ export function ResetPassword() {
               </div>
             </div>
           </div>
-          <div className={styles.imggirl}>
-            {/* <img src={background} alt="girl-bg"></img> */}
-          </div>
+          <div className={styles.imggirl}></div>
         </div>
       </div>
     </>
