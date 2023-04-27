@@ -17,7 +17,7 @@ const Login = (props: Props) => {
           <div className={styles.contentwrapper}>
             <h2>Welcome Back</h2>
             <p className={styles.parareset}>
-              Welcome back! Please enter your details
+              Welcome back! Please enter your detailss
             </p>
 
             <div className={styles.inputdescription}>
