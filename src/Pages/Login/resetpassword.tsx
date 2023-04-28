@@ -6,12 +6,12 @@ export function ResetPassword() {
     <>
       <div className={styles.main_container}>
         {/* Tg_logo */}
-        <div className={styles.loginform}>
+        <div className={styles.login_form}>
           <div className={styles.logo}>
             <img src="./assets/Technologo.png" alt="Tg-logo"></img>
           </div>
           {/* Pass Desc */}
-          <div className={styles.contentwrapper}>
+          <div className={styles.content_wrapper}>
             <h2>Reset Password</h2>
             <p className={styles.heading}>Loreum ipusm enter the detail</p>
             {/* Pass Details */}
@@ -19,7 +19,7 @@ export function ResetPassword() {
               <label className={styles.password}>Password</label>
               <br></br>
 
-              <div className={styles.inputtype}>
+              <div className={styles.input_box}>
                 <input
                   type="password"
                   className={styles.password_wrapper}

@@ -4,11 +4,10 @@
   @include backgroundImage;
 }
 
-.loginform {
+.login_form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   color: #003554;
   margin-top: 4rem;
   padding: 2rem;
@@ -20,10 +19,10 @@
   @include logo;
 }
 
-.contentwrapper {
+.content_wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
   margin: auto;
   width: 50%;
   margin-top: 1rem;
@@ -54,32 +53,12 @@ h2 {
   color: #003554;
 }
 
-.email_wrapper {
+.email_wrapper,
+.password_wrapper {
   background: rgba(205, 239, 255, 0.3);
   border-radius: 4px;
   width: 85%;
   padding: 12px 20px;
-  font-style: normal;
-  border: 1px solid transparent;
-  font-family: serif;
-}
-
-.passwordinput_wrapper {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  color: #003554;
-}
-
-.password_wrapper {
-  background: rgba(205, 239, 255, 0.3);
-  border-radius: 4px;
-  width: 100%;
-  margin: 0px 0px;
-  padding: 12px 20px;
-  display: flex;
-  box-sizing: border-box;
   font-style: normal;
   border: 1px solid transparent;
   font-family: serif;
@@ -109,10 +88,4 @@ h2 {
 
 a {
   color: #898b8b;
-}
-.inputtypepassword {
-  display: flex;
-  align-items: center;
-
-  background: rgba(205, 239, 255, 0.3);
 }

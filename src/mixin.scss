@@ -35,16 +35,3 @@
   justify-content: center;
   align-items: center;
 }
-
-@mixin password {
-  background: rgba(205, 239, 255, 0.1);
-  border-radius: 4px;
-  width: 85%;
-  margin: 5px 0px;
-  padding: 12px 20px;
-  display: flex;
-  box-sizing: border-box;
-  font-style: normal;
-  border: 1px solid transparent;
-  font-family: serif;
-}

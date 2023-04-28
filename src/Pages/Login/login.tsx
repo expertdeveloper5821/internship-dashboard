@@ -4,18 +4,18 @@ import styles from "./auth.module.scss";
 export function Login() {
   return (
     <div className={styles.main_container}>
-      <div className={styles.loginform}>
+      <div className={styles.login_form}>
         <div className={styles.logo}>
           <img src="./assets/Technologo.png" alt="Tg-logo"></img>
         </div>
 
-        <div className={styles.contentwrapper}>
+        <div className={styles.content_wrapper}>
           <h2>Welcome Back</h2>
           <p className={styles.heading}>
             Welcome back! Please enter your details
           </p>
 
-          <div className={styles.input_control}>
+          <div className={styles.input_box}>
             <label className={styles.email}>Email</label>
             <br></br>{" "}
             <input
@@ -28,7 +28,7 @@ export function Login() {
             <label className={styles.password}>Password</label>
             <br></br>
 
-            <div className={styles.inputtype}>
+            <div className={styles.input_box}>
               <input
                 type="password"
                 className={styles.password_wrapper}
