@@ -7,11 +7,9 @@
 .login_form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   color: #003554;
   margin-top: 4rem;
   padding: 2rem;
-
   width: 90vh;
 }
 
@@ -22,7 +20,6 @@
 .content_wrapper {
   display: flex;
   flex-direction: column;
-
   margin: auto;
   width: 50%;
   margin-top: 1rem;
@@ -33,7 +30,7 @@ h2 {
   font-weight: 500;
   font-size: 24px;
   line-height: 12px;
-  margin-top: 1rem;
+  // margin-top: 0.5rem;
 }
 
 .heading {
@@ -42,7 +39,7 @@ h2 {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  margin: 0.5rem 0rem;
+  margin-top: 0.5rem;
 }
 
 .input_control {
@@ -51,6 +48,7 @@ h2 {
   font-weight: 400;
   font-size: 16px;
   color: #003554;
+  margin-top: 1rem;
 }
 
 .email_wrapper,
@@ -62,6 +60,7 @@ h2 {
   font-style: normal;
   border: 1px solid transparent;
   font-family: serif;
+  margin-top: 1rem;
 }
 
 .checkbox_wrapper {

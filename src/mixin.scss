@@ -3,7 +3,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position-y: top;
-  height: 100vh;
+  min-height: 100vh;
+  // height: 100vh;
   display: flex;
 }
 
