@@ -21,13 +21,13 @@
 }
 
 @mixin checkbox_wrapper {
-  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
   color: #858585;
   margin-top: 2rem;
+  font-family: "Roboto";
 }
 
 @mixin logo {
