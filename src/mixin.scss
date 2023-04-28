@@ -29,19 +29,8 @@
   margin-top: 2rem;
 }
 
-@mixin imggirl {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  height: 80vh;
-  position: absolute;
-  margin-top: 8rem;
-  margin-left: 44rem;
-}
-
 @mixin logo {
   display: flex;
-
   margin-top: 2rem;
   justify-content: center;
   align-items: center;

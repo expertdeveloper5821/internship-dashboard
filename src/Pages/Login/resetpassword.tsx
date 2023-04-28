@@ -1,5 +1,5 @@
 import * as React from "react";
-import styles from "./loginresetpasword.module.scss";
+import styles from "./auth.module.scss";
 
 export function ResetPassword() {
   return (
