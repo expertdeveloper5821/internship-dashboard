@@ -1,14 +1,10 @@
 @import "../../mixin.scss";
 
-.maincontainer {
+.main_container {
   @include backgroundImage;
 }
 
-.bgcontainer {
-  display: flex;
-}
-
-.container {
+.loginform {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,7 +46,7 @@ h2 {
   margin: 0.5rem 0rem;
 }
 
-.emailinput_wrapper {
+.input_control {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -61,7 +57,7 @@ h2 {
 .email_wrapper {
   background: rgba(205, 239, 255, 0.3);
   border-radius: 4px;
-  width: 86%;
+  width: 85%;
   padding: 12px 20px;
   font-style: normal;
   border: 1px solid transparent;

@@ -3,56 +3,54 @@ import styles from "./loginresetpasword.module.scss";
 
 export function Login() {
   return (
-    <div className={styles.maincontainer}>
-      <div className={styles.bgcontainer}>
-        <div className={styles.container}>
-          <div className={styles.logo}>
-            <img src="./assets/Technologo.png" alt="Tg-logo"></img>
+    <div className={styles.main_container}>
+      <div className={styles.loginform}>
+        <div className={styles.logo}>
+          <img src="./assets/Technologo.png" alt="Tg-logo"></img>
+        </div>
+
+        <div className={styles.contentwrapper}>
+          <h2>Welcome Back</h2>
+          <p className={styles.heading}>
+            Welcome back! Please enter your details
+          </p>
+
+          <div className={styles.input_control}>
+            <label className={styles.email}>Email</label>
+            <br></br>{" "}
+            <input
+              type="email"
+              className={styles.email_wrapper}
+              placeholder="Enter Email"
+            ></input>
           </div>
+          <div className={styles.input_control}>
+            <label className={styles.password}>Password</label>
+            <br></br>
 
-          <div className={styles.contentwrapper}>
-            <h2>Welcome Back</h2>
-            <p className={styles.heading}>
-              Welcome back! Please enter your details
-            </p>
-
-            <div className={styles.emailinput_wrapper}>
-              <label className={styles.email}>Email</label>
-              <br></br>{" "}
+            <div className={styles.inputtype}>
               <input
-                type="email"
-                className={styles.email_wrapper}
-                placeholder="Enter Email"
+                type="password"
+                className={styles.password_wrapper}
+                placeholder="Enter password"
               ></input>
             </div>
-            <div className={styles.passwordinput_wrapper}>
-              <label className={styles.password}>Password</label>
-              <br></br>
+          </div>
+          <div className={styles.checkbox_wrapper}>
+            <input type="checkbox"></input>
+            <span>Remember for 30 days</span>
+          </div>
 
-              <div className={styles.inputtype}>
-                <input
-                  type="password"
-                  className={styles.password_wrapper}
-                  placeholder="Enter password"
-                ></input>
-              </div>
-            </div>
-            <div className={styles.checkbox_wrapper}>
-              <input type="checkbox"></input>
-              <span>Remember for 30 days</span>
-            </div>
+          <div className={styles.button_wrapper}>
+            <button type="submit" className={styles.forgetbutton}>
+              Signup
+            </button>
+          </div>
 
-            <div className={styles.button_wrapper}>
-              <button type="submit" className={styles.forgetbutton}>
-                Signup
-              </button>
-            </div>
-
-            <div className={styles.signin}>
-              <span>
-                <a href="/resetpassword"> Forget your Password?</a>
-              </span>
-            </div>
+          <div className={styles.signin}>
+            <span>
+              <a href="/resetpassword"> Forget your Password?</a>
+            </span>
           </div>
         </div>
       </div>
