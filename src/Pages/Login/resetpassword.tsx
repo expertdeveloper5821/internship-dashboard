@@ -10,20 +10,25 @@ export function ResetPassword() {
           <div className={styles.logo}>
             <img src="./assets/Technologo.png" alt="Tg-logo"></img>
           </div>
+
           {/* Pass Desc */}
           <div className={styles.content_wrapper}>
-            <h2>Reset Password</h2>
-            <p className={styles.heading}>Loreum ipusm enter the detail</p>
+            <h2>Forget Password</h2>
+            <p className={styles.heading}>
+              Please enter your registered email id or mobile to reset your
+              password
+            </p>
+
             {/* Pass Details */}
             <div className={styles.input_control}>
-              <label className={styles.password}>Password</label>
+              <label className={styles.password}>Email/Mobile Number</label>
               <br></br>
 
               <div className={styles.input_box}>
                 <input
                   type="password"
                   className={styles.password_wrapper}
-                  placeholder="Enter password"
+                  placeholder="Enter Email/Mobile Number"
                 ></input>
               </div>
             </div>
@@ -34,7 +39,7 @@ export function ResetPassword() {
             {/* Submit Button */}
             <div className={styles.button_wrapper}>
               <button type="submit" className={styles.forgetbutton}>
-                Forget Password
+                Recover password
               </button>
             </div>
             {/* Sign in */}
