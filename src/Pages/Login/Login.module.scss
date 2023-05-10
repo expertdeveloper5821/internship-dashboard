@@ -1,4 +1,4 @@
-@import "../../mixin.scss";
+@import "../../styles//mixins_variable";
 
 .maincontainer {
   @include backgroundImage;
@@ -6,16 +6,18 @@
 
 .bgcontainer {
   display: flex;
+  justify-content: center;
+  align-items: top;
 }
 
 .container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   color: #003554;
-  margin-top: 4rem;
-  padding: 2rem;
-  width: 100vh;
+  position: relative;
+  flex-direction: column;
+  width: 70%;
+  justify-content: center;
+  margin-left: 8rem;
 }
 
 .logo {
@@ -23,11 +25,11 @@
 }
 
 .contentwrapper {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   margin-top: 1rem;
   padding: 0px 160px;
+  display: block;
 }
 
 h2 {
@@ -43,7 +45,7 @@ h2 {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  margin-top: 0;
+  font-size: 18.75px;
 }
 
 .inputdescription {
@@ -52,6 +54,9 @@ h2 {
   font-weight: 400;
   font-size: 16px;
   color: #003554;
+  margin-top: 0.5rem;
+  line-height: 18.75px;
+  margin-bottom: 0.5rem;
 }
 
 .email {
@@ -66,32 +71,58 @@ h2 {
 .emaildesc {
   background: rgba(205, 239, 255, 0.3);
   border-radius: 4px;
-  width: 82%;
   padding: 12px 20px;
   margin-top: 0.5rem;
   font-style: normal;
   border: 1px solid transparent;
-  font-family: serif;
-  letter-spacing: 0.05em;
-  font-family: serif;
-  letter-spacing: 0.05em;
-  font-family: "Open Sans";
+  letter-spacing: 5%;
+  font-family: "Roboto";
   font-weight: 200;
   font-size: 14px;
-  line-height: 14px;
-}
-
-.inputdesc {
-  margin-top: 0.5rem;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  color: #003554;
+  line-height: 18.75px;
+  margin-bottom: 0.5rem;
+  width: 60%;
 }
 
 .passworddesc {
-  @include passworddesc;
+  background: rgba(205, 239, 255, 0.3);
+  border-radius: 4px;
+  padding: 12px 20px;
+  display: flex;
+  font-style: normal;
+  border: 1px solid transparent;
+  letter-spacing: 0.05em;
+  font-family: "Roboto";
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 18.75px;
+  width: 60%;
+}
+
+.girlSection {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+  img {
+    height: 520px;
+    width: 60%;
+    margin-top: 3rem;
+    margin-left: 11rem;
+  }
+  height: 100vh;
+  overflow: hidden;
+}
+
+.linearBottom {
+  position: absolute;
+  bottom: -50px;
+  right: 0;
+  left: -140px;
+  img {
+    width: 90%;
+    height: 70%;
+  }
 }
 
 .remembercheck {
@@ -103,6 +134,7 @@ h2 {
   justify-content: center;
   margin-top: 2rem;
 }
+
 .forgetbutton {
   @include button;
 }
@@ -119,12 +151,15 @@ h2 {
 a {
   color: #898b8b;
 }
-.inputtype {
-  border: 1px solid;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.eyepassword img {
+
+// .inputtype {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   position: relative;
+// }
+
+.eyepassword {
   height: 20px;
+  margin-left: -2.5rem;
 }
