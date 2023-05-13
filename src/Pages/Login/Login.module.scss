@@ -5,123 +5,81 @@
 }
 
 .bgcontainer {
-  display: flex;
-  justify-content: center;
-  align-items: top;
+  @include bgcontainer;
 }
 
 .container {
-  display: flex;
-  color: #003554;
-  position: relative;
-  flex-direction: column;
-  width: 70%;
-  justify-content: center;
-  margin-left: 8rem;
+  @include container;
+  @media (max-width: $breakpoint-xs) {
+    margin-left: 2rem;
+  }
+  @media (max-width: $breakpoint-sm) {
+    width: 95%;
+    height: 100%;
+    margin-left: 3rem;
+  }
 }
 
 .logo {
   @include logo;
+  @media (max-width: $breakpoint-xs) {
+    margin-top: 4rem;
+  }
 }
 
-.contentwrapper {
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 1rem;
-  padding: 0px 160px;
-  display: block;
+.eyewrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #edf9ff;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  img {
+    margin-right: 3rem;
+  }
 }
 
 h2 {
+  color: #003554;
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
-  line-height: 5px;
+  font-size: 28px;
+  line-height: 33px;
+  @media (max-width: $breakpoint-xs) {
+    font-size: 28px;
+    line-height: 32px;
+    font-family: 600;
+    margin-top: 3rem;
+  }
 }
 
 .parareset {
-  color: #858585;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 18.75px;
+  @include parareset;
 }
 
 .inputdescription {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  color: #003554;
-  margin-top: 0.5rem;
-  line-height: 18.75px;
-  margin-bottom: 0.5rem;
-}
-
-.email {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  color: #003554;
-  border-style: none;
+  @include inputdescription;
 }
 
 .emaildesc {
-  background: rgba(205, 239, 255, 0.3);
-  border-radius: 4px;
-  padding: 12px 20px;
-  margin-top: 0.5rem;
-  font-style: normal;
-  border: 1px solid transparent;
-  letter-spacing: 5%;
-  font-family: "Roboto";
-  font-weight: 200;
-  font-size: 14px;
-  line-height: 18.75px;
-  margin-bottom: 0.5rem;
-  width: 60%;
+  @include emaildesc;
 }
 
 .passworddesc {
-  background: rgba(205, 239, 255, 0.3);
-  border-radius: 4px;
-  padding: 12px 20px;
-  display: flex;
-  font-style: normal;
-  border: 1px solid transparent;
-  letter-spacing: 0.05em;
-  font-family: "Roboto";
-  font-weight: 200;
-  font-size: 14px;
-  line-height: 18.75px;
-  width: 60%;
+  @include passworddesc;
 }
 
 .girlSection {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  position: relative;
-  img {
-    height: 520px;
-    width: 60%;
-    margin-top: 3rem;
-    margin-left: 11rem;
+  @include girlSection;
+  @media (max-width: $breakpoint-xs) {
+    display: none;
   }
-  height: 100vh;
-  overflow: hidden;
-}
-
-.linearBottom {
-  position: absolute;
-  bottom: -50px;
-  right: 0;
-  left: -140px;
-  img {
-    width: 90%;
-    height: 70%;
+  @media (max-width: $breakpoint-sm) {
+    margin-top: 0;
+    img {
+      width: 70%;
+      height: 70vh;
+    }
   }
 }
 
@@ -129,37 +87,22 @@ h2 {
   @include remembercheck;
 }
 
-.buttoncontainer {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
 .forgetbutton {
   @include button;
 }
 
 .signin {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1rem;
-  color: #858585;
-  cursor: pointer;
+  @include signin;
 }
 
 a {
   color: #898b8b;
+  width: -webkit-fill-available;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
-// .inputtype {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   position: relative;
-// }
-
-.eyepassword {
-  height: 20px;
-  margin-left: -2.5rem;
+.error {
+  @include error;
 }

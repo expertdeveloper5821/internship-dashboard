@@ -1,6 +1,6 @@
 /* Set up breakpoints */
-$breakpoint-xs: 480px;
-$breakpoint-sm: 768px;
+$breakpoint-xs: 680px;
+$breakpoint-sm: 900px;
 $breakpoint-md: 992px;
 $breakpoint-lg: 1200px;
 
@@ -12,18 +12,98 @@ $breakpoint-lg: 1200px;
   width: 100vw;
   height: 100vh;
   background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+@mixin logo {
+  display: flex;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+
+@mixin container {
+  display: flex;
+  color: #003554;
+  position: relative;
+  flex-direction: column;
+  width: 80vw;
+  justify-content: center;
+  margin-left: 8rem;
+}
+
+@mixin bgcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+@mixin parareset {
+  color: #858585;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+@mixin inputdescription {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #003554;
+  margin-right: 3rem;
+}
+
+@mixin emaildesc {
+  background: #edf9ff;
+  border-radius: 8px;
+  padding: 12px 20px;
+  margin-top: 0.5rem;
+  font-style: normal;
+  border: 1px solid transparent;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 16px;
+  color: #003554;
+  border-style: none;
+  width: -webkit-fill-available;
+}
+
+@mixin passworddesc {
+  background: #edf9ff;
+  border-radius: 8px;
+  padding: 12px 20px;
+  margin-top: 0.5rem;
+  font-style: normal;
+  border: 1px solid transparent;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 16px;
+  color: #003554;
+  border-style: none;
+  width: -webkit-fill-available;
 }
 
 @mixin button {
-  background: #003554;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background: rgba(0, 53, 84, 0.8);
   border-radius: 8px;
   color: #ffffff;
   font-size: 14px;
   letter-spacing: 0.05em;
-  padding: 12px 100px;
+  padding: 12px 40px;
   box-shadow: none;
   cursor: pointer;
   border: 1px solid transparent;
+  width: -webkit-fill-available;
+  margin-top: 2rem;
+  border: 2px solid;
+  margin-right: 3rem;
 }
 
 @mixin remembercheck {
@@ -33,13 +113,41 @@ $breakpoint-lg: 1200px;
   font-size: 14px;
   line-height: 16px;
   color: #858585;
-  margin-top: 0.5rem;
+  margin-top: 1.5rem;
+  position: relative;
 }
 
-@mixin logo {
+@mixin signin {
+  margin-top: 6rem;
+  color: #858585;
+  cursor: pointer;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  text-decoration-line: underline;
+}
+
+@mixin girlSection {
   display: flex;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+  img {
+    height: 536px;
+    width: 68%;
+    margin-top: 3rem;
+    margin-left: 6rem;
+  }
+  height: 100%;
+  overflow: hidden;
+}
+
+@mixin error {
+  color: rgb(240, 7, 7);
+  p {
+    white-space: initial;
+    // margin: 4px;
+    // padding: 4px;
+  }
 }
