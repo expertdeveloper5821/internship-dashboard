@@ -152,12 +152,7 @@ const Login = (props: Props) => {
                 </div>
                 <div className={styles.error}>
                   {errors.password && touched.password ? (
-                    <p>
-                      {
-                        (errors.password =
-                          "Wrong Password. Try again or click forgot password to reset it.")
-                      }
-                    </p>
+                    <p>{(errors.password = "Please enter a valid password")}</p>
                   ) : null}
                 </div>
               </div>
