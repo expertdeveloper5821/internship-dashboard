@@ -1,4 +1,5 @@
-@import "../../styles//mixins_variable";
+@import "../../styles/_mixins";
+@import "../../styles/_variable";
 
 .maincontainer {
   @include backgroundImage;
@@ -31,16 +32,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #edf9ff;
+  background: var(--bs-skyblue);
   border-radius: 8px;
   margin-top: 0.5rem;
   img {
     margin-right: 3rem;
   }
+  :hover {
+    border: 1px solid black;
+  }
 }
 
 h2 {
-  color: #003554;
+  color: var(--bs-darkblue);
   font-style: normal;
   font-weight: 500;
   font-size: 28px;
@@ -48,7 +52,7 @@ h2 {
   @media (max-width: $breakpoint-xs) {
     font-size: 28px;
     line-height: 32px;
-    font-family: 600;
+    font-family: var(--bs-body-font-family);
     margin-top: 3rem;
   }
 }
@@ -96,7 +100,7 @@ h2 {
 }
 
 a {
-  color: #898b8b;
+  color: var(--bs-grey);
   width: -webkit-fill-available;
   text-align: center;
   display: flex;
