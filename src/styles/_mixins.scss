@@ -24,20 +24,20 @@
   margin-left: 8rem;
 }
 
-@mixin bgcontainer {
+@mixin background_container {
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 }
 
-@mixin parareset {
+@mixin heading {
   color: var(--bs-grey);
   font-weight: var(--bs-body-font-weight);
   font-size: var(--bs-body-font-size);
 }
 
-@mixin inputdescription {
+@mixin input_box {
   font-style: var(--bs-font-style);
   font-weight: var(--bs-body-font-weight);
   font-size: var(--bs-body-font-size);
@@ -46,38 +46,26 @@
   margin-bottom: 1rem;
 }
 
-@mixin emaildesc {
+@mixin email_wrapper {
   background: var(--bs-skyblue);
   border-radius: var(--bs-border-radius);
   padding: 12px 20px;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
   font-style: var(--bs-font-style);
   border: 1px solid transparent;
   font-weight: var(--bs-body-font-weight);
   font-size: var(--bs-body-font-size);
   border-style: none;
   width: -webkit-fill-available;
-  input:hover {
-    outline: none;
-  }
+  border: none;
+  outline: none;
 }
 
-@mixin passworddesc {
-  background: var(--bs-skyblue);
-  border-radius: var(--bs-border-radius);
-  padding: 12px 20px;
-  font-style: var(--bs-font-style);
-  border: 1px solid transparent;
-  font-weight: var(--bs-body-font-weight);
-  font-size: var(--bs-body-font-size);
-  border-style: none;
-  width: -webkit-fill-available;
-  input:hover {
-    border: 1px solid transparent;
-  }
+@mixin password_wrapper {
+  @include email_wrapper;
 }
 
-@mixin button {
+@mixin button_wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,7 +85,7 @@
   margin-right: 3rem;
 }
 
-@mixin remembercheck {
+@mixin checkbox_wrapper {
   font-style: var(--bs-font-style);
   font-weight: var(--bs-body-font-weight);
   font-size: var(--bs-font-size);
@@ -118,7 +106,7 @@
   text-decoration-line: underline;
 }
 
-@mixin girlSection {
+@mixin girlImg_wrapper {
   display: flex;
   flex-wrap: wrap;
   width: 100%;

@@ -1,12 +1,12 @@
 @import "../../styles/_mixins";
 @import "../../styles/_variable";
 
-.maincontainer {
+.main_container {
   @include backgroundImage;
 }
 
-.bgcontainer {
-  @include bgcontainer;
+.background_container {
+  @include background_container;
 }
 
 .container {
@@ -26,21 +26,24 @@
   @media (max-width: $breakpoint-xs) {
     margin-top: 4rem;
   }
+  @media (max-width: $breakpoint-xSmall) {
+    margin-top: 2rem;
+    margin-right: 2rem;
+  }
 }
 
-.eyewrapper {
+.eye_wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: var(--bs-skyblue);
   border-radius: 8px;
   margin-top: 0.5rem;
-
   img {
     margin-right: 3rem;
   }
-  :hover {
-    border: 1px solid black;
+  @media (max-width: $breakpoint-xSmall) {
+    padding-right: 1.5rem;
   }
 }
 
@@ -58,24 +61,24 @@ h2 {
   }
 }
 
-.parareset {
-  @include parareset;
+.heading {
+  @include heading;
 }
 
-.inputdescription {
-  @include inputdescription;
+.input_box {
+  @include input_box;
 }
 
-.emaildesc {
-  @include emaildesc;
+.email_wrapper {
+  @include email_wrapper;
 }
 
-.passworddesc {
-  @include passworddesc;
+.password_wrapper {
+  @include password_wrapper;
 }
 
-.girlSection {
-  @include girlSection;
+.girlImg_wrapper {
+  @include girlImg_wrapper;
   @media (max-width: $breakpoint-xs) {
     display: none;
   }
@@ -88,26 +91,28 @@ h2 {
   }
 }
 
-.remembercheck {
-  @include remembercheck;
+.checkbox_wrapper {
+  @include checkbox_wrapper;
 }
 
 .forgetbutton {
-  @include button;
+  @include button_wrapper;
 }
 
 .signin {
   @include signin;
 }
 
-a {
+.signin a {
   color: var(--bs-grey);
   width: -webkit-fill-available;
   text-align: center;
   display: flex;
   justify-content: center;
+  @media (max-width: $breakpoint-xSmall) {
+    margin-right: 2rem;
+  }
 }
-
 .error {
   @include error;
 }
