@@ -6,10 +6,10 @@ export function ResetPassword() {
   return (
     <>
       <div className={styles.main_container}>
-        <div className={styles.bgcontainer}>
+        <div className={styles.background_container}>
           <div className={styles.container}>
             <div className={styles.logo}>
-              <img src="./assets/Tehnogeticlogo.png" alt="Tg-logo"></img>
+              <img src="./assets/Tehnogeticlogo.svg" alt="Tg-logo"></img>
             </div>
 
             {/* Para heading */}
