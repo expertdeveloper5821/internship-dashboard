@@ -12,16 +12,7 @@ export function SentMail() {
               <img src="./assets/Tehnogeticlogo.svg" alt="Tg-logo"></img>
             </div>
 
-            <div
-              className="heading_wrapper"
-              style={{
-                border: "1px solid black",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                margin: "0px",
-              }}
-            >
+            <div className="heading_wrapper">
               <h2 className="mail_heading" style={{ border: "1px solid" }}>
                 Check Your Email
               </h2>
