@@ -1,9 +1,9 @@
-@mixin backgroundImage {
-  background-image: url("../../public/assets/bgimage-TG.svg");
-  background-size: cover;
+@mixin main_container {
+  background-image: url("../../public/assets/backgroundimage.svg");
+  // background-size: contain;
   height: auto;
-  width: 100vw;
-  height: 100vh;
+  width: auto;
+  height: 99.2vh;
   background-repeat: no-repeat;
   overflow: hidden;
 }
