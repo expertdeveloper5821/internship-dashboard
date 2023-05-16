@@ -1,48 +1,45 @@
-import * as React from "react";
-import styles from "../Login/Login.module.scss";
-import technologo from "../../Images/Technologo.png";
-import girlImage from "../../Images/girlImage.png";
+import styles from "../Login/auth.module.scss";
 
 export interface IAppProps {}
 
 export function ResetPassword() {
   return (
     <>
-      <div className={styles.maincontainer}>
-        <div className={styles.bgcontainer}>
+      <div className={styles.main_container}>
+        <div className={styles.background_container}>
           <div className={styles.container}>
             <div className={styles.logo}>
-              <img src={technologo} alt="Tg-logo"></img>
+              <img src="./assets/Tehnogeticlogo.svg" alt="Tg-logo"></img>
             </div>
 
-            {/* Para reset */}
+            {/* Para heading */}
             <div>
               <h2>Forgot Password</h2>
-              <p className={styles.parareset}>
-                Please enter your registered email id or mobile to<br></br>{" "}
-                reset your password
+              <p className={styles.heading}>
+                Please enter your registered email id or mobile to reset your
+                password
               </p>
             </div>
 
             {/* Email Tag */}
-            <div className={styles.inputdescription}>
+            <div className={styles.input_box}>
               <label className={styles.email}>Email</label>
               <br></br>
               <input
                 type="email"
-                className={styles.emaildesc}
+                className={styles.email_wrapper}
                 placeholder="Enter Email"
               ></input>
             </div>
 
             {/* Remember me  */}
-            <div className={styles.remembercheck}>
+            <div className={styles.checkbox_wrapper}>
               <input type="checkbox"></input>
               <span>Remember for 30 days</span>
             </div>
 
             {/* Sign in */}
-            <div className={styles.buttoncontainer}>
+            <div className={styles.button_wrapper}>
               <button type="submit" className={styles.forgetbutton} disabled>
                 Recover Password
               </button>
@@ -58,8 +55,8 @@ export function ResetPassword() {
               </span>
             </div>
           </div>
-          <div className={styles.girlSection}>
-            <img src={girlImage} alt="girl_image"></img>
+          <div className={styles.girlImg_wrapper}>
+            <img src="./assets/GirlImg.png" alt="girl-img"></img>
           </div>
         </div>
       </div>

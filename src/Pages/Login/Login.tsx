@@ -1,6 +1,4 @@
-import styles from "./Login.module.scss";
-import technologo from "../../Images/Technologo.png";
-import girlImage from "../../Images/girlImage.png";
+import styles from "./auth.module.scss";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useState, useEffect } from "react";
 import { useFormik } from "formik";
@@ -77,16 +75,16 @@ const Login = (props: Props) => {
 
   return (
     <div className={styles.maincontainer}>
-      <div className={styles.bgcontainer}>
+      <div className={styles.background_container}>
         <div className={styles.container}>
           <div className={styles.logo}>
-            <img src={technologo} alt="Tg-logo"></img>
+            <img src="./assets/Tehnogeticlogo.svg" alt="Tg-logo"></img>
           </div>
 
           {/* Para reset */}
           <div>
             <h2>Welcome Back</h2>
-            <p className={styles.parareset}>
+            <p className={styles.heading}>
               Welcome back! Please enter your details
             </p>
           </div>
@@ -94,11 +92,11 @@ const Login = (props: Props) => {
           {/* Email Tag */}
           <div>
             <form onSubmit={handleSubmit}>
-              <div className={styles.inputdescription}>
+              <div className={styles.input_box}>
                 <label className={styles.email}>Email</label>
-                <br></br>
+
                 <input
-                  className={styles.emaildesc}
+                  className={styles.email_wrapper}
                   type="email"
                   name="email"
                   autoComplete="off"
@@ -115,16 +113,11 @@ const Login = (props: Props) => {
               </div>
 
               {/* Password Tag */}
-              <div className={styles.inputdescription}>
-                <label
-                  className={styles.password}
-                  style={{ marginTop: "20px" }}
-                >
-                  Password
-                </label>
-                <div className={styles.eyewrapper}>
+              <div className={styles.input_box}>
+                <label className={styles.password}>Password</label>
+                <div className={styles.eye_wrapper}>
                   <input
-                    className={styles.passworddesc}
+                    className={styles.password_wrapper}
                     type={passwordShown ? "text" : "password"}
                     name="password"
                     autoComplete="off"
@@ -158,13 +151,13 @@ const Login = (props: Props) => {
               </div>
 
               {/* Remember me  */}
-              <div className={styles.remembercheck}>
+              <div className={styles.checkbox_wrapper}>
                 <input type="checkbox" onChange={handleRememberMe}></input>
                 <span>Remember for 30 days</span>
               </div>
 
               {/* Sign in */}
-              <div className={styles.buttoncontainer}>
+              <div className={styles.button_wrapper}>
                 <button type="submit" className={styles.forgetbutton}>
                   Sign in
                 </button>
@@ -179,8 +172,8 @@ const Login = (props: Props) => {
             </form>
           </div>
         </div>
-        <div className={styles.girlSection}>
-          <img src={girlImage} alt="girl_image"></img>
+        <div className={styles.girlImg_wrapper}>
+          <img src="./assets/GirlImg.png" alt="girl-img"></img>
         </div>
       </div>
     </div>
