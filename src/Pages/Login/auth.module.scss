@@ -109,6 +109,7 @@ h2 {
   text-align: center;
   display: flex;
   justify-content: center;
+  margin-right: 4rem;
   @media (max-width: $breakpoint-xSmall) {
     margin-right: 2rem;
   }

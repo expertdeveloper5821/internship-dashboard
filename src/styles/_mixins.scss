@@ -13,6 +13,7 @@
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   justify-content: center;
+  margin-right: 4rem;
 }
 
 @mixin container {
@@ -42,8 +43,8 @@
   font-weight: var(--bs-body-font-weight);
   font-size: var(--bs-body-font-size);
   color: var(--bs-darkblue);
-  margin-right: 3rem;
   margin-bottom: 1rem;
+  width: 80%;
 }
 
 @mixin email_wrapper {
@@ -79,10 +80,9 @@
   box-shadow: none;
   cursor: var(--bs-cursor);
   border: 1px solid transparent;
-  width: -webkit-fill-available;
+  width: 80%;
   margin-top: 2rem;
   border: 2px solid;
-  margin-right: 3rem;
 }
 
 @mixin checkbox_wrapper {
