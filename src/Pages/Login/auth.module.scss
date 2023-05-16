@@ -2,7 +2,7 @@
 @import "../../styles/_variable";
 
 .main_container {
-  @include backgroundImage;
+  @include main_container;
 }
 
 .background_container {
