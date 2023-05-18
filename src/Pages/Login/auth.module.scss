@@ -12,12 +12,12 @@
 .container {
   @include container;
   @media (max-width: $breakpoint-xs) {
+    margin-top: 0px;
     margin-left: 2rem;
   }
   @media (max-width: $breakpoint-sm) {
     width: 95%;
     height: 100%;
-    margin-left: 3rem;
   }
 }
 
@@ -99,6 +99,11 @@ h2 {
   @include button_wrapper;
 }
 
+.SignIn_button {
+  @include button_wrapper;
+  background-color: var(--bs-lightgrey);
+}
+
 .signin {
   @include signin;
 }
@@ -116,4 +121,13 @@ h2 {
 }
 .error {
   @include error;
+}
+
+.emailverification_wrapper {
+  @include emailverification_wrapper;
+}
+
+.blueButton {
+  background-color: var(--bs-darkblue);
+  color: var(--bs-lightgrey);
 }
