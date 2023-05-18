@@ -12,7 +12,6 @@ export function ResetPassword() {
               <img src="./assets/Tehnogeticlogo.svg" alt="Tg-logo"></img>
             </div>
 
-            {/* Para heading */}
             <div>
               <h2>Forgot Password</h2>
               <p className={styles.heading}>
@@ -21,7 +20,6 @@ export function ResetPassword() {
               </p>
             </div>
 
-            {/* Email Tag */}
             <div className={styles.input_box}>
               <label className={styles.email}>Email</label>
               <br></br>
@@ -32,20 +30,17 @@ export function ResetPassword() {
               ></input>
             </div>
 
-            {/* Remember me  */}
             <div className={styles.checkbox_wrapper}>
               <input type="checkbox"></input>
               <span>Remember for 30 days</span>
             </div>
 
-            {/* Sign in */}
             <div className={styles.button_wrapper}>
               <button type="submit" className={styles.forgetbutton} disabled>
                 Recover Password
               </button>
             </div>
 
-            {/* href Tag */}
             <div className={styles.signin}>
               <span>
                 <a href="/">

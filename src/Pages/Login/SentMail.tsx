@@ -19,7 +19,6 @@ export function SentMail() {
               <p
                 className={styles.mailheading}
                 style={{ border: "1px solid black" }}
-                // style={{ display: "flex", justifyContent: "center" }}
               >
                 We have sent you a reset password link on <br></br>
                 ***given mail***
