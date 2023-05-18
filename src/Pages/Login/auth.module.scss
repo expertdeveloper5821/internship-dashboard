@@ -1,7 +1,7 @@
 @import "../../styles/_mixins";
 
 .main_container {
-  @include backgroundImage;
+  @include main_container;
 }
 
 .background_container {
