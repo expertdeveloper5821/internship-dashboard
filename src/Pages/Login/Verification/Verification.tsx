@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "../Verification/verification.module.scss";
 import OtpInput from 'react-otp-input';
+import {useNavigate} from "react-router-dom";
 
 
 type Props = {};
@@ -9,6 +10,8 @@ const Verification = (props: Props) => {
     const [otp, setOtp] = useState('');
     const [error, setError] = useState(false);
 
+    const navigate = useNavigate();
+
     const handleSubmit = () => {
         if (otp.length !== 4) {
             setError(true);
@@ -16,14 +19,12 @@ const Verification = (props: Props) => {
         }
         else {
             setError(false);
+            navigate("/success");
         }
     }
 
     return (
         <>
-            <div className={styles.clBtn_wrapper}>
-                <img src="./assets/CloseBtn.png" alt="close-btn" ></img>
-            </div>
             <div className={styles.maincontainer}>
                 <div className={styles.background_container}>
                     <div className={styles.container}>

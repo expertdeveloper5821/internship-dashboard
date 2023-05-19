@@ -42,7 +42,10 @@
   font-size: var(--bs-body-font-size);
   color: var(--bs-darkblue);
   margin-bottom: 1rem;
-  width: 80%;
+  width: 85%;
+  @media (max-width: $breakpoint-sm) {
+    width: 100%;
+}
 }
 
 @mixin email_wrapper {
@@ -78,8 +81,11 @@
   box-shadow: none;
   cursor: var(--bs-cursor);
   border: 1px solid transparent;
-  width: 80%;
+  width: 85%;
   margin-top: 2rem;
+  @media (max-width: $breakpoint-sm) {
+    width: 100%;
+}
 }
 
 @mixin checkbox_wrapper {
@@ -126,26 +132,6 @@
   p {
     white-space: initial;
   }
-}
-
-@mixin clBtn_wrapper {
-  margin-top: 3rem;
-  margin-left: 5rem;
-  position: absolute;
-
-  img {
-      width: 10px;
-      height: 10px;
-  }
-
-  @media (max-width: $breakpoint-xs) {
-      margin-top: 2px;
-      margin-left: 3rem;
-  }
-  @media (max-width: $breakpoint-xSmall) {
-    margin-top: 2px;
-    
-}
 }
 
 @mixin heading_wrapper {

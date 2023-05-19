@@ -1,10 +1,15 @@
-import styles from "../AuthFail/authfail.module.scss";
+import { useNavigate } from "react-router-dom";
+import styles from "../AuthSuccess/authsuccess.module.scss";
 
 type Props = {};
 
-const AuthFail = (props: Props) => {
+const UpdateCredSuccess = (props: Props) => {
 
+    const navigate = useNavigate();
 
+    const handleClick = () => {
+        navigate("/");
+    }
     return (
         <>
             <div className={styles.maincontainer}>
@@ -14,16 +19,18 @@ const AuthFail = (props: Props) => {
                             <img src="./assets/Tehnogeticlogo.svg" alt="Tg-logo"></img>
                         </div>
                         <div className={styles.heading_wrapper}>
-                            <h2>Error!!</h2>
+                            <h2>Congratulations!!</h2>
                             <p className={styles.heading}>
-                                Ooops!! Something went wrong please try again.
+                                Hurrah! You have successfully updated your password
                             </p>
-                            <div>
-                                <div className={styles.mail_fail}></div>
+                        </div>
+                        <div>
+                            <div className={styles.mail_success}>
+                                <img src="./assets/MailVerifiedBg.gif" alt="gifImg"></img>
                             </div>
                             <div className={styles.button_wrapper}>
-                                <button type="submit" className={styles.forgetbutton}>
-                                    Try again
+                                <button type="submit" className={styles.forgetbutton} onClick={handleClick}>
+                                    Sign in
                                 </button>
                             </div>
                         </div>
@@ -37,4 +44,4 @@ const AuthFail = (props: Props) => {
     );
 };
 
-export default AuthFail;
+export default UpdateCredSuccess;

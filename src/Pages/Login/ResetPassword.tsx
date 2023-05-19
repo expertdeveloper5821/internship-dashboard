@@ -42,7 +42,7 @@ export function ResetPassword() {
 
             <div className={styles.signin}>
               <span>
-                <a href="/">
+                <a href="/login">
                   Remember it?
                   <b>Sign in here</b>
                 </a>

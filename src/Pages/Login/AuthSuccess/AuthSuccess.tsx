@@ -7,9 +7,6 @@ const AuthSuccess = (props: Props) => {
 
     return (
         <>
-            <div className={styles.clBtn_wrapper}>
-                <img src="./assets/CloseBtn.png" alt="close-btn" ></img>
-            </div>
             <div className={styles.maincontainer}>
                 <div className={styles.background_container}>
                     <div className={styles.container}>
@@ -24,7 +21,7 @@ const AuthSuccess = (props: Props) => {
                         </div>
                         <div>
                             <div className={styles.mail_success}>
-                            <img src="./assets/MailVerifiedBg.gif" alt="gifImg"></img>
+                                <img src="./assets/MailVerifiedBg.gif" alt="gifImg"></img>
                             </div>
                             <div className={styles.button_wrapper}>
                                 <button type="submit" className={styles.forgetbutton}>

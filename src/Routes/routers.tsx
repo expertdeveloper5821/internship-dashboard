@@ -6,6 +6,8 @@ import { SentMail } from "../Pages/Login/SentMail";
 import Verification from "../Pages/Login/Verification/Verification";
 import AuthSuccess from "../Pages/Login/AuthSuccess/AuthSuccess";
 import AuthFail from "../Pages/Login/AuthFail/AuthFail";
+import UpdateCredential from "../Pages/Login/UserCredential/UpdateCredential";
+import UpdateCredSuccess from "../Pages/Login/UserCredential/UpdateCredSuccess";
 
 type Props = {};
 
@@ -19,6 +21,8 @@ const Routers = (props: Props) => {
         <Route path="/verified" element={<Verification />} />
         <Route path="/success" element={<AuthSuccess />} />
         <Route path="/error" element={<AuthFail />} />
+        <Route path="/user_credential" element={<UpdateCredential />} />
+        <Route path="/user_credential_success" element={<UpdateCredSuccess />} />
       </Routes>
     </Router>
   );

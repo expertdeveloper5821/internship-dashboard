@@ -2,7 +2,7 @@ import styles from "./auth.module.scss";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useState, useEffect } from "react";
 import { useFormik } from "formik";
-import SignupSchema from "../../Schemas/SignupSchemas";
+import {SignupSchema} from "../../Schemas/SignupSchemas";
 import { useNavigate } from "react-router-dom";
 import { Cookies } from "typescript-cookie";
 
@@ -53,7 +53,7 @@ const Login = (props: Props) => {
         Cookies.set("email", values.email, { expires: 30 });
         Cookies.set("password", values.password, { expires: 30 });
       }
-      navigate("/student");
+      navigate("/success");
     },
   });
 
@@ -149,7 +149,7 @@ const Login = (props: Props) => {
               </div>
 
               <div className={styles.button_wrapper}>
-                <button type="submit" className={styles.forgetbutton}>
+                <button type="submit" className={styles.forgetbutton} >
                   Sign in
                 </button>
               </div>
