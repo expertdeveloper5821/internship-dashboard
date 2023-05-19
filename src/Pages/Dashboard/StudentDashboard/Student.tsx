@@ -7,7 +7,7 @@ export function Student () {
   return (
     <header>
         <div className={styles.container}>
-            <div className='background-wrapper'>
+            <div className={styles.background}>
                 <h2>Student</h2>
             </div>
         </div>
