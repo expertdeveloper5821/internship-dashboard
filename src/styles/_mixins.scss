@@ -1,6 +1,5 @@
 @mixin main_container {
   background-image: url("../../public/assets/backgroundimage.svg");
-  // background-size: contain;
   height: auto;
   width: auto;
   height: 99.2vh;
@@ -176,8 +175,4 @@
 @mixin forgetbutton_wrapper {
   width: 92%;
   margin: 1rem;
-
-  @media (max-width: $breakpoint-xSmall) {
-      // margin: 1.5rem;
-  }
 }

@@ -9,11 +9,8 @@ import { Cookies } from "typescript-cookie";
 type Props = {};
 
 const Login = (props: Props) => {
-  //Remember for 30 days
   const [rememberMe, setRememberMe] = useState(false);
-  //Password Toggle
   const [passwordShown, setPasswordShown] = useState(false);
-  //Icon Toggle
   const [isToggle, setIsToggle] = useState(false);
 
   const togglePassword = () => {
@@ -35,7 +32,6 @@ const Login = (props: Props) => {
 
   const navigate = useNavigate();
 
-  //Formik Validation
   const initialValues = {
     email: "",
     password: "",

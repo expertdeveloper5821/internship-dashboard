@@ -1,6 +1,6 @@
 import styles from "../Login/auth.module.scss";
 
-export interface IAppProps {}
+export interface IAppProps { }
 
 export function ResetPassword() {
   return (
@@ -22,7 +22,6 @@ export function ResetPassword() {
 
             <div className={styles.input_box}>
               <label className={styles.email}>Email</label>
-              <br></br>
               <input
                 type="email"
                 className={styles.email_wrapper}
