@@ -9,11 +9,8 @@ import { Cookies } from "typescript-cookie";
 type Props = {};
 
 const Login = (props: Props) => {
-  //Remember for 30 days
   const [rememberMe, setRememberMe] = useState(false);
-  //Password Toggle
   const [passwordShown, setPasswordShown] = useState(false);
-  //Icon Toggle
   const [isToggle, setIsToggle] = useState(false);
 
   const togglePassword = () => {
@@ -35,7 +32,6 @@ const Login = (props: Props) => {
 
   const navigate = useNavigate();
 
-  //Formik Validation
   const initialValues = {
     email: "",
     password: "",
@@ -81,7 +77,6 @@ const Login = (props: Props) => {
             <img src="./assets/Tehnogeticlogo.svg" alt="Tg-logo"></img>
           </div>
 
-          {/* Para reset */}
           <div>
             <h2>Welcome Back</h2>
             <p className={styles.heading}>
@@ -89,7 +84,6 @@ const Login = (props: Props) => {
             </p>
           </div>
 
-          {/* Email Tag */}
           <div>
             <form onSubmit={handleSubmit}>
               <div className={styles.input_box}>
@@ -112,7 +106,6 @@ const Login = (props: Props) => {
                 </div>
               </div>
 
-              {/* Password Tag */}
               <div className={styles.input_box}>
                 <label className={styles.password}>Password</label>
                 <div className={styles.eye_wrapper}>
@@ -150,20 +143,17 @@ const Login = (props: Props) => {
                 </div>
               </div>
 
-              {/* Remember me  */}
               <div className={styles.checkbox_wrapper}>
                 <input type="checkbox" onChange={handleRememberMe}></input>
                 <span>Remember for 30 days</span>
               </div>
 
-              {/* Sign in */}
               <div className={styles.button_wrapper}>
                 <button type="submit" className={styles.forgetbutton}>
                   Sign in
                 </button>
               </div>
 
-              {/* href Tag */}
               <div className={styles.signin}>
                 <span>
                   <a href="/resetpassword"> Forget your Password?</a>
