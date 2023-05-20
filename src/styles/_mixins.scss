@@ -27,13 +27,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 @mixin heading {
   color: var(--bs-grey);
   font-weight: var(--bs-body-font-weight);
   font-size: var(--bs-body-font-size);
-  margin: 2.5rem 0rem;
+  margin: 1.5rem 0rem;
 }
 
 @mixin input_box {

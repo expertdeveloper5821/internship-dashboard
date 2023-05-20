@@ -7,7 +7,7 @@ const AuthSuccess = (props: Props) => {
 
     return (
         <>
-            <div className={styles.maincontainer}>
+            <div className={styles.main_container}>
                 <div className={styles.background_container}>
                     <div className={styles.container}>
                         <div className={styles.logo}>
