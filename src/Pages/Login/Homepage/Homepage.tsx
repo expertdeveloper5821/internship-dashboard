@@ -1,0 +1,31 @@
+import { useEffect } from "react";
+import styles from "./homepage.module.scss";
+import { useNavigate } from "react-router-dom";
+
+type Props = {};
+
+const Homepage = (props: Props) => {
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        setTimeout(() => {
+            navigate("/login");
+        },4000)
+    })
+    return (
+        <>
+            <div className={styles.main_container}>
+                <div className={styles.background_container}>
+                    <div className={styles.container}>
+                        <div className={styles.logo}>
+                            <img src="./assets/Tehnogeticlogo.svg" alt="Tg-logo"></img>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+};
+
+export default Homepage;

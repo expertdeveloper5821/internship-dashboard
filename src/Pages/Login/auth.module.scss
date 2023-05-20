@@ -113,8 +113,14 @@ h2 {
   text-align: center;
   display: flex;
   justify-content: center;
-  // margin-right: 4rem;
+  margin-right: 3.5rem;
   text-align: center;
+  @media (max-width: $breakpoint-xs) {
+    margin-right: 0;
+  }
+  @media (max-width: $breakpoint-sm) {
+    margin-right: 1rem;
+  }
 }
 
 .error {

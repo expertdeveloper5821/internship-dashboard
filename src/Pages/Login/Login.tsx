@@ -53,7 +53,7 @@ const Login = (props: Props) => {
         Cookies.set("email", values.email, { expires: 30 });
         Cookies.set("password", values.password, { expires: 30 });
       }
-      navigate("/success");
+      navigate("/student_dashboard");
     },
   });
 

@@ -1,9 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import styles from "../AuthSuccess/authsuccess.module.scss";
 
 type Props = {};
 
 const AuthSuccess = (props: Props) => {
 
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate("/user_credential");
+    }
 
     return (
         <>
@@ -24,7 +30,7 @@ const AuthSuccess = (props: Props) => {
                                 <img src="./assets/MailVerifiedBg.gif" alt="gifImg"></img>
                             </div>
                             <div className={styles.button_wrapper}>
-                                <button type="submit" className={styles.forgetbutton}>
+                                <button type="submit" className={styles.forgetbutton} onClick={handleClick}>
                                     Get Started
                                 </button>
                             </div>
