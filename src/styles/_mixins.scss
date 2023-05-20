@@ -43,9 +43,14 @@
   color: var(--bs-darkblue);
   margin-bottom: 1rem;
   width: 85%;
+
   @media (max-width: $breakpoint-sm) {
     width: 100%;
-}
+  }
+
+  @media (max-width: $breakpoint-xSmall) {
+    width: 90%;
+  }
 }
 
 @mixin email_wrapper {
@@ -83,9 +88,14 @@
   border: 1px solid transparent;
   width: 85%;
   margin-top: 2rem;
+
   @media (max-width: $breakpoint-sm) {
     width: 100%;
-}
+  }
+
+  @media (max-width: $breakpoint-xSmall) {
+    width: 90%;
+  }
 }
 
 @mixin checkbox_wrapper {
@@ -149,12 +159,12 @@
   text-align: center;
 
   a {
-      margin-right: 0;
-      margin-bottom: 2rem;
+    margin-right: 0;
+    margin-bottom: 2rem;
   }
 
   span {
-      color: #858585
+    color: #858585
   }
 }
 
