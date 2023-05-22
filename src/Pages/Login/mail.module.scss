@@ -29,7 +29,7 @@
 
 .logo {
   @include logo;
-  margin-right: 0px;
+  // margin-right: 4rem;
   @media (max-width: $breakpoint-xs) {
     margin-top: 4rem;
   }

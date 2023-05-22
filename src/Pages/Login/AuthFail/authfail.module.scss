@@ -1,0 +1,48 @@
+@import "../auth.module.scss";
+@import "../../../styles/variable.scss";
+
+.heading_wrapper {
+    @include heading_wrapper;
+    h2 {
+        color: #FF0000;
+    }
+}
+
+.logo {
+    @include logo_wrapper;
+}
+
+.signin {
+    @include signin_wrapper;
+}
+
+.forgetbutton {
+    @include forgetbutton_wrapper;
+    background-color: rgba(255, 0, 0, 0.8);;
+}
+
+.mail_fail {
+    width: 70%;
+    height: 250px;
+    background-image: url("../../../../public/assets/MailError.svg");
+    margin-left: auto;
+    margin-right: auto;
+    animation-name: bounceImageError;
+    animation-delay: 2s;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+@keyframes bounceImageError {
+    from {
+        background-image: url("../../../../public/assets/MailError.svg");
+    }
+
+    to {
+        background-image: url("../../../../public/assets/MailError(2).svg");
+    }
+}

@@ -10,7 +10,7 @@ export function SentMail() {
           <div className={styles.container}>
             <div className={styles.mailsent_container}>
               <div className={styles.logo}>
-                <img src="./assets/Tehnogeticlogo.svg" alt="Tg-logo"></img>
+                <img src="./assets/technogeticlogo.svg" alt="Tg-logo"></img>
               </div>
 
               <div className={styles.email_wrapper}>

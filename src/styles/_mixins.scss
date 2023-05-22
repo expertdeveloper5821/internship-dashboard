@@ -5,6 +5,7 @@
   height: 99.2vh;
   background-repeat: no-repeat;
   overflow: hidden;
+  background-size: cover;
 }
 
 @mixin logo {
@@ -12,7 +13,6 @@
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   justify-content: center;
-  margin-right: 4rem;
 }
 
 @mixin container {
@@ -29,7 +29,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // overflow: hidden;
 }
 
 @mixin heading {
@@ -44,7 +43,15 @@
   font-size: var(--bs-body-font-size);
   color: var(--bs-darkblue);
   margin-bottom: 1rem;
-  width: 80%;
+  width: 85%;
+
+  @media (max-width: $breakpoint-sm) {
+    width: 100%;
+  }
+
+  @media (max-width: $breakpoint-xSmall) {
+    width: 90%;
+  }
 }
 
 @mixin email_wrapper {
@@ -80,9 +87,19 @@
   box-shadow: none;
   cursor: var(--bs-cursor);
   border: 1px solid transparent;
-  width: 80%;
+  width: 85%;
   margin-top: 2rem;
-  border: 2px solid;
+
+  @media (max-width: $breakpoint-sm) {
+    width: 100%;
+  }
+
+  @media (max-width: $breakpoint-xSmall) {
+    width: 90%;
+  }
+  @media (max-width: $breakpoint-xs) {
+    width: 90%;
+  }
 }
 
 @mixin checkbox_wrapper {
@@ -111,18 +128,21 @@
   flex-wrap: wrap;
   width: 100%;
   position: relative;
+
   img {
     height: 536px;
     width: 68%;
     margin-top: 3rem;
     margin-left: 6rem;
   }
+
   height: 100%;
   overflow: hidden;
 }
 
 @mixin error {
   color: var(--bs-red);
+
   p {
     white-space: initial;
   }
@@ -147,4 +167,33 @@
   animation-name: bounceImages;
   animation-duration: 0.2s;
   animation-iteration-count: infinite;
+}
+
+@mixin heading_wrapper {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+@mixin logo_wrapper {
+  text-align: center;
+  align-items: center;
+}
+
+@mixin signin_wrapper {
+  margin-top: 2rem;
+  text-align: center;
+
+  a {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  span {
+    color: #858585;
+  }
+}
+
+@mixin forgetbutton_wrapper {
+  width: 92%;
+  margin: 1rem;
 }
