@@ -139,18 +139,3 @@ h2 {
 .error {
   @include error;
 }
-
-.emailverification_wrapper {
-  @include emailverification_wrapper;
-}
-
-.blueButton {
-  background-color: var(--bs-darkblue);
-  color: var(--bs-lightgrey);
-}
-
-.SignIn_button {
-  @include button_wrapper;
-  // background-color: var(--bs-lightgrey);
-  background-color: var(--bs-darkblue);
-}
