@@ -18,7 +18,8 @@
 
 .forgetbutton {
     @include forgetbutton_wrapper;
-    background-color: rgba(255, 0, 0, 0.8);;
+    background-color: rgba(255, 0, 0, 0.8);
+    margin-left: 1rem;
 }
 
 .mail_fail {
