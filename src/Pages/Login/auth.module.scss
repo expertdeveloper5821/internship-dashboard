@@ -8,12 +8,10 @@
 .background_container {
   @include background_container;
 }
-
 .container {
   @include container;
 
   @media (max-width: $breakpoint-xs) {
-    margin-left: 2rem;
     margin: 1.5rem 1rem;
   }
 
@@ -27,6 +25,7 @@
 
 .logo {
   @include logo;
+  margin-right: 4rem;
 
   @media (max-width: $breakpoint-xs) {
     margin-top: 8rem;
@@ -114,6 +113,16 @@ h2 {
   }
 }
 
+.SignIn_button {
+  @include button_wrapper;
+  background-color: var(--bs-lightgrey);
+}
+
+.SignIn_button {
+  @include button_wrapper;
+  background-color: var(--bs-lightgrey);
+}
+
 .signin {
   @include signin;
 }
@@ -153,4 +162,12 @@ h2 {
   @include button_wrapper;
   // background-color: var(--bs-lightgrey);
   background-color: var(--bs-darkblue);
+}
+.emailverification_wrapper {
+  @include emailverification_wrapper;
+}
+
+.blueButton {
+  background-color: var(--bs-darkblue);
+  color: var(--bs-lightgrey);
 }
