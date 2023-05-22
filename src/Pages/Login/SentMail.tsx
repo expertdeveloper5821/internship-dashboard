@@ -9,7 +9,7 @@ export function SentMail() {
         <div className={styles.background_container}>
           <div className={styles.container} style={{ border: "1px solid" }}>
             <div className={styles.logo}>
-              <img src="./assets/Tehnogeticlogo.svg" alt="Tg-logo"></img>
+              <img src="./assets/technogeticlogo.svg" alt="Tg-logo"></img>
             </div>
 
             <div className="heading_wrapper">
