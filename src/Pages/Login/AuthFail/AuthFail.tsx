@@ -7,14 +7,11 @@ const AuthFail = (props: Props) => {
 
     return (
         <>
-            <div className={styles.clBtn_wrapper}>
-                <img src="./assets/CloseBtn.png" alt="close-btn" ></img>
-            </div>
-            <div className={styles.maincontainer}>
+            <div className={styles.main_container}>
                 <div className={styles.background_container}>
                     <div className={styles.container}>
                         <div className={styles.logo}>
-                            <img src="./assets/Tehnogeticlogo.svg" alt="Tg-logo"></img>
+                            <img src="./assets/technogeticlogo.svg" alt="Tg-logo"></img>
                         </div>
                         <div className={styles.heading_wrapper}>
                             <h2>Error!!</h2>

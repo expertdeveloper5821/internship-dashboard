@@ -3,26 +3,25 @@ import styles from "../AuthSuccess/authsuccess.module.scss";
 
 type Props = {};
 
-const AuthSuccess = (props: Props) => {
+const UpdateCredSuccess = (props: Props) => {
 
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate("/user_credential");
+        navigate("/login");
     }
-
     return (
         <>
-            <div className={styles.main_container}>
+            <div className={styles.maincontainer}>
                 <div className={styles.background_container}>
                     <div className={styles.container}>
                         <div className={styles.logo}>
                             <img src="./assets/technogeticlogo.svg" alt="Tg-logo"></img>
                         </div>
                         <div className={styles.heading_wrapper}>
-                            <h2>Verifed!!</h2>
+                            <h2>Congratulations!!</h2>
                             <p className={styles.heading}>
-                                Hurrah! You have successfully verified the account.
+                                Hurrah! You have successfully updated your password
                             </p>
                         </div>
                         <div>
@@ -31,7 +30,7 @@ const AuthSuccess = (props: Props) => {
                             </div>
                             <div className={styles.button_wrapper}>
                                 <button type="submit" className={styles.forgetbutton} onClick={handleClick}>
-                                    Get Started
+                                    Sign in
                                 </button>
                             </div>
                         </div>
@@ -45,4 +44,4 @@ const AuthSuccess = (props: Props) => {
     );
 };
 
-export default AuthSuccess;
+export default UpdateCredSuccess;

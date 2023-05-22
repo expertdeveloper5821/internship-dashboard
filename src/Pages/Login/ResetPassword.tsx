@@ -9,7 +9,7 @@ export function ResetPassword() {
         <div className={styles.background_container}>
           <div className={styles.container}>
             <div className={styles.logo}>
-              <img src="./assets/Tehnogeticlogo.svg" alt="Tg-logo"></img>
+              <img src="./assets/technogeticlogo.svg" alt="Tg-logo"></img>
             </div>
 
             <div>
@@ -42,7 +42,7 @@ export function ResetPassword() {
 
             <div className={styles.signin}>
               <span>
-                <a href="/">
+                <a href="/login">
                   Remember it?
                   <b>Sign in here</b>
                 </a>

@@ -1,10 +1,6 @@
 @import "../auth.module.scss";
 @import "../../../styles/variable.scss";
 
-.clBtn_wrapper {
-    @include clBtn_wrapper;
-}
-
 .heading_wrapper {
     @include heading_wrapper;
 }

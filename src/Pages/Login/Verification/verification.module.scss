@@ -1,10 +1,6 @@
 @import "../auth.module.scss";
 @import "../../../styles/mixins.scss";
 
-.clBtn_wrapper {
-    @include clBtn_wrapper;
-}
-
 .otp_input {
     display: flex;
     justify-content: center;
@@ -55,3 +51,4 @@
     text-align: center;
     margin-top: 0.5rem;
 }
+
