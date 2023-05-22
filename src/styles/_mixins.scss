@@ -10,7 +10,7 @@
 
 @mixin logo {
   display: flex;
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   justify-content: center;
 }
@@ -21,6 +21,7 @@
   flex-direction: column;
   width: 80vw;
   justify-content: center;
+  margin-top: 1rem;
   margin-left: 8rem;
 }
 
@@ -28,14 +29,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 @mixin heading {
   color: var(--bs-grey);
   font-weight: var(--bs-body-font-weight);
   font-size: var(--bs-body-font-size);
-  margin: 1.5rem 0rem;
 }
 
 @mixin input_box {
