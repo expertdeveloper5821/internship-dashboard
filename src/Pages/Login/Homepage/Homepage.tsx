@@ -11,7 +11,7 @@ const Homepage = (props: Props) => {
     useEffect(() => {
         setTimeout(() => {
             navigate("/login");
-        },4000)
+        },2000)
     })
     return (
         <>
