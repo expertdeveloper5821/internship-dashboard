@@ -8,6 +8,7 @@
 .background_container {
   @include background_container;
 }
+
 .container {
   @include container;
 
@@ -16,16 +17,14 @@
   }
 
   @media (max-width: $breakpoint-sm) {
-    width: 100%;
+    width: 90%;
     height: 100%;
-    margin: 2rem 1rem;
-    margin-left: 2rem;
+    margin: 1rem 1.5rem;
   }
 }
 
 .logo {
   @include logo;
-  margin-right: 4rem;
 
   @media (max-width: $breakpoint-xs) {
     margin-top: 8rem;
@@ -46,10 +45,6 @@
 
   img {
     margin-right: 3rem;
-  }
-
-  @media (max-width: $breakpoint-xSmall) {
-    padding-right: 1.5rem;
   }
 }
 
@@ -74,6 +69,11 @@ h2 {
 
 .input_box {
   @include input_box;
+
+  @media (max-width: $breakpoint-xs) {
+    width: 100%;
+  }
+
 }
 
 .email_wrapper {
@@ -95,8 +95,9 @@ h2 {
     margin-top: 0;
 
     img {
-      width: 75%;
-      height: 70vh;
+      width: 500px;
+      height: 430px;
+      margin-left: 0;
     }
   }
 }
@@ -105,26 +106,31 @@ h2 {
   @include checkbox_wrapper;
 }
 
+.error {
+  @include error;
+}
+
 .forgetbutton {
   @include button_wrapper;
 
   @media (max-width: $breakpoint-xSmall) {
     padding: 12px 30px;
+    width: 100%;
   }
 }
 
 .SignIn_button {
   @include button_wrapper;
   background-color: var(--bs-lightgrey);
-}
 
-.SignIn_button {
-  @include button_wrapper;
-  background-color: var(--bs-lightgrey);
+  @media (max-width: $breakpoint-xs) {
+     width: 100%
+  }
 }
 
 .signin {
   @include signin;
+
 }
 
 .signin a {
@@ -139,12 +145,19 @@ h2 {
   @media (max-width: $breakpoint-xs) {
     margin-right: 0;
   }
-
-  @media (max-width: $breakpoint-sm) {
-    margin-right: 1rem;
-  }
 }
 
 .error {
   @include error;
+}
+
+
+.blueButton {
+  background-color: var(--bs-darkblue);
+  
+}
+
+.SignIn_button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }

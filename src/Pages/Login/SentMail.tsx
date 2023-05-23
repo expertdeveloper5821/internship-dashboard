@@ -20,7 +20,7 @@ export function SentMail() {
                 </p>
 
                 <div className={styles.mailsent_logo}>
-                  <img src="./assets/letterBox.png" alt="mailsent-logo"></img>
+                  <img src="./assets/letterBox.svg" alt="mailsent-logo"></img>
                 </div>
               </div>
 
