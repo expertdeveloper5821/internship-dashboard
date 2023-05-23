@@ -130,21 +130,19 @@
   position: relative;
 
   img {
-    height: 569px;
-    width: 75%;
+    height: 610px;
+    width: 400px;
     margin-top: 3rem;
-    margin-left: 6rem;
+    margin-left: 3rem;
   }
 
-  @media (max-width: $breakpoint-xs) {
-    img {
-      height: 450px;
-      margin-top: 0;
-    }
-  }
-
-  height: 100%;
+  // height: 100%;
   overflow: hidden;
+
+  @media (max-width: $breakpoint-xSmall) {
+    display: none;
+  }
+
 }
 
 @mixin error {
@@ -184,6 +182,7 @@
 @mixin logo_wrapper {
   text-align: center;
   align-items: center;
+  margin-right: 0;
 }
 
 @mixin signin_wrapper {
@@ -203,4 +202,25 @@
 @mixin forgetbutton_wrapper {
   width: 92%;
   margin: 1rem;
+}
+
+@mixin emailverification_wrapper {
+  border: 4px solid;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin mailsent_logo {
+  width: 235px;
+  height: 130px;
+  margin: 2.5rem 0rem;
+  background-image: url("../../../public/assets/letterBox.png");
+  background-size: cover;
+  animation-delay: 0.2s;
+  animation-fill-mode: forwards;
+  animation-name: bounceImages;
+  animation-duration: 0.2s;
+  animation-iteration-count: infinite;
 }

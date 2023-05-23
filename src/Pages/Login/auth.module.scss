@@ -18,7 +18,7 @@
   @media (max-width: $breakpoint-sm) {
     width: 100%;
     height: 100%;
-    margin: 1rem 1rem;
+    margin: 2rem 1rem;
     margin-left: 2rem;
   }
 }
@@ -95,7 +95,7 @@ h2 {
     margin-top: 0;
 
     img {
-      width: 70%;
+      width: 75%;
       height: 70vh;
     }
   }
@@ -147,27 +147,4 @@ h2 {
 
 .error {
   @include error;
-}
-
-.emailverification_wrapper {
-  @include emailverification_wrapper;
-}
-
-.blueButton {
-  background-color: var(--bs-darkblue);
-  color: var(--bs-lightgrey);
-}
-
-.SignIn_button {
-  @include button_wrapper;
-  // background-color: var(--bs-lightgrey);
-  background-color: var(--bs-darkblue);
-}
-.emailverification_wrapper {
-  @include emailverification_wrapper;
-}
-
-.blueButton {
-  background-color: var(--bs-darkblue);
-  color: var(--bs-lightgrey);
 }
