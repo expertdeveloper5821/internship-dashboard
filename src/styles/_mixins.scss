@@ -97,6 +97,7 @@
   @media (max-width: $breakpoint-xSmall) {
     width: 90%;
   }
+
   @media (max-width: $breakpoint-xs) {
     width: 90%;
   }
@@ -136,13 +137,20 @@
     margin-left: 3rem;
   }
 
-  // height: 100%;
   overflow: hidden;
 
   @media (max-width: $breakpoint-xSmall) {
     display: none;
   }
 
+  @media (max-width: $breakpoint-ms) {
+    img {
+      height: 500px;
+      width: 430px;
+      margin-top: 3rem;
+      margin-left: 3rem;
+    }
+  }
 }
 
 @mixin error {
