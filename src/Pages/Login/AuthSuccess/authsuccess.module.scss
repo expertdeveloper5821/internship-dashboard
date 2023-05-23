@@ -15,6 +15,7 @@
 
 .forgetbutton {
     @include forgetbutton_wrapper;
+    width: 95%;
 }
 
 .mail_success {

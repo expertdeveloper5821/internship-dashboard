@@ -50,7 +50,7 @@ const Verification = (props: Props) => {
                         </div>
                         {error && <div className={styles.errors}>Please enter a valid OTP</div>}
                         <div className={styles.signin}>
-                            <a href="/resetpassword"> If you did not receive code? <span>Resend</span></a>
+                            <a href="/resetpassword"> If you did not receive code? <span>&nbsp;Resend</span></a>
                         </div>
                         <div>
                             <div className={styles.button_wrapper}>

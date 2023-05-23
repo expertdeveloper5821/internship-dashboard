@@ -15,20 +15,20 @@
 
   @media (max-width: $breakpoint-xs) {
     margin-left: 2rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
   }
 
   @media (max-width: $breakpoint-sm) {
-    width: 95%;
+    width: 85%;
     height: 100%;
-    margin-left: 3rem;
+    // margin-left: 3rem;
   }
 
 
 }
 
 .mailsent_container {
-  width: 90%;
+  width: 85%;
 }
 
 .logo {
@@ -97,7 +97,7 @@
   }
 }
 
-.mailsent_logo {
+.mailsent_logo img{
   position: relative;
   width: 235px;
   height: 130px;
