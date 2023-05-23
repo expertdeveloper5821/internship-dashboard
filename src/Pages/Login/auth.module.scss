@@ -8,6 +8,7 @@
 .background_container {
   @include background_container;
 }
+
 .container {
   @include container;
 
@@ -18,14 +19,12 @@
   @media (max-width: $breakpoint-sm) {
     width: 100%;
     height: 100%;
-    margin: 2rem 1rem;
-    margin-left: 2rem;
+    margin: 1rem 1.5rem;
   }
 }
 
 .logo {
   @include logo;
-  margin-right: 4rem;
 
   @media (max-width: $breakpoint-xs) {
     margin-top: 8rem;
@@ -46,10 +45,6 @@
 
   img {
     margin-right: 3rem;
-  }
-
-  @media (max-width: $breakpoint-xSmall) {
-    padding-right: 1.5rem;
   }
 }
 
@@ -95,8 +90,9 @@ h2 {
     margin-top: 0;
 
     img {
-      width: 75%;
-      height: 70vh;
+      width: 500px;
+      height: 430px;
+      margin-left: 0;
     }
   }
 }
@@ -116,6 +112,41 @@ h2 {
 .SignIn_button {
   @include button_wrapper;
   background-color: var(--bs-lightgrey);
+  width: 100%
+}
+
+.signin {
+  @include signin;
+}
+
+.signin a {
+  color: var(--bs-grey);
+  width: -webkit-fill-available;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-right: 3.5rem;
+  text-align: center;
+
+  @media (max-width: $breakpoint-xs) {
+    margin-right: 0;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    margin-right: 1rem;
+  }
+}
+
+.error {
+  @include error;
+}
+
+.forgetbutton {
+  @include button_wrapper;
+
+  @media (max-width: $breakpoint-xSmall) {
+    padding: 12px 30px;
+  }
 }
 
 .SignIn_button {
@@ -147,4 +178,15 @@ h2 {
 
 .error {
   @include error;
+}
+
+
+.blueButton {
+  background-color: var(--bs-darkblue);
+  color: var(--bs-grey);
+}
+
+.SignIn_button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }

@@ -1,8 +1,7 @@
 @mixin main_container {
   background-image: url("../../public/assets/backgroundimage.svg");
-  height: auto;
   width: auto;
-  height: 99.2vh;
+  height: 100vh;
   background-repeat: no-repeat;
   overflow: scroll;
   background-size: cover;
@@ -95,7 +94,7 @@
   }
 
   @media (max-width: $breakpoint-xSmall) {
-    width: 90%;
+    width: 100%;
   }
 
   @media (max-width: $breakpoint-xs) {
@@ -208,8 +207,8 @@
 }
 
 @mixin forgetbutton_wrapper {
-  width: 92%;
-  margin: 1rem;
+  width: 97%;
+  margin: 0.5rem;
 }
 
 @mixin emailverification_wrapper {
