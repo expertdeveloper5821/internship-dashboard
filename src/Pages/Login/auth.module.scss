@@ -8,12 +8,10 @@
 .background_container {
   @include background_container;
 }
-
 .container {
   @include container;
 
   @media (max-width: $breakpoint-xs) {
-    margin-left: 2rem;
     margin: 1.5rem 1rem;
   }
 
@@ -27,6 +25,7 @@
 
 .logo {
   @include logo;
+  margin-right: 4rem;
 
   @media (max-width: $breakpoint-xs) {
     margin-top: 8rem;
@@ -112,6 +111,16 @@ h2 {
   @media (max-width: $breakpoint-xSmall) {
     padding: 12px 30px;
   }
+}
+
+.SignIn_button {
+  @include button_wrapper;
+  background-color: var(--bs-lightgrey);
+}
+
+.SignIn_button {
+  @include button_wrapper;
+  background-color: var(--bs-lightgrey);
 }
 
 .signin {
