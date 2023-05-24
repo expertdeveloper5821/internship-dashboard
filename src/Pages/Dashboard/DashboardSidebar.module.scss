@@ -1,0 +1,41 @@
+@import "../../styles/mixins";
+@import "../../styles/variable";
+
+.sidebar_container {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(205, 239, 255, 0.6);
+    box-shadow: 2px 3px 8px rgba(0, 148, 218, 0.25);
+    border: 2px solid red;
+    position: relative;
+}
+
+.sidebar_wrapper {
+    border: 2px solid yellow;
+}
+
+.side_logo {
+    img {
+        width: 100px;
+        height: 200px;
+        margin: 0.5rem 4rem;
+    }
+    border: 2px solid blue;
+}
+
+.hamburger_btn{
+    position: absolute;
+}
+
+.close_btn{
+    position: absolute;
+}
+
+
+
+
+
+
+
+
+

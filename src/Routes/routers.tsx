@@ -9,6 +9,7 @@ import AuthFail from "../Pages/Login/AuthFail/AuthFail";
 import UpdateCredential from "../Pages/Login/UserCredential/UpdateCredential";
 import UpdateCredSuccess from "../Pages/Login/UserCredential/UpdateCredSuccess";
 import Homepage from "../Pages/Login/Homepage/Homepage";
+import { Student } from "../Pages/Dashboard/StudentDashboard/Student";
 
 
 type Props = {};
@@ -17,7 +18,7 @@ const Routers = (props: Props) => {
   return (
     <Router>
       <Routes>
-      <Route path="/" element={<Homepage />} />
+        <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/resetpassword" element={<ResetPassword />} />
         <Route path="/mailsent" element={<SentMail />} />
@@ -26,8 +27,7 @@ const Routers = (props: Props) => {
         <Route path="/error" element={<AuthFail />} />
         <Route path="/user_credential" element={<UpdateCredential />} />
         <Route path="/user_credential_success" element={<UpdateCredSuccess />} />
-        
-
+        <Route path="/student_dashboard" element={<Student />} />
       </Routes>
     </Router>
   );
