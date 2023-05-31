@@ -1,10 +1,17 @@
 import styles from "../AuthFail/authfail.module.scss";
+//@ts-ignore
+import { Button } from "technogetic-iron-smart-ui";
+import { useNavigate } from "react-router-dom";
 
 type Props = {};
 
 const AuthFail = (props: Props) => {
 
+    const navigate = useNavigate();
 
+    const handleClick = () => {
+        navigate("/user_credential")
+    }
     return (
         <>
             <div className={styles.main_container}>
@@ -22,9 +29,9 @@ const AuthFail = (props: Props) => {
                                 <div className={styles.mail_fail}></div>
                             </div>
                             <div className={styles.button_wrapper}>
-                                <button type="submit" className={styles.forgetbutton}>
+                                <Button varient="contained" className={styles.forgetbutton} onClick={handleClick}>
                                     Try again
-                                </button>
+                                </Button>
                             </div>
                         </div>
                     </div>

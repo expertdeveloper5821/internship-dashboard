@@ -3,6 +3,7 @@
 
 .heading_wrapper {
     @include heading_wrapper;
+
     h2 {
         color: #FF0000;
     }
@@ -17,9 +18,8 @@
 }
 
 .forgetbutton {
-    @include forgetbutton_wrapper;
     background-color: rgba(255, 0, 0, 0.8);
-    width: 95%;
+    width: 100%;
 }
 
 .mail_fail {
@@ -32,10 +32,10 @@
     animation-delay: 2s;
     animation-duration: 2s;
     animation-iteration-count: infinite;
-    background-size:contain;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    
+
 }
 
 @keyframes bounceImageError {

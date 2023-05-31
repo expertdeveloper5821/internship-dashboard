@@ -10,7 +10,7 @@ export function Student() {
       <div className={styles.container}>
         <div className={styles.background}>
           <DashboardSidebar />
-          <h2>Student</h2>
+          {/* <h2>Student</h2> */}
         </div>
       </div>
     </header>

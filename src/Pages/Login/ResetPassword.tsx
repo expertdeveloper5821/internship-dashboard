@@ -1,5 +1,8 @@
 import React, { useState, ChangeEvent } from "react";
 import styles from "../Login/auth.module.scss";
+//@ts-ignore
+import { Button } from "technogetic-iron-smart-ui";
+
 export function ResetPassword() {
   const [email, setEmail] = useState("");
   const [isEmailValid, setIsEmailValid] = useState(true);
@@ -46,14 +49,15 @@ export function ResetPassword() {
               <span>Remember for 30 days</span>
             </div>
             <div className={styles.button_wrapper}>
-              <button
-                type="submit"
+              <Button
+                varient="contained"
                 className={`${styles.SignIn_button} ${isButtonEnabled ? styles.blueButton : ""
                   }`}
-                disabled={!isButtonEnabled}
+                // disabled={!isButtonEnabled}
+                disabled="True"
               >
                 Recover Password
-              </button>
+              </Button>
             </div>
             <div className={styles.signin}>
               <span>

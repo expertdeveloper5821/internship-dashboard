@@ -35,19 +35,6 @@
   }
 }
 
-.eye_wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--bs-skyblue);
-  border-radius: 8px;
-  margin-top: 0.5rem;
-
-  img {
-    margin-right: 3rem;
-  }
-}
-
 h2 {
   color: var(--bs-darkblue);
   font-style: normal;
@@ -112,7 +99,6 @@ h2 {
 
 .forgetbutton {
   @include button_wrapper;
-
   @media (max-width: $breakpoint-xSmall) {
     padding: 12px 30px;
     width: 100%;

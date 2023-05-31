@@ -1,25 +1,17 @@
 import styles from "./auth.module.scss";
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useState, useEffect } from "react";
 import { useFormik } from "formik";
-import {SignupSchema} from "../../Schemas/SignupSchemas";
+import { SignupSchema } from "../../Schemas/SignupSchemas";
 import { useNavigate } from "react-router-dom";
 import { Cookies } from "typescript-cookie";
+//@ts-ignore
+import { Button, Input } from "technogetic-iron-smart-ui";
 
 type Props = {};
 
 const Login = (props: Props) => {
   const [rememberMe, setRememberMe] = useState(false);
-  const [passwordShown, setPasswordShown] = useState(false);
-  const [isToggle, setIsToggle] = useState(false);
-
-  const togglePassword = () => {
-    setPasswordShown(!passwordShown);
-  };
-
-  const handleToggleIcon = () => {
-    setIsToggle(!isToggle);
-  };
+  const passwordShown = false;
 
   function handleRememberMe(event: { target: any }) {
     setRememberMe(event.target.checked);
@@ -69,6 +61,10 @@ const Login = (props: Props) => {
     }
   }, [storedemail, storedPassword, setFieldValue]);
 
+  const handleSignIn = () => {
+    handleSubmit();
+  };
+
   return (
     <div className={styles.main_container}>
       <div className={styles.background_container}>
@@ -88,8 +84,7 @@ const Login = (props: Props) => {
             <form onSubmit={handleSubmit}>
               <div className={styles.input_box}>
                 <label className={styles.email}>Email</label>
-
-                <input
+                <Input
                   className={styles.email_wrapper}
                   type="email"
                   name="email"
@@ -98,44 +93,25 @@ const Login = (props: Props) => {
                   value={values.email}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                ></input>
+                ></Input>
                 <div className={styles.error}>
                   {errors.email && touched.email ? (
                     <p>{(errors.email = "Please enter a valid email")}</p>
                   ) : null}
                 </div>
               </div>
-
               <div className={styles.input_box}>
                 <label className={styles.password}>Password</label>
-                <div className={styles.eye_wrapper}>
-                  <input
-                    className={styles.password_wrapper}
-                    type={passwordShown ? "text" : "password"}
-                    name="password"
-                    autoComplete="off"
-                    placeholder="Enter password"
-                    value={values.password}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  ></input>
-                  <div
-                    onClick={handleToggleIcon}
-                    style={{
-                      marginTop: "14px",
-                      marginRight: "8px",
-                      width: "30px",
-                      height: "30px",
-                      color: "#CC85858",
-                    }}
-                  >
-                    {isToggle ? (
-                      <AiOutlineEyeInvisible onClick={togglePassword} />
-                    ) : (
-                      <AiOutlineEye onClick={togglePassword} />
-                    )}
-                  </div>
-                </div>
+                <Input
+                  className={styles.password_wrapper}
+                  type={passwordShown ? "text" : "password"}
+                  name="password"
+                  autoComplete="off"
+                  placeholder="Enter password"
+                  value={values.password}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                ></Input>
                 <div className={styles.error}>
                   {errors.password && touched.password ? (
                     <p>{(errors.password = "Please enter a valid password")}</p>
@@ -149,9 +125,13 @@ const Login = (props: Props) => {
               </div>
 
               <div className={styles.button_wrapper}>
-                <button type="submit" className={styles.forgetbutton} >
+                <Button
+                  className={styles.forgetbutton}
+                  varient="contained"
+                  onClick={handleSignIn}
+                >
                   Sign in
-                </button>
+                </Button>
               </div>
 
               <div className={styles.signin}>
@@ -165,8 +145,8 @@ const Login = (props: Props) => {
         <div className={styles.girlImg_wrapper}>
           <img src="./assets/GirlImg.png" alt="girl-img"></img>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 };
 

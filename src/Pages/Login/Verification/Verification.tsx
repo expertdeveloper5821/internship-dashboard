@@ -1,8 +1,9 @@
 import { useState } from "react";
 import styles from "../Verification/verification.module.scss";
 import OtpInput from 'react-otp-input';
-import {useNavigate} from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
+//@ts-ignore
+import { Button } from "technogetic-iron-smart-ui";
 
 type Props = {};
 
@@ -54,9 +55,9 @@ const Verification = (props: Props) => {
                         </div>
                         <div>
                             <div className={styles.button_wrapper}>
-                                <button type="submit" onClick={handleSubmit} className={styles.forgetbutton}>
+                                <Button varient="contained" onClick={handleSubmit} className={styles.forgetbutton}>
                                     Continue
-                                </button>
+                                </Button>
                             </div>
                         </div>
                     </div>
