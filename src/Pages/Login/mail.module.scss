@@ -23,8 +23,6 @@
     height: 100%;
     // margin-left: 3rem;
   }
-
-
 }
 
 .mailsent_container {
@@ -93,20 +91,18 @@
     font-family: var(--bs-body-font-family);
     margin-top: 3rem;
     margin-bottom: 1rem;
-    ;
   }
 }
 
-.mailsent_logo img{
+.mailsent_logo img {
   position: relative;
   width: 235px;
   height: 130px;
-  margin: 2.5rem 0rem;
+  margin: 1rem 0rem;
   animation: bounce 1s infinite;
 }
 
 @keyframes bounce {
-
   0%,
   20%,
   50%,

@@ -73,11 +73,13 @@ h2 {
   @media (max-width: $breakpoint-xs) {
     width: 100%;
   }
-
 }
 
 .email_wrapper {
   @include email_wrapper;
+  input {
+    background-color: var(--bs-skyblue);
+  }
 }
 
 .password_wrapper {
@@ -122,15 +124,13 @@ h2 {
 .SignIn_button {
   @include button_wrapper;
   background-color: var(--bs-lightgrey);
-
   @media (max-width: $breakpoint-xs) {
-     width: 100%
+    width: 100%;
   }
 }
 
 .signin {
   @include signin;
-
 }
 
 .signin a {
@@ -151,13 +151,16 @@ h2 {
   @include error;
 }
 
-
 .blueButton {
   background-color: var(--bs-darkblue);
-  
 }
 
 .SignIn_button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+  border: 1px solid;
+}
+
+.error_message {
+  color: var(--bs-red);
 }

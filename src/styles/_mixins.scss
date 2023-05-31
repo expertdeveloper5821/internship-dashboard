@@ -3,7 +3,7 @@
   width: auto;
   height: 100vh;
   background-repeat: no-repeat;
-  overflow: scroll;
+  overflow: visible;
   background-size: cover;
 }
 
@@ -55,17 +55,15 @@
 }
 
 @mixin email_wrapper {
-  background: var(--bs-skyblue);
+  background-color: var(--bs-skyblue) !important;
   border-radius: var(--bs-border-radius);
   padding: 12px 20px;
   margin-top: 0.25rem;
   font-style: var(--bs-font-style);
-  border: 1px solid transparent;
   font-weight: var(--bs-body-font-weight);
   font-size: var(--bs-body-font-size);
   border-style: none;
-  width: -webkit-fill-available;
-  border: none;
+  border: none !important;
   outline: none;
 }
 
@@ -109,7 +107,7 @@
   font-size: var(--bs-font-size);
   line-height: var(--bs-line-height);
   color: var(--bs-grey);
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
   position: relative;
 }
 
@@ -132,7 +130,7 @@
 
   img {
     height: 610px;
-    width: 400px;
+    width: 480px;
     margin-top: 3rem;
     margin-left: 3rem;
   }

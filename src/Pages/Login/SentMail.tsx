@@ -1,4 +1,6 @@
 import styles from "./mail.module.scss";
+// @ts-ignore
+import { Button } from "technogetic-iron-smart-ui";
 
 export interface IAppProps {}
 
@@ -25,9 +27,16 @@ export function SentMail() {
               </div>
 
               <div className={styles.button_wrapper}>
-                <button type="submit" className={styles.forgetbutton}>
+                {/* <button type="submit" className={styles.forgetbutton}>
                   Go to email
-                </button>
+                </button> */}
+                <Button
+                  // type="submit"
+                  varient="contained"
+                  className={styles.forgetbutton}
+                >
+                  Go to email{" "}
+                </Button>
               </div>
             </div>
           </div>
