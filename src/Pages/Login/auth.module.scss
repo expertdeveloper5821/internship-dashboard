@@ -65,6 +65,9 @@ h2 {
 
 .heading {
   @include heading;
+  @media (max-width: $breakpoint-xSmall) {
+    width: 100%;
+  }
 }
 
 .input_box {
@@ -163,4 +166,8 @@ h2 {
 
 .error_message {
   color: var(--bs-red);
+}
+
+.commonInputDiv input::after {
+  border: 2px solid red;
 }
