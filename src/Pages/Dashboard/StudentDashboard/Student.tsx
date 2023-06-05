@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from "../StudentDashboard/Student.module.scss"
-import DashboardSidebar from '.././DashboardSidebar';
+import DashboardSidebar from '../../../Components/SideBar/DashboardSidebar';
 // export interface IAppProps {
 // }
 
