@@ -40,12 +40,12 @@ const Login = (props: Props) => {
   } = useFormik({
     initialValues,
     validationSchema: SignupSchema,
-    onSubmit: (values, action) => {
+    onSubmit: (values) => {
       if (rememberMe) {
         Cookies.set("email", values.email, { expires: 30 });
         Cookies.set("password", values.password, { expires: 30 });
       }
-      navigate("/student_dashboard");
+      navigate("/teacher_dashboard");
     },
   });
 

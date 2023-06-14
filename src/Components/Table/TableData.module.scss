@@ -1,0 +1,29 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variable.scss";
+
+.table_content {
+    font-size: var(--bs-body-font-size);
+    color: #003554;
+    text-align: center;
+    line-height: 19px;
+    height: auto;
+    margin: 1rem 0rem;
+    background-color:#fff;
+}
+
+.filter {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: auto;
+}
+
+.table_head{
+    background-color:#fff;
+    padding: 0.5rem
+}
+
+.table_rowdata{
+    border: 2px solid green;
+    margin-bottom: 1rem;
+}

@@ -1,6 +1,42 @@
-@import "../../../../styles/mixins.scss";
+@import "../../../styles/mixins.scss";
 
-.container {
+.dashboard_content {
     position: absolute;
-    background: #FFFFFF;
+    top: 50px;
+    left: 250px;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+}
+
+.input_desc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input_desc input {
+    background: #FFFFFF !important;
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 8px !important;
+    border: 1px solid transparent;
+    color: rgba(133, 133, 133, 0.6);
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.searchbutton {
+    background: var(--bs-darkblue);
+    border-radius: var(--bs-border-radius);
+    color: var(--bs-white);
+    font-size: var(--bs-font-size);
+    cursor: var(--bs-cursor);
+    border: 1px solid transparent;
+    width: 15vw;
+}
+
+.table_wrapper{
+    margin-top: 1.5rem;
+    height: 500px;
+    margin: 1rem 0rem;
 }
