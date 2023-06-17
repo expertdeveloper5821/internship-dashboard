@@ -8,7 +8,7 @@
     line-height: 19px;
     height: auto;
     margin: 1rem 0rem;
-    background-color:#fff;
+    background-color: #fff;
 }
 
 .filter {
@@ -18,12 +18,22 @@
     width: auto;
 }
 
-.table_head{
-    background-color:#fff;
+.table_head {
+    background-color: #fff;
     padding: 0.5rem
 }
 
-.table_rowdata{
-    border: 2px solid green;
-    margin-bottom: 1rem;
+.table_rowdata {
+    height: 40px;
+    color: #6C757D;
+    background-color: #FFFFFF;
+}
+
+.table_icon {
+    margin-right: 12px;
+}
+
+.table_cell{
+    padding: 15px;
+    text-align: left;
 }

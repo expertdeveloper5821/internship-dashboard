@@ -55,6 +55,13 @@
       "studentID": "0007",
       "assignedData": "08 Jan 2023",
       "deadline": "11 Jan 2023"
+    },
+    {
+      "assignmentName": "Which is faster in JavaScript and ASP script?",
+      "assignmentID": "PRO-0008",
+      "studentID": "0008",
+      "assignedData": "05 Jan 2023",
+      "deadline": "14 Jan 2023"
     }
   ]
 }

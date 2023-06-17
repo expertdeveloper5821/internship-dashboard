@@ -1,4 +1,3 @@
-import * as React from 'react';
 import styles from "./Teacher.module.scss";
 import DashboardSidebar from '../../../Components/SideBar/DashboardSidebar';
 //@ts-ignore
@@ -13,7 +12,7 @@ export function Teacher() {
     <>
       <DashboardSidebar />
       <div className={styles.dashboard_content}>
-        <h2>Teacher</h2>
+        <h2>Assignments</h2>
         <div className={styles.content_wrapper}>
           <div className={styles.input_desc}>
             <Input placeholder='Assignment Name' type="text"></Input>
@@ -36,7 +35,7 @@ export function Teacher() {
                 ]}
                 padding="8px"
                 placeholder="Courses"
-              // width="500px"
+                width="600px"
               />
             </div>
             <div className={styles.button_wrapper}>
