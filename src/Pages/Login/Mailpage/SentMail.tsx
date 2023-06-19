@@ -1,4 +1,5 @@
-import styles from "./mail.module.scss";
+// import styles from "./mail.module.scss";
+import styles from "../Mailpage/mail.module.scss";
 // @ts-ignore
 import { Button } from "technogetic-iron-smart-ui";
 import { useNavigate } from "react-router-dom";
@@ -38,7 +39,7 @@ export function SentMail() {
                 </button> */}
                 <Button
                   // type="submit"
-                  varient="contained"
+                  variant="contained"
                   onClick={handleClick}
                   className={styles.forgetbutton}
                 >

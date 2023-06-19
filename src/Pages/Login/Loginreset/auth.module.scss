@@ -1,5 +1,5 @@
-@import "../../styles/mixins.scss";
-@import "../../styles/variable.scss";
+@import "../../../styles/mixins.scss";
+@import "../../../styles/variable.scss";
 
 .main_container {
   @include main_container;
@@ -126,7 +126,7 @@ h2 {
 
 .SignIn_button {
   @include button_wrapper;
-  background-color: var(--bs-lightgrey);
+  background-color: var(--bs-lightgrey) !important;
   @media (max-width: $breakpoint-xs) {
     width: 100%;
   }
@@ -155,13 +155,7 @@ h2 {
 }
 
 .blueButton {
-  background-color: var(--bs-darkblue);
-}
-
-.SignIn_button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  border: 1px solid;
+  background-color: var(--bs-darkblue) !important;
 }
 
 .error_message {

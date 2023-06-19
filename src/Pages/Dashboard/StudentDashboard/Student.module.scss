@@ -1,6 +1,2 @@
-@import "../../../../styles/mixins.scss";
-
-.container {
-    position: absolute;
-    background: #FFFFFF;
-}
+@import "../../../../src/styles/mixins";
+@import "../../../../src/styles/mixins_global";
