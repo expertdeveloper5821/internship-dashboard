@@ -79,9 +79,11 @@ h2 {
 }
 
 .email_wrapper {
+  border: transparent !important;
   @include email_wrapper;
   input {
     background-color: var(--bs-skyblue);
+    color: var(--bs-darkblue);
   }
 }
 
