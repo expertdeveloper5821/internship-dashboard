@@ -1,5 +1,8 @@
 import React, { useState, ChangeEvent } from "react";
-import styles from "../Login/auth.module.scss";
+import { useNavigate } from "react-router-dom";
+// import styles from "../Login/auth.module.scss";
+import styles from "../../Login/Loginreset/auth.module.scss";
+
 // @ts-ignore
 import { Button, Input } from "technogetic-iron-smart-ui";
 
@@ -7,6 +10,8 @@ export function ResetPassword(): any {
   const [email, setEmail] = useState("");
   const [isEmailValid, setIsEmailValid] = useState(true);
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
+  const navigate = useNavigate();
+
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setEmail(value);
@@ -18,6 +23,11 @@ export function ResetPassword(): any {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
+
+  const handleRecoverPassword = () => {
+    navigate("/mailsent");
+  };
+
   return (
     <>
       <div className={styles.main_container}>
@@ -48,16 +58,6 @@ export function ResetPassword(): any {
                 onChange={handleEmailChange}
               />
 
-              {/* <input
-                type="email"
-                className={`${styles.email_wrapper} ${
-                  isEmailValid ? "" : styles.invalid
-                }`}
-                placeholder="Enter Email"
-                value={email}
-                onChange={handleEmailChange}
-              /> */}
-
               {!isEmailValid && (
                 <p className={styles.error_message}>
                   Please enter a valid email
@@ -69,21 +69,13 @@ export function ResetPassword(): any {
               <span>Remember for 30 days</span>
             </div>
             <div className={styles.button_wrapper}>
-              {/* <button
-                type="submit"
-                className={`${styles.SignIn_button} ${
-                  isButtonEnabled ? styles.blueButton : ""
-                }`}
-                disabled={!isButtonEnabled}
-              >
-                Recover Password
-              </button> */}
               <Button
-                varient="contained"
+                variant="contained"
                 className={`${styles.SignIn_button} ${
                   isButtonEnabled ? styles.blueButton : ""
                 }`}
                 disabled={!isButtonEnabled}
+                onClick={handleRecoverPassword}
               >
                 Recover Password{" "}
               </Button>
