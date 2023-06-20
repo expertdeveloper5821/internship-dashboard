@@ -1,54 +1,53 @@
-@import "../auth.module.scss";
+@import "../Loginreset/auth.module.scss";
 @import "../../../styles/mixins.scss";
 
 .otp_input {
-    display: flex;
-    justify-content: center;
-    align-self: center;
+  display: flex;
+  justify-content: center;
+  align-self: center;
 }
 
 .otp_input input[type="number"] {
-    width: 55px;
-    padding: 0.5rem;
-    font-size: 28px;
-    text-align: center;
-    color: #003554;
-    border: 0.8px solid #003554;
-    border-radius: 8px;
-    outline: none;
-    margin: 0.5rem;
+  width: 55px;
+  padding: 0.5rem;
+  font-size: 28px;
+  text-align: center;
+  color: #003554;
+  border: 0.8px solid #003554;
+  border-radius: 8px;
+  outline: none;
+  margin: 0.5rem;
 }
 
 .otp_input input[type="number"]::-webkit-inner-spin-button,
 .otp_input input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 @media (max-width: $breakpoint-xSmall) {
-    .otp_input input[type="number"] {
-        margin: 0.2rem;
-    }
+  .otp_input input[type="number"] {
+    margin: 0.2rem;
+  }
 }
 
 .heading_wrapper {
-    @include heading_wrapper;
+  @include heading_wrapper;
 }
 
 .logo {
-    @include logo_wrapper;
+  @include logo_wrapper;
 }
 
 .signin {
-    @include signin_wrapper;
+  @include signin_wrapper;
 }
 
 .forgetbutton {
-    width: 100%
+  @include forgetbutton_wrapper;
 }
 
 .errors {
-    @include error;
-    text-align: center;
-    margin-top: 0.5rem;
+  @include error;
+  text-align: center;
+  margin-top: 0.5rem;
 }
-

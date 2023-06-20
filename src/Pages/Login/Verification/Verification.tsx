@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "../Verification/verification.module.scss";
-import OtpInput from 'react-otp-input';
+import OtpInput from "react-otp-input";
 import { useNavigate } from "react-router-dom";
 //@ts-ignore
 import { Button } from "technogetic-iron-smart-ui";
@@ -8,7 +8,7 @@ import { Button } from "technogetic-iron-smart-ui";
 type Props = {};
 
 const Verification = (props: Props) => {
-    const [otp, setOtp] = useState('');
+    const [otp, setOtp] = useState("");
     const [error, setError] = useState(false);
 
     const navigate = useNavigate();
@@ -17,12 +17,11 @@ const Verification = (props: Props) => {
         if (otp.length !== 4) {
             setError(true);
             return;
-        }
-        else {
+        } else {
             setError(false);
             navigate("/success");
         }
-    }
+    };
 
     return (
         <>
@@ -38,8 +37,9 @@ const Verification = (props: Props) => {
                                 Please enter the code we just sent to email ***given mail***
                             </p>
                         </div>
-                        <div className={`${styles.otp_input} ${error ? styles.errors : ''}`}>
-
+                        <div
+                            className={`${styles.otp_input} ${error ? styles.errors : ""}`}
+                        >
                             <OtpInput
                                 value={otp}
                                 onChange={setOtp}
@@ -47,15 +47,23 @@ const Verification = (props: Props) => {
                                 inputType="number"
                                 renderInput={(props) => <input {...props} />}
                             />
-
                         </div>
-                        {error && <div className={styles.errors}>Please enter a valid OTP</div>}
+                        {error && (
+                            <div className={styles.errors}>Please enter a valid OTP</div>
+                        )}
                         <div className={styles.signin}>
-                            <a href="/resetpassword"> If you did not receive code? <span>&nbsp;Resend</span></a>
+                            <a href="/resetpassword">
+                                {" "}
+                                If you did not receive code? <span>&nbsp;Resend</span>
+                            </a>
                         </div>
                         <div>
                             <div className={styles.button_wrapper}>
-                                <Button varient="contained" onClick={handleSubmit} className={styles.forgetbutton}>
+                                <Button
+                                    varient="contained"
+                                    onClick={handleSubmit}
+                                    className={styles.forgetbutton}
+                                >
                                     Continue
                                 </Button>
                             </div>
@@ -67,7 +75,6 @@ const Verification = (props: Props) => {
                 </div>
             </div>
         </>
-
     );
 };
 

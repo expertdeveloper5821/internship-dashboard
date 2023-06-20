@@ -1,0 +1,65 @@
+@import "../../../styles/mixins";
+@import "../../../styles/mixins_global";
+@import "../../../styles/variable";
+
+// .maincontainer {
+//   border: 1px solid black;
+//   height: 99vh;
+//   position: relative;
+// }
+
+// .sidebar {
+//   width: 250px;
+//   height: 100%;
+//   background-color: var(--bs-skyblue);
+//   position: absolute;
+//   border: 1px solid black;
+// }
+
+// img {
+//   margin: 3rem 3rem;
+// }
+// .sidebar ul {
+//   list-style-type: none;
+//   margin-top: 1rem;
+//   padding: 0;
+//   text-align: center;
+// }
+
+// .sidebar ul li {
+//   padding: 10px;
+//   position: relative;
+// }
+
+// .sidebar ul li a {
+//   display: block;
+//   text-decoration: none;
+//   color: #000;
+// }
+
+// .sidebar ul li ul.dropdown {
+//   display: none;
+//   position: absolute;
+//   top: 0;
+//   left: 100%;
+//   background-color: #f1f1f1;
+//   min-width: 200px;
+// }
+
+// .sidebar ul li:hover ul.dropdown {
+//   display: block;
+// }
+
+// .sidebar ul li ul.dropdown li {
+//   padding: 5px 10px;
+// }
+
+// .sidebar ul li ul.dropdown li a {
+//   color: #000;
+//   display: block;
+//   text-decoration: none;
+// }
+
+// .sidebar ul li ul.dropdown li:hover {
+//   background-color: #ddd;
+// }

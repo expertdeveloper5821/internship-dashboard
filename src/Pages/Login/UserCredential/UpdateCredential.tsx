@@ -9,7 +9,7 @@ type Props = {};
 
 const UpdateCredential = (props: Props) => {
   const newPasswordShown = false
-  const confirmPasswordShown= false
+  const confirmPasswordShown = false
 
   const navigate = useNavigate();
 
@@ -59,16 +59,16 @@ const UpdateCredential = (props: Props) => {
               <div className={styles.input_box}>
                 <label className={styles.password}>New password</label>
 
-                  <Input
-                    className={styles.password_wrapper}
-                    type={newPasswordShown ? "text" : "password"}
-                    name="newPassword"
-                    autoComplete="off"
-                    placeholder="Enter password"
-                    value={values.newPassword}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  ></Input>
+                <Input
+                  className={styles.password_wrapper}
+                  type={newPasswordShown ? "text" : "password"}
+                  name="newPassword"
+                  autoComplete="off"
+                  placeholder="Enter password"
+                  value={values.newPassword}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                ></Input>
                 <div className={styles.error}>
                   {errors.newPassword && touched.newPassword ? (
                     <p>{(errors.newPassword = "Password must be atleast 6 characters")}</p>

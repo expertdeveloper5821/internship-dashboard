@@ -1,19 +1,15 @@
-import * as React from 'react';
-import styles from "../StudentDashboard/Student.module.scss"
-import DashboardSidebar from '../../../Components/SideBar/DashboardSidebar';
+import * as React from "react";
+import styles from "../StudentDashboard/Student.module.scss";
+import { Sidebar } from "./Sidebar";
 
-export interface IAppProps {
-}
+// export interface IAppProps {
+
+// }
 
 export function Student() {
   return (
-    <header>
-      <div className={styles.container}>
-        <div className={styles.background}>
-          <DashboardSidebar />
-          <h2>Student</h2>
-        </div>
-      </div>
-    </header>
+    <div className={styles.container}>
+      <Sidebar></Sidebar>
+    </div>
   );
 }

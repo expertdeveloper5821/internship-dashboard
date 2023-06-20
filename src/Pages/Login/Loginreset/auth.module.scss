@@ -1,5 +1,5 @@
-@import "../../styles/mixins.scss";
-@import "../../styles/variable.scss";
+@import "../../../styles/mixins.scss";
+@import "../../../styles/variable.scss";
 
 .main_container {
   @include main_container;
@@ -35,6 +35,19 @@
   }
 }
 
+.eye_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bs-skyblue);
+  border-radius: 8px;
+  margin-top: 0.5rem;
+
+  img {
+    margin-right: 3rem;
+  }
+}
+
 h2 {
   color: var(--bs-darkblue);
   font-style: normal;
@@ -52,6 +65,10 @@ h2 {
 
 .heading {
   @include heading;
+
+  @media (max-width: $breakpoint-xSmall) {
+    width: 100%;
+  }
 }
 
 .input_box {
@@ -60,15 +77,26 @@ h2 {
   @media (max-width: $breakpoint-xs) {
     width: 100%;
   }
-
 }
 
 .email_wrapper {
+  border: transparent !important;
   @include email_wrapper;
+
+  input {
+    background-color: var(--bs-skyblue);
+    color: var(--bs-darkblue);
+  }
 }
 
 .password_wrapper {
+  border: transparent !important;
   @include password_wrapper;
+
+  input {
+    color: var(--bs-darkblue) !important;
+
+  }
 }
 
 .girlImg_wrapper {
@@ -99,6 +127,7 @@ h2 {
 
 .forgetbutton {
   @include button_wrapper;
+
   @media (max-width: $breakpoint-xSmall) {
     padding: 12px 30px;
     width: 100%;
@@ -107,16 +136,15 @@ h2 {
 
 .SignIn_button {
   @include button_wrapper;
-  background-color: var(--bs-lightgrey);
+  background-color: var(--bs-lightgrey) !important;
 
   @media (max-width: $breakpoint-xs) {
-     width: 100%
+    width: 100%;
   }
 }
 
 .signin {
   @include signin;
-
 }
 
 .signin a {
@@ -125,7 +153,6 @@ h2 {
   text-align: center;
   display: flex;
   justify-content: center;
-  margin-right: 3.5rem;
   text-align: center;
 
   @media (max-width: $breakpoint-xs) {
@@ -137,13 +164,14 @@ h2 {
   @include error;
 }
 
-
 .blueButton {
-  background-color: var(--bs-darkblue);
-  
+  background-color: var(--bs-darkblue) !important;
 }
 
-.SignIn_button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+.error_message {
+  color: var(--bs-red);
+}
+
+.commonInputDiv input::after {
+  border: 2px solid red;
 }

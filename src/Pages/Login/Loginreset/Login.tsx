@@ -1,7 +1,7 @@
 import styles from "./auth.module.scss";
 import { useState, useEffect } from "react";
 import { useFormik } from "formik";
-import { SignupSchema } from "../../Schemas/SignupSchemas";
+import { SignupSchema } from "../../../Schemas/SignupSchemas";
 import { useNavigate } from "react-router-dom";
 import { Cookies } from "typescript-cookie";
 //@ts-ignore

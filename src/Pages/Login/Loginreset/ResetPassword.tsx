@@ -1,12 +1,15 @@
 import React, { useState, ChangeEvent } from "react";
-import styles from "../Login/auth.module.scss";
-//@ts-ignore
-import { Button } from "technogetic-iron-smart-ui";
+import { useNavigate } from "react-router-dom";
+import styles from "../../Login/Loginreset/auth.module.scss";
+// @ts-ignore
+import { Button, Input } from "technogetic-iron-smart-ui";
 
-export function ResetPassword() {
+export function ResetPassword(): any {
   const [email, setEmail] = useState("");
   const [isEmailValid, setIsEmailValid] = useState(true);
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
+  const navigate = useNavigate();
+
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setEmail(value);
@@ -18,6 +21,11 @@ export function ResetPassword() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
+
+  const handleRecoverPassword = () => {
+    navigate("/mailsent");
+  };
+
   return (
     <>
       <div className={styles.main_container}>
@@ -29,20 +37,29 @@ export function ResetPassword() {
             <div>
               <h2>Forgot Password</h2>
               <p className={styles.heading}>
-                Please enter your registered email id or mobile to reset your password
+                Please enter your registered email id or mobile to reset your
+                password
               </p>
             </div>
+
             <div className={styles.input_box}>
               <label className={styles.email}>Email</label>
               <br />
-              <input
+
+              <Input
                 type="email"
-                className={`${styles.email_wrapper} ${isEmailValid ? "" : styles.invalid}`}
+                className={`${styles.email_wrapper} ${isEmailValid ? "" : styles.invalid
+                  }`}
                 placeholder="Enter Email"
                 value={email}
                 onChange={handleEmailChange}
               />
-              {!isEmailValid && <p className={styles.error_message}>Invalid email format</p>}
+
+              {!isEmailValid && (
+                <p className={styles.error_message}>
+                  Please enter a valid email
+                </p>
+              )}
             </div>
             <div className={styles.checkbox_wrapper}>
               <input type="checkbox" />
@@ -50,13 +67,13 @@ export function ResetPassword() {
             </div>
             <div className={styles.button_wrapper}>
               <Button
-                varient="contained"
+                variant="contained"
                 className={`${styles.SignIn_button} ${isButtonEnabled ? styles.blueButton : ""
                   }`}
-                // disabled={!isButtonEnabled}
-                disabled="True"
+                disabled={!isButtonEnabled}
+                onClick={handleRecoverPassword}
               >
-                Recover Password
+                Recover Password{" "}
               </Button>
             </div>
             <div className={styles.signin}>
@@ -72,7 +89,7 @@ export function ResetPassword() {
             <img src="./assets/GirlImg.png" alt="girl-img" />
           </div>
         </div>
-      </div >
+      </div>
     </>
   );
 }

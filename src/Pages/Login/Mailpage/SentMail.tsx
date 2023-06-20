@@ -1,8 +1,17 @@
-import styles from "./mail.module.scss";
+// import styles from "./mail.module.scss";
+import styles from "../Mailpage/mail.module.scss";
+// @ts-ignore
+import { Button } from "technogetic-iron-smart-ui";
+import { useNavigate } from "react-router-dom";
 
-export interface IAppProps {}
+export interface IAppProps { }
 
 export function SentMail() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/verified");
+  };
   return (
     <>
       <div className={styles.main_container}>
@@ -25,9 +34,13 @@ export function SentMail() {
               </div>
 
               <div className={styles.button_wrapper}>
-                <button type="submit" className={styles.forgetbutton}>
-                  Go to email
-                </button>
+                <Button
+                  variant="contained"
+                  onClick={handleClick}
+                  className={styles.forgetbutton}
+                >
+                  Validate OTP
+                </Button>
               </div>
             </div>
           </div>
