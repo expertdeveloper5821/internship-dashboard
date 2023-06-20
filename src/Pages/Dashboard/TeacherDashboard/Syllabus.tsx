@@ -9,9 +9,8 @@ export interface IAppProps {}
 export function Syllabus() {
   return (
     <>
-      <Navbar />
-
       <div className={styles.main_container}>
+        <Navbar />
         <div className={styles.container}>
           <h1 className={styles.Profile_Setting}>Syllabus</h1>
           <span className={styles.main_profile}>Dashboard/Syllabus</span>
@@ -36,7 +35,7 @@ export function Syllabus() {
         </div>
         <div className={styles.uploaddocs}>
           <img src="./assets/docs.svg" alt="document"></img>
-          <div>UI Figma basic</div>
+          <div className={styles.course_name}>UI Figma basic</div>
         </div>
       </div>
     </>

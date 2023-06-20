@@ -9,7 +9,6 @@
 .container {
   padding-top: 6rem;
   border-bottom: 1px solid #dcdcdc;
-  position: relative;
 }
 
 .Profile_Setting {
@@ -18,6 +17,7 @@
   line-height: 38px;
   font-weight: 500;
   margin: 0rem 1rem;
+  position: absolute;
 }
 
 .main_profile {
@@ -26,6 +26,7 @@
   line-height: 19px;
   font-weight: var(--bs-body-font-weight);
   margin: 0rem 1rem;
+  border: 2px solid;
 }
 
 .upload {
@@ -86,4 +87,8 @@
 .uploaddocs img {
   height: 32px;
   width: 32px;
+  color: var(--bs-darkblue);
+}
+.course_name {
+  color: var(--bs-darkblue);
 }
