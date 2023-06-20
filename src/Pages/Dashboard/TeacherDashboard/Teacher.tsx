@@ -3,11 +3,20 @@ import DashboardSidebar from '../../../Components/SideBar/DashboardSidebar';
 //@ts-ignore
 import { Select, Button, Input } from "technogetic-iron-smart-ui";
 import TableData from '../../../Components/Table/TableData';
+import studentData from "../../../utils/data.json";
 
 export interface IAppProps {
 }
 
 export function Teacher() {
+  const transformedStudentData = studentData.studentData.map((item) => ({
+    StudentName: item.StudentName,
+    Student: item.Student,
+    studentID: item.studentID,
+    Mobile: item.Mobile,
+    Course: item.Course,
+  }));
+
   return (
     <>
       <DashboardSidebar />
@@ -35,7 +44,7 @@ export function Teacher() {
                 ]}
                 padding="8px"
                 placeholder="Courses"
-                width="600px"
+                width="180px"
               />
             </div>
             <div className={styles.button_wrapper}>
@@ -49,7 +58,7 @@ export function Teacher() {
           </div>
         </div>
         <div className={styles.table_wrapper}>
-          <TableData />
+          <TableData studentData={transformedStudentData} />
         </div>
       </div>
     </>

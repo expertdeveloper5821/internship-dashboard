@@ -7,10 +7,11 @@ import { Drawer, MenuItem, Button, Menu } from "technogetic-iron-smart-ui";
 type Props = {};
 
 const DashboardSidebar = (props: Props) => {
-  const [isSidebarOpen, setSidebarOpen] = useState(true);
+  const isSidebarOpen = true;
   const [showMenuIcons, setShowMenuIcons] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showNewLogo, setShowNewLogo] = useState(false);
+  const [wideSidebar, setWideSidebar] = useState(true);
 
   const navigate = useNavigate();
 
@@ -23,6 +24,7 @@ const DashboardSidebar = (props: Props) => {
   const toggleMenuIcons = () => {
     setShowMenuIcons(!showMenuIcons);
     setShowNewLogo(!showNewLogo);
+    setWideSidebar(!wideSidebar);
   };
 
   return (
@@ -55,27 +57,30 @@ const DashboardSidebar = (props: Props) => {
                           ></img>
                         ) : null,
                         key: "Dashboard",
-                        label: "Dashboard",
+                        label: showMenuIcons ? "Dashboard" : <img
+                          src="./assets/DashboardImg.svg"
+                          alt="dashboard_img"
+                        ></img>,
                       },
                       {
                         children: showMenuIcons
                           ? [
-                              {
-                                href: "/Syllabus",
-                                key: "Syllabus",
-                                label: "Syllabus",
-                              },
-                              {
-                                href: "/Assignment",
-                                key: "Assignment",
-                                label: "Assignment",
-                              },
-                              {
-                                href: "/Students",
-                                key: "Students",
-                                label: "Students",
-                              },
-                            ]
+                            {
+                              href: "/Syllabus",
+                              key: "Syllabus",
+                              label: "Syllabus",
+                            },
+                            {
+                              href: "/Assignment",
+                              key: "Assignment",
+                              label: "Assignment",
+                            },
+                            {
+                              href: "/student",
+                              key: "Students",
+                              label: "Students",
+                            },
+                          ]
                           : null,
                         icon: showMenuIcons ? (
                           <img
@@ -84,7 +89,10 @@ const DashboardSidebar = (props: Props) => {
                           ></img>
                         ) : null,
                         key: "Teachers",
-                        label: "Teachers",
+                        label: showMenuIcons ? "Teachers" : <img
+                          src="./assets/TeacherImg.svg"
+                          alt="Teacher_img"
+                        ></img>
                       },
                       {
                         href: "/Comments",
@@ -95,7 +103,10 @@ const DashboardSidebar = (props: Props) => {
                           ></img>
                         ) : null,
                         key: "Comments",
-                        label: "Comments",
+                        label: showMenuIcons ? "Comments" : <img
+                          src="./assets/CommentsImg.svg"
+                          alt="Comments_img"
+                        ></img>,
                       },
                       {
                         href: "/Notifications",
@@ -106,18 +117,20 @@ const DashboardSidebar = (props: Props) => {
                           ></img>
                         ) : null,
                         key: "Notifications",
-                        label: "Notifications",
+                        label: showMenuIcons ? "Notifications" : <img
+                          src="./assets/CommentsImg.svg"
+                          alt="Notifications_img"
+                        ></img>
                       },
                     ]}
                   />
                 </Drawer>
-                
               </div>
             </div>
             <div className={styles.logout}>
               <MenuItem onClick={handleLogout}>
-                <img src="./assets/LogoutImg.svg" alt="logout_img"></img>
-                Logout
+                {showMenuIcons && <img src="./assets/LogoutImg.svg" alt="logout_img" />}
+                {!showMenuIcons || "Logout"}
               </MenuItem>
             </div>
           </div>

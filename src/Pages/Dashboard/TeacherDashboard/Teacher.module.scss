@@ -12,13 +12,13 @@
 .input_desc {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .input_desc input {
-    background: #FFFFFF !important;
+    background: #FFFFFF;
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.05) !important;
-    border-radius: 8px !important;
+    border-radius: 8px;
     border: 1px solid transparent;
     color: rgba(133, 133, 133, 0.6);
     font-size: 14px;
@@ -39,8 +39,4 @@
     margin-top: 1.5rem;
     height: 500px;
     margin: 1rem 0rem;
-}
-
-.select_content{
-    z-index: 100;
 }

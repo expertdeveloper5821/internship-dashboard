@@ -1,67 +1,67 @@
 {
-  "assignment": [
+  "studentData": [
     {
-      "assignmentName": "MongoDB database tier",
-      "assignmentID": "PRO-0004",
+      "StudentName": "MongoDB database tier",
+      "Student": "PRO-0004",
       "studentID": "0004",
-      "assignedData": "01 Jan 2023",
-      "deadline": "18 Jan 2023"
+      "Mobile": "01 Jan 2023",
+      "Course": "18 Jan 2023"
     },
     {
-      "assignmentName": "Objects, Object Members and Arrays in JS.",
-      "assignmentID": "PRO-0001",
+      "StudentName": "Objects, Object Members and Arrays in JS.",
+      "Student": "PRO-0001",
       "studentID": "0001",
-      "assignedData": "02 Jan 2023",
-      "deadline": "17 Jan 2023"
+      "Mobile": "02 Jan 2023",
+      "Course": "17 Jan 2023"
     },
     {
-      "assignmentName": "What are JavaScript Data Types? ",
-      "assignmentID": "PRO-0003",
+      "StudentName": "What are JavaScript Data Types? ",
+      "Student": "PRO-0003",
       "studentID": "0003",
-      "assignedData": "03 Jan 2023",
-      "deadline": "16 Jan 2023"
+      "Mobile": "03 Jan 2023",
+      "Course": "16 Jan 2023"
     },
     {
-      "assignmentName": "Navbar with bootstrap",
-      "assignmentID": "PRO-0002",
+      "StudentName": "Navbar with bootstrap",
+      "Student": "PRO-0002",
       "studentID": "0002",
-      "assignedData": "04 Jan 2023",
-      "deadline": "15 Jan 2023"
+      "Mobile": "04 Jan 2023",
+      "Course": "15 Jan 2023"
     },
     {
-      "assignmentName": "Which is faster in JavaScript and ASP script?",
-      "assignmentID": "PRO-0008",
+      "StudentName": "Which is faster in JavaScript and ASP script?",
+      "Student": "PRO-0008",
       "studentID": "0008",
-      "assignedData": "05 Jan 2023",
-      "deadline": "14 Jan 2023"
+      "Mobile": "05 Jan 2023",
+      "Course": "14 Jan 2023"
     },
     {
-      "assignmentName": "Food Delivery UI",
-      "assignmentID": "PRO-0005",
+      "StudentName": "Food Delivery UI",
+      "Student": "PRO-0005",
       "studentID": "0005",
-      "assignedData": "06 Jan 2023",
-      "deadline": "13 Jan 2023"
+      "Mobile": "06 Jan 2023",
+      "Course": "13 Jan 2023"
     },
     {
-      "assignmentName": "Salon app wireframe",
-      "assignmentID": "PRO-0006",
+      "StudentName": "Salon app wireframe",
+      "Student": "PRO-0006",
       "studentID": "0006",
-      "assignedData": "07 Jan 2023",
-      "deadline": "12 Jan 2023"
+      "Mobile": "07 Jan 2023",
+      "Course": "12 Jan 2023"
     },
     {
-      "assignmentName": "CSS Animation",
-      "assignmentID": "PRO-0007",
+      "StudentName": "CSS Animation",
+      "Student": "PRO-0007",
       "studentID": "0007",
-      "assignedData": "08 Jan 2023",
-      "deadline": "11 Jan 2023"
+      "Mobile": "08 Jan 2023",
+      "Course": "11 Jan 2023"
     },
     {
-      "assignmentName": "Which is faster in JavaScript and ASP script?",
-      "assignmentID": "PRO-0008",
+      "StudentName": "Which is faster in JavaScript and ASP script?",
+      "Student": "PRO-0008",
       "studentID": "0008",
-      "assignedData": "05 Jan 2023",
-      "deadline": "14 Jan 2023"
+      "Mobile": "05 Jan 2023",
+      "Course": "14 Jan 2023"
     }
   ]
 }

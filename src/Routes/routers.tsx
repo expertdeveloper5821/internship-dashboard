@@ -11,6 +11,7 @@ import UpdateCredSuccess from "../Pages/Login/UserCredential/UpdateCredSuccess";
 import Homepage from "../Pages/Login/Homepage/Homepage";
 import { Student } from "../Pages/Dashboard/StudentDashboard/Student";
 import { Teacher } from "../Pages/Dashboard/TeacherDashboard/Teacher";
+import { StudentProfile } from "../Pages/StudentProfile/StudentProfile";
 
 
 type Props = {};
@@ -30,6 +31,7 @@ const Routers = (props: Props) => {
         <Route path="/user_credential_success" element={<UpdateCredSuccess />} />
         <Route path="/student_dashboard" element={<Student />} />
         <Route path="/teacher_dashboard" element={<Teacher />} />
+        <Route path="/student" element={<StudentProfile />} />
       </Routes>
     </Router>
   );
