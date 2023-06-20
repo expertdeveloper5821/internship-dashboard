@@ -60,6 +60,6 @@
     "eslint": "^8.38.0",
     "eslint-plugin-react": "^7.32.2",
     "prettier": "2.8.7",
-    "technogetic-iron-smart-ui": "^1.0.15"
+    "technogetic-iron-smart-ui": "^1.0.16"
   }
 }
