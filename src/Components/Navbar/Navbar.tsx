@@ -18,7 +18,6 @@ export function Navbar() {
       <div className={styles.maincontainer}>
         <nav className={styles.container} style={{ border: "1px solid black" }}>
           <div className={styles.navbarbrand}>
-            <img src="./assets/Vector2.svg" alt="vector" />
           </div>
 
           <ul className={styles.navbarnav}>

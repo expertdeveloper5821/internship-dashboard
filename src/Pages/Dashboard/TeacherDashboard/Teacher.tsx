@@ -4,6 +4,7 @@ import DashboardSidebar from '../../../Components/SideBar/DashboardSidebar';
 import { Select, Button, Input } from "technogetic-iron-smart-ui";
 import TableData from '../../../Components/Table/TableData';
 import studentData from "../../../utils/data.json";
+import { Navbar } from "../../../Components/Navbar/Navbar";
 
 export interface IAppProps {
 }
@@ -19,6 +20,9 @@ export function Teacher() {
 
   return (
     <>
+      <div>
+        <Navbar />
+      </div>
       <DashboardSidebar />
       <div className={styles.dashboard_content}>
         <h2>Assignments</h2>
