@@ -6,9 +6,9 @@ import { Avatar, Switch, Input, Button } from "technogetic-iron-smart-ui";
 import { Editor } from "react-draft-wysiwyg";
 import { EditorState } from "draft-js";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import { Navbar } from "./Navbar";
+import { Navbar } from "../../../../Components/Navbar/Navbar";
 
-export interface IAppProps {}
+export interface IAppProps { }
 
 export function ProfileSetting() {
   const [editorState, setEditorState] = useState(() =>
@@ -35,14 +35,14 @@ export function ProfileSetting() {
             <div className={styles.block1}>
               <div className={styles.circle}>
                 <Avatar
-                  onClick={() => {}}
+                  onClick={() => { }}
                   size={32}
                   className={styles.avatar}
                   src="./assets/avatar.png"
                 />
                 <div className={styles.addicon}>
                   <Button
-                    onClick={function noRefCheck() {}}
+                    onClick={function noRefCheck() { }}
                     type="file"
                     variant="contained"
                     className={styles.addicon}
@@ -76,7 +76,7 @@ export function ProfileSetting() {
             <div className={styles.user_name}>
               <div className={styles.text_details}>Username</div>
               <Input
-                onChange={function noRefCheck() {}}
+                onChange={function noRefCheck() { }}
                 placeholder="Your name"
                 className={styles.user_input}
                 type="text"
@@ -85,7 +85,7 @@ export function ProfileSetting() {
             <div className={styles.user_email}>
               <div className={styles.text_details}>Email Id</div>
               <Input
-                onChange={function noRefCheck() {}}
+                onChange={function noRefCheck() { }}
                 placeholder="Enter Email"
                 className={styles.user_input}
                 type="email"
@@ -96,7 +96,7 @@ export function ProfileSetting() {
             <div className={styles.user_name}>
               <div className={styles.text_details}>Phone Number</div>
               <Input
-                onChange={function noRefCheck() {}}
+                onChange={function noRefCheck() { }}
                 placeholder="Phone Number"
                 className={styles.user_input}
                 type="text"
@@ -105,7 +105,7 @@ export function ProfileSetting() {
             <div className={styles.user_email}>
               <div className={styles.text_details}>Job title</div>
               <Input
-                onChange={function noRefCheck() {}}
+                onChange={function noRefCheck() { }}
                 placeholder="Job title"
                 className={styles.user_input}
                 type="text"

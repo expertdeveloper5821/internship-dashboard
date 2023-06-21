@@ -18,7 +18,6 @@ export function Navbar() {
       <div className={styles.maincontainer}>
         <nav className={styles.container} style={{ border: "1px solid black" }}>
           <div className={styles.navbarbrand}>
-            <img src="./assets/Vector2.svg" alt="vector" />
           </div>
 
           <ul className={styles.navbarnav}>
@@ -48,7 +47,7 @@ export function Navbar() {
                     </div>
                     <div className={styles.dropdown}>
                       <Avatar
-                        onClick={() => {}}
+                        onClick={() => { }}
                         size={20}
                         src="./assets/avatar.png"
                       />
@@ -59,7 +58,7 @@ export function Navbar() {
                     </div>
                     <div className={styles.dropdown}>
                       <Avatar
-                        onClick={() => {}}
+                        onClick={() => { }}
                         size={20}
                         src="./assets/avatar.png"
                       />
@@ -70,7 +69,7 @@ export function Navbar() {
                     </div>
                     <div className={styles.dropdown}>
                       <Avatar
-                        onClick={() => {}}
+                        onClick={() => { }}
                         size={20}
                         src="./assets/avatar.png"
                       />
@@ -97,7 +96,7 @@ export function Navbar() {
               </Popover>
             </li>
             <li className={styles.navitem}>
-              <Avatar onClick={() => {}} src="./assets/avatar.png" size={20} />
+              <Avatar onClick={() => { }} src="./assets/avatar.png" size={20} />
             </li>
             <li className={styles.navitem}>
               <Popover
@@ -107,7 +106,7 @@ export function Navbar() {
                   <div className={styles.myprofilesection}>
                     <div className={styles.userdetails}>
                       <Avatar
-                        onClick={() => {}}
+                        onClick={() => { }}
                         src="./assets/avatar.png"
                         size={25}
                       />

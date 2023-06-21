@@ -65,6 +65,7 @@ h2 {
 
 .heading {
   @include heading;
+
   @media (max-width: $breakpoint-xSmall) {
     width: 100%;
   }
@@ -81,6 +82,7 @@ h2 {
 .email_wrapper {
   border: transparent !important;
   @include email_wrapper;
+
   input {
     background-color: var(--bs-skyblue);
     color: var(--bs-darkblue);
@@ -88,7 +90,13 @@ h2 {
 }
 
 .password_wrapper {
+  border: transparent !important;
   @include password_wrapper;
+
+  input {
+    color: var(--bs-darkblue) !important;
+
+  }
 }
 
 .girlImg_wrapper {
@@ -129,6 +137,7 @@ h2 {
 .SignIn_button {
   @include button_wrapper;
   background-color: var(--bs-lightgrey) !important;
+
   @media (max-width: $breakpoint-xs) {
     width: 100%;
   }
@@ -144,7 +153,6 @@ h2 {
   text-align: center;
   display: flex;
   justify-content: center;
-  margin-right: 3.5rem;
   text-align: center;
 
   @media (max-width: $breakpoint-xs) {

@@ -1,0 +1,67 @@
+{
+  "studentData": [
+    {
+      "StudentName": "John Nick",
+      "Student": "PRO-0004",
+      "studentID": "0004",
+      "Mobile": "1234567890",
+      "Course": "HTML"
+    },
+    {
+      "StudentName": "Abhram Nick",
+      "Student": "PRO-0005",
+      "studentID": "0005",
+      "Mobile": "1234567890",
+      "Course": "HTML"
+    },
+    {
+      "StudentName": "ABC Nick",
+      "Student": "PRO-0006",
+      "studentID": "0006",
+      "Mobile": "1234567890",
+      "Course": "MongoDb"
+    },
+    {
+      "StudentName": "XYZ Nick",
+      "Student": "PRO-0007",
+      "studentID": "0007",
+      "Mobile": "1234567890",
+      "Course": "React"
+    },
+    {
+      "StudentName": "EFG Nick",
+      "Student": "PRO-0008",
+      "studentID": "0008",
+      "Mobile": "1234567890",
+      "Course": "Express"
+    },
+    {
+      "StudentName": "Domnick Nick",
+      "Student": "PRO-0009",
+      "studentID": "0009",
+      "Mobile": "1234567890",
+      "Course": "HTML"
+    },
+    {
+      "StudentName": "Avatar Nick",
+      "Student": "PRO-0001",
+      "studentID": "0001",
+      "Mobile": "1234567890",
+      "Course": "CSS"
+    },
+    {
+      "StudentName": "Singh Nick",
+      "Student": "PRO-0002",
+      "studentID": "0002",
+      "Mobile": "1234567890",
+      "Course": "Node"
+    },
+    {
+      "StudentName": "JHA Nick",
+      "Student": "PRO-0003",
+      "studentID": "0003",
+      "Mobile": "1234567890",
+      "Course": "JS"
+    }
+  ]
+}

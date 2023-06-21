@@ -1,8 +1,6 @@
 import React, { useState, ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
-// import styles from "../Login/auth.module.scss";
 import styles from "../../Login/Loginreset/auth.module.scss";
-
 // @ts-ignore
 import { Button, Input } from "technogetic-iron-smart-ui";
 
@@ -50,9 +48,8 @@ export function ResetPassword(): any {
 
               <Input
                 type="email"
-                className={`${styles.email_wrapper} ${
-                  isEmailValid ? "" : styles.invalid
-                }`}
+                className={`${styles.email_wrapper} ${isEmailValid ? "" : styles.invalid
+                  }`}
                 placeholder="Enter Email"
                 value={email}
                 onChange={handleEmailChange}
@@ -71,9 +68,8 @@ export function ResetPassword(): any {
             <div className={styles.button_wrapper}>
               <Button
                 variant="contained"
-                className={`${styles.SignIn_button} ${
-                  isButtonEnabled ? styles.blueButton : ""
-                }`}
+                className={`${styles.SignIn_button} ${isButtonEnabled ? styles.blueButton : ""
+                  }`}
                 disabled={!isButtonEnabled}
                 onClick={handleRecoverPassword}
               >

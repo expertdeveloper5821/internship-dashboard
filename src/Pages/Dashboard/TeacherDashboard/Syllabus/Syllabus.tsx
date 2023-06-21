@@ -2,9 +2,9 @@ import * as React from "react";
 import styles from "./Syllabus.module.scss";
 // @ts-ignore
 import { Button } from "technogetic-iron-smart-ui";
-import { Navbar } from "./Navbar";
+import { Navbar } from "../../../../Components/Navbar/Navbar";
 
-export interface IAppProps {}
+export interface IAppProps { }
 
 export function Syllabus() {
   return (
@@ -24,7 +24,7 @@ export function Syllabus() {
 
           <div className={styles.button}>
             <Button
-              onClick={function noRefCheck() {}}
+              onClick={function noRefCheck() { }}
               type="file"
               variant="contained"
               className={styles.newsyllabus}

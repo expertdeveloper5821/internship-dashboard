@@ -1,0 +1,45 @@
+@import "../../styles/mixins";
+@import "../../styles/variable";
+
+.sidebar_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 94vh;
+  width: 200px;
+  padding: 1.5rem;
+  background-color: rgba(205, 239, 255, 0.6);
+  box-shadow: 2px 3px 8px rgba(0, 148, 218, 0.25);
+}
+
+.side_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.content_wrapper {
+  margin-top: 2rem;
+}
+
+.menu_container {
+  position: relative;
+  height: 100%;
+}
+
+.logout {
+  color: #003554;
+  cursor: pointer;
+  position: relative;
+}
+
+.logout img {
+  margin-right: 1rem;
+}
+
+.toggleSideBar {
+  position: fixed;
+  margin-left: 17rem;
+}
