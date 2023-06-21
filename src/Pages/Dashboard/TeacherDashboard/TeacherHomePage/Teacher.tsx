@@ -1,10 +1,10 @@
 import styles from "./Teacher.module.scss";
-import DashboardSidebar from '../../../Components/SideBar/DashboardSidebar';
+import DashboardSidebar from '../../../../Components/SideBar/DashboardSidebar';
 //@ts-ignore
 import { Select, Button, Input } from "technogetic-iron-smart-ui";
-import TableData from '../../../Components/Table/TableData';
-import studentData from "../../../utils/data.json";
-import { Navbar } from "../../../Components/Navbar/Navbar";
+import TableData from '../../../../Components/Table/TableData';
+import studentData from "../../../../utils/data.json";
+import { Navbar } from "../../../../Components/Navbar/Navbar";
 
 export interface IAppProps {
 }

@@ -2,7 +2,7 @@ import * as React from "react";
 import styles from "./Syllabus.module.scss";
 // @ts-ignore
 import { Button } from "technogetic-iron-smart-ui";
-import { Navbar } from "../../../Components/Navbar/Navbar";
+import { Navbar } from "../../../../Components/Navbar/Navbar";
 
 export interface IAppProps { }
 

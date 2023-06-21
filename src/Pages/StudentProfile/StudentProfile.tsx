@@ -1,4 +1,4 @@
-import styles from "../../Pages/Dashboard/TeacherDashboard/Teacher.module.scss";
+import styles from "../../Pages/Dashboard/TeacherDashboard/TeacherHomePage/Teacher.module.scss";
 import DashboardSidebar from "../../Components/SideBar/DashboardSidebar";
 import TableData from "../../Components/Table/TableData";
 import studentData from "../../utils/studentData.json";

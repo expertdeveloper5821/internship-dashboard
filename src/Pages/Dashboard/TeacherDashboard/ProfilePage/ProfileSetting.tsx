@@ -6,7 +6,7 @@ import { Avatar, Switch, Input, Button } from "technogetic-iron-smart-ui";
 import { Editor } from "react-draft-wysiwyg";
 import { EditorState } from "draft-js";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import { Navbar } from "../../../Components/Navbar/Navbar";
+import { Navbar } from "../../../../Components/Navbar/Navbar";
 
 export interface IAppProps { }
 

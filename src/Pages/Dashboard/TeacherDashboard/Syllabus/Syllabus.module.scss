@@ -1,6 +1,5 @@
-@import "../../../styles/mixins";
-@import "../../../styles/mixins_global";
-@import "../../../styles/variable";
+@import "../../../../styles/mixins";
+@import "../../../../styles/variable";
 
 .main_container {
   @include background-image;
