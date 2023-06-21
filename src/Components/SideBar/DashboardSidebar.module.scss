@@ -17,6 +17,7 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 2rem;
+  position: relative;
 }
 
 .content_wrapper {
@@ -31,6 +32,7 @@
 .logout {
   color: #003554;
   cursor: pointer;
+  position: relative;
 }
 
 .logout img {
