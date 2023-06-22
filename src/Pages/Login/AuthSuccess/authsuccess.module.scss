@@ -14,8 +14,7 @@
 }
 
 .forgetbutton {
-  @include forgetbutton_wrapper;
-  width: 95%;
+  width: 100%;
 }
 
 .mail_success {
@@ -29,11 +28,11 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 40%;
+  width: 50%;
 
   img {
     width: 100%;
     height: auto;
-    margin: 1rem 0rem;
+    margin: 1rem 0.5rem;
   }
 }

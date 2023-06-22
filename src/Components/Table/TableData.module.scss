@@ -1,0 +1,54 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variable.scss";
+
+.table_content {
+  font-size: var(--bs-body-font-size);
+  color: #003554;
+  text-align: center;
+  line-height: 2.5rem;
+  height: auto;
+  margin: 1rem 0rem;
+  background-color: #fff;
+}
+
+.filter {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  width: auto;
+}
+
+.table_head {
+  background-color: #fff;
+  padding: 0.8rem;
+}
+
+.table_rowdata {
+  height: 40px;
+  color: #6c757d;
+  background-color: #ffffff;
+}
+
+.table_icon {
+  margin-right: 0.5rem;
+  height: 1rem;
+  align-items: center;
+}
+
+.iconWrapper {
+  :hover {
+   color: #003554;
+  }
+  display: flex;
+  align-items: center;
+}
+
+.table_cell {
+  padding: 1rem;
+  text-align: left;
+}
+
+.table_Studenticon img {
+  border: 2px solid red;
+  size: 20px;
+}

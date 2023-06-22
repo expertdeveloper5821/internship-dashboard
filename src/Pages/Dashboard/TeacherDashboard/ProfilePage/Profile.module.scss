@@ -1,12 +1,19 @@
-@import "../../../styles/mixins";
+@import "../../../../styles/mixins.scss";
 
 .main_container {
   @include background-image;
-  position: relative;
-}
+  // border: 2px solid red;
+  display: flex;
+  background-image: linear-gradient(#f5f5f5, #cdefff);
 
+  // position: relative;
+}
+.abcd {
+  // border: 2px solid;
+  width: 100%;
+}
 .container {
-  padding-top: 4rem;
+  padding: 1rem;
   border-bottom: 1px solid #dcdcdc;
 }
 
@@ -26,7 +33,7 @@
 
 .edit_profile {
   height: 40%;
-  margin: 2rem 4rem;
+  margin: 1.5rem 3rem;
 }
 
 .profile {
@@ -120,13 +127,14 @@ input::-webkit-input-placeholder {
   letter-spacing: 0.05em;
   color: rgba(133, 133, 133, 0.6);
 }
+
 .user_name,
 .user_email,
 .user_phone {
   display: flex;
   width: 100%;
   align-items: center;
-  gap: 5rem;
+  gap: 2.5rem;
   padding: 0.5rem 0rem;
 }
 
@@ -189,4 +197,9 @@ input::-webkit-input-placeholder {
   padding: 8px 60px;
   border: 1px solid var(--bs-darkblue);
   color: var(--bs-darkblue);
+}
+.togglebutton {
+  width: 56px;
+  height: 28px;
+  margin: 0px 5px;
 }

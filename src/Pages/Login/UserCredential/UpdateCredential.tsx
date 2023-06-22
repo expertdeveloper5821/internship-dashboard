@@ -1,28 +1,15 @@
 import styles from "./credential.module.scss";
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import { useState } from "react";
 import { useFormik } from "formik";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ResetPasswordSchema } from "../../../Schemas/SignupSchemas";
+//@ts-ignore
+import { Button, Input } from "technogetic-iron-smart-ui";
 
 type Props = {};
 
 const UpdateCredential = (props: Props) => {
-  const [newPasswordShown, setNewPasswordShown] = useState(false);
-  const [confirmPasswordShown, setConfirmPasswordShown] = useState(false);
-  const [isToggle, setIsToggle] = useState(false);
-
-  const togglePassword = () => {
-    setNewPasswordShown(!newPasswordShown);
-  };
-
-  const toggleConfirmPassword = () => {
-    setConfirmPasswordShown(!confirmPasswordShown);
-  };
-
-  const handleToggleIcon = () => {
-    setIsToggle(!isToggle);
-  };
+  const newPasswordShown = false
+  const confirmPasswordShown = false
 
   const navigate = useNavigate();
 
@@ -42,11 +29,15 @@ const UpdateCredential = (props: Props) => {
     initialValues,
     validationSchema: ResetPasswordSchema,
     onSubmit: (values) => {
-      if(values.newPassword === values.confirmPassword){
+      if (values.newPassword === values.confirmPassword) {
         navigate("/user_credential_success")
       }
     }
   });
+
+  const onclickHandler = () => {
+    handleSubmit();
+  }
 
   return (
     <div className={styles.main_container}>
@@ -68,34 +59,16 @@ const UpdateCredential = (props: Props) => {
               <div className={styles.input_box}>
                 <label className={styles.password}>New password</label>
 
-                <div className={styles.eye_wrapper}>
-                  <input
-                    className={styles.password_wrapper}
-                    type={newPasswordShown ? "text" : "password"}
-                    name="newPassword"
-                    autoComplete="off"
-                    placeholder="Enter password"
-                    value={values.newPassword}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  ></input>
-                  <div
-                    onClick={handleToggleIcon}
-                    style={{
-                      marginTop: "14px",
-                      marginRight: "8px",
-                      width: "30px",
-                      height: "30px",
-                      color: "#CC85858",
-                    }}
-                  >
-                    {newPasswordShown ? (
-                      <AiOutlineEyeInvisible onClick={togglePassword} />
-                    ) : (
-                      <AiOutlineEye onClick={togglePassword} />
-                    )}
-                  </div>
-                </div>
+                <Input
+                  className={styles.password_wrapper}
+                  type={newPasswordShown ? "text" : "password"}
+                  name="newPassword"
+                  autoComplete="off"
+                  placeholder="Enter password"
+                  value={values.newPassword}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                ></Input>
                 <div className={styles.error}>
                   {errors.newPassword && touched.newPassword ? (
                     <p>{(errors.newPassword = "Password must be atleast 6 characters")}</p>
@@ -105,34 +78,16 @@ const UpdateCredential = (props: Props) => {
 
               <div className={styles.input_box}>
                 <label className={styles.password}>Confirm New Password</label>
-                <div className={styles.eye_wrapper}>
-                  <input
-                    className={styles.password_wrapper}
-                    type={confirmPasswordShown ? "text" : "password"}
-                    name="confirmPassword"
-                    autoComplete="off"
-                    placeholder="Enter new password"
-                    value={values.confirmPassword}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  ></input>
-                  <div
-                    onClick={handleToggleIcon}
-                    style={{
-                      marginTop: "14px",
-                      marginRight: "8px",
-                      width: "30px",
-                      height: "30px",
-                      color: "#CC85858",
-                    }}
-                  >
-                    {confirmPasswordShown ? (
-                      <AiOutlineEyeInvisible onClick={toggleConfirmPassword} />
-                    ) : (
-                      <AiOutlineEye onClick={toggleConfirmPassword} />
-                    )}
-                  </div>
-                </div>
+                <Input
+                  className={styles.password_wrapper}
+                  type={confirmPasswordShown ? "text" : "password"}
+                  name="confirmPassword"
+                  autoComplete="off"
+                  placeholder="Enter new password"
+                  value={values.confirmPassword}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                ></Input>
                 <div className={styles.error}>
                   {errors.confirmPassword && touched.confirmPassword ? (
                     <p>{(errors.confirmPassword = "Both password must match")}</p>
@@ -141,9 +96,9 @@ const UpdateCredential = (props: Props) => {
               </div>
 
               <div className={styles.button_wrapper}>
-                <button type="submit" className={styles.forgetbutton}>
+                <Button varient="contained" className={styles.forgetbutton} onClick={onclickHandler}>
                   Update
-                </button>
+                </Button>
               </div>
             </form>
           </div>
