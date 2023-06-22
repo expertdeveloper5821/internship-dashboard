@@ -1,10 +1,5 @@
 @import "../../../../styles/mixins.scss";
 
-.main_container {
-  @include background-image;
-  position: relative;
-}
-
 .container {
   padding-top: 4rem;
   border-bottom: 1px solid #dcdcdc;

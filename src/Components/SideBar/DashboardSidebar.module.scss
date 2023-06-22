@@ -5,19 +5,28 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 94vh;
-  width: 200px;
-  padding: 1.5rem;
-  background-color: rgba(205, 239, 255, 0.6);
+  align-items: center;
+  height: 92vh;
+  padding: 2rem;
   box-shadow: 2px 3px 8px rgba(0, 148, 218, 0.25);
+  overflow: hidden;
+  background-color: rgba(205, 239, 255, 0.6);
+  margin-top: -60px;
+}
+
+.wide_sidebar {
+  width: 120px;
+}
+
+.shrunk_sidebar {
+  width: 30px;
 }
 
 .side_logo {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 2rem;
-  position: relative;
 }
 
 .content_wrapper {
@@ -25,14 +34,12 @@
 }
 
 .menu_container {
-  position: relative;
   height: 100%;
 }
 
 .logout {
   color: #003554;
   cursor: pointer;
-  position: relative;
 }
 
 .logout img {
@@ -40,6 +47,6 @@
 }
 
 .toggleSideBar {
-  position: fixed;
-  margin-left: 17rem;
+  position: absolute;
+  margin-left: 12rem;
 }

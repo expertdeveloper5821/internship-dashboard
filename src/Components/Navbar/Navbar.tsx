@@ -16,7 +16,7 @@ export function Navbar() {
   return (
     <header>
       <div className={styles.maincontainer}>
-        <nav className={styles.container} style={{ border: "1px solid black" }}>
+        <nav className={styles.container}>
           <div className={styles.navbarbrand}>
           </div>
 

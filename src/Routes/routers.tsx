@@ -9,12 +9,13 @@ import AuthFail from "../Pages/Login/AuthFail/AuthFail";
 import UpdateCredential from "../Pages/Login/UserCredential/UpdateCredential";
 import UpdateCredSuccess from "../Pages/Login/UserCredential/UpdateCredSuccess";
 import Homepage from "../Pages/Login/Homepage/Homepage";
-import { Teacher } from "../Pages/Dashboard/TeacherDashboard/TeacherHomePage/Teacher";
+import { Teacher } from "../Pages/Dashboard/TeacherHomePage/Teacher";
 import { Student } from "../Pages/Dashboard/StudentDashboard/Student";
 import { ProfileSetting } from "../Pages/Dashboard/TeacherDashboard/ProfilePage/ProfileSetting";
 import { Syllabus } from "../Pages/Dashboard/TeacherDashboard/Syllabus/Syllabus";
 import { StudentProfile } from "../Pages/StudentProfile/StudentProfile";
 import { Navbar } from "../Components/Navbar/Navbar";
+import {BtnDashboard} from "../Components/CommonComp/BtnDashboard"
 
 type Props = {};
 
@@ -37,6 +38,7 @@ const Routers = (props: Props) => {
         <Route path="/Syllabus" element={<Syllabus />} />
         <Route path="/student" element={<StudentProfile />} />
         <Route path="/navbar" element={<Navbar />} />
+        <Route path="/btndash" element={<BtnDashboard />} />
       </Routes>
     </Router>
   );
