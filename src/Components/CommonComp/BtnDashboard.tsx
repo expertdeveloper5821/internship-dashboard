@@ -1,20 +1,14 @@
-import styles from "../Dashboard/TeacherHomePage/Teacher.module.scss";
-import DashboardSidebar from "../../Components/SideBar/DashboardSidebar";
-import TableData from "../../Components/Table/TableData";
-import studentData from "../../utils/studentData.json";
+import styles from "../../Pages/Dashboard/TeacherHomePage/Teacher.module.scss";
 //@ts-ignore
 import { Select, Button, Input } from "technogetic-iron-smart-ui";
 
-export interface IAppProps {}
+export interface IAppProps { }
 
-export function StudentProfile() {
-  const transformedStudentData = studentData.studentData;
-
+export function BtnDashboard() {
   return (
     <>
-      <DashboardSidebar />
       <div className={styles.dashboard_content}>
-        <h2>Students</h2>
+        <h2>Assignments</h2>
         <div className={styles.content_wrapper}>
           <div className={styles.input_desc}>
             <Input placeholder="Assignment Name" type="text"></Input>
@@ -37,7 +31,8 @@ export function StudentProfile() {
                 ]}
                 padding="8px"
                 placeholder="Courses"
-                width="200px"
+                containerWidth="180px"
+                optionWidth="180px"
               />
             </div>
             <div className={styles.button_wrapper}>
@@ -46,9 +41,6 @@ export function StudentProfile() {
               </Button>
             </div>
           </div>
-        </div>
-        <div className={styles.table_wrapper}>
-          <TableData studentData={transformedStudentData} />
         </div>
       </div>
     </>

@@ -2,31 +2,37 @@
 @import "../../styles/variable.scss";
 
 .table_content {
-  font-size: var(--bs-body-font-size);
+  font-size: 10px;
   color: #003554;
   text-align: center;
-  line-height: 2.5rem;
-  height: auto;
-  margin: 1rem 0rem;
-  background-color: #fff;
+  position: relative;
 }
 
 .filter {
   display: flex;
   align-items: flex-start;
-  justify-content: space-around;
   width: auto;
 }
 
+.tableHeader {
+  background-color: transparent;
+}
+
 .table_head {
-  background-color: #fff;
   padding: 0.8rem;
+  background-color: none;
+}
+
+.table_body {
+  margin: 2px 2px;
+}
+
+.tableRow {
+  background: transparent;
 }
 
 .table_rowdata {
-  height: 40px;
-  color: #6c757d;
-  background-color: #ffffff;
+  background-color: #f5f5f5;
 }
 
 .table_icon {
@@ -37,18 +43,32 @@
 
 .iconWrapper {
   :hover {
-   color: #003554;
+    color: #003554;
   }
+
   display: flex;
   align-items: center;
 }
 
 .table_cell {
   padding: 1rem;
-  text-align: left;
+  text-align: start;
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: 12px;
+  }
+}
+
+.cell_icon {
+  margin-right: 0.5rem;
+
+  @media (max-width: $breakpoint-sm) {
+    img {
+      size: 15px;
+    }
+  }
 }
 
 .table_Studenticon img {
-  border: 2px solid red;
   size: 20px;
 }

@@ -3,6 +3,8 @@ import styles from "./Syllabus.module.scss";
 //@ts-ignore
 import { Button } from "technogetic-iron-smart-ui";
 import { Navbar } from "../../../../Components/Navbar/Navbar";
+import studentData from "../../../../utils/Assignment.json";
+import TableData from "../../../../Components/Table/TableData";
 import DashboardSidebar from "../../../../Components/SideBar/DashboardSidebar";
 
 export interface IAppProps {}
@@ -15,6 +17,10 @@ export function Syllabus() {
     { name: "UI Figma basic", quantity: "+ 30 docs" },
     { name: "UI Figma basic", quantity: "+ 30 docs" },
   ];
+
+  const transformedStudentData = studentData.studentData;
+
+  console.log(transformedStudentData);
 
   return (
     <>
@@ -47,13 +53,13 @@ export function Syllabus() {
           <div className={styles.document_upload}>
             {courses.map((course, index) => (
               <div className={styles.uploaddocs} key={index}>
-                <img src="./assets/docs.svg" alt="document" />
+                <img src=". /assets/docs.svg" alt="document" />
                 <div className={styles.course_name}>{course.name}</div>
                 <div className={styles.quantity}>{course.quantity}</div>
               </div>
             ))}
           </div>
-          {/* <TableData /> */}
+          <TableData studentData={transformedStudentData} />
         </div>
       </div>
     </>
