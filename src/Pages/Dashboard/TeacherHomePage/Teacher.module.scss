@@ -1,0 +1,67 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/variable.scss";
+
+.dashboard_content {
+    margin-top: -25px;
+    padding: 15px;
+    flex: 1 1 100%;
+}
+
+.wrapper_main {
+    display: flex;
+}
+
+.select_content {
+    border: 2px solid;
+    z-index: 99;
+    background-color: red;
+}
+
+.input_desc {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.input_desc Input {
+    border-radius: 8px;
+    color: #8a96a5 !important;
+    font-size: 14px;
+}
+
+.main_container {
+    background-image: linear-gradient(#f5f5f5, #cdefff);
+    position: static;
+}
+
+.searchbutton {
+    background: var(--bs-darkblue);
+    border-radius: var(--bs-border-radius);
+    color: var(--bs-white);
+    font-size: var(--bs-font-size);
+    cursor: var(--bs-cursor);
+    border: 1px solid transparent;
+    width: 15vw;
+}
+
+.table_wrapper {
+    margin-top: 1.5rem;
+    margin: 1rem 0rem;
+    font-size: 10px;
+    height: auto;
+
+    @media (max-width: $breakpoint-sm) {
+        font-size: 10px !important;
+    }
+}
+
+.sidebar_wrapper {
+    z-index: 99;
+    height: auto;
+}
+
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin: 1rem;
+}

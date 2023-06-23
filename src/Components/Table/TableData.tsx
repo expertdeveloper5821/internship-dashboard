@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation } from "react-router-dom";
 import styles from "./TableData.module.scss";
 //@ts-ignore
@@ -27,10 +27,13 @@ interface studentData {
 const TableData = (props: StudentProfilePropsType) => {
   const location = useLocation();
 
-  const { studentData } = props
-  const [sortedData, setSortedData] = useState(studentData);
+  const [sortedData, setSortedData] = useState(props.studentData);
   const [isDescending, setIsDescending] = useState(false);
   const [sortKey, setSortKey] = useState('');
+
+  useEffect(() => {
+    setSortedData(props.studentData)
+  }, [props.studentData])
 
   const handleSort = (key: keyof studentData) => {
     let sorted = [];
@@ -58,12 +61,12 @@ const TableData = (props: StudentProfilePropsType) => {
   const handleEdit = (studentData: studentData) => {
     const handleEdit = sortedData;
   }
-
+  console.log(sortedData)
   return (
     <div>
       <Table className={styles.table_content}>
-        <TableHeader>
-          <TableRow>
+        <TableHeader className={styles.tableHeader}>
+          <TableRow className={styles.tableRow}>
             <TableHead className={styles.table_head}>
               <div className={styles.filter}>
                 Assignment Name
@@ -136,13 +139,13 @@ const TableData = (props: StudentProfilePropsType) => {
                   ) : (
                     <>
                       <IconButton>
-                        <img src="./assets/TableProfile.svg" alt='studentProfile' className={styles.table_icon}></img>
+                        <img src="./assets/TableProfile.svg" alt='studentProfile' className={styles.cell_icon}></img>
                       </IconButton>
                       <IconButton onClick={() => handleEdit(studentData)}>
-                        <img src="./assets/TableEdit.svg" alt='studentProfileEdit' className={styles.table_icon}></img>
+                        <img src="./assets/TableEdit.svg" alt='studentProfileEdit' className={styles.cell_icon}></img>
                       </IconButton>
                       <IconButton onClick={() => handleDelete(studentData)}>
-                        <img src="./assets/TableDelete.svg" alt='studentProfileDelete' className={styles.table_icon}></img>
+                        <img src="./assets/TableDelete.svg" alt='studentProfileDelete' className={styles.cell_icon}></img>
                       </IconButton>
                     </>
                   )}

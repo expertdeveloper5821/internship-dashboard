@@ -1,11 +1,6 @@
 @import "../../styles/mixins";
 @import "../../styles/variable";
 
-.maincontainer {
-  @include background-image;
-  position: absolute;
-}
-
 .container {
   border: none !important;
   width: auto;
