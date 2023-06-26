@@ -13,7 +13,8 @@ import { Teacher } from "../Pages/Dashboard/TeacherHomePage/Teacher";
 import { Student } from "../Pages/Dashboard/StudentDashboard/Student";
 import { ProfileSetting } from "../Pages/Dashboard/TeacherDashboard/ProfilePage/ProfileSetting";
 import { Syllabus } from "../Pages/Dashboard/TeacherDashboard/Syllabus/Syllabus";
-import { StudentProfile } from "../Pages/StudentProfile/StudentProfile";
+import { StudentProfile } from "../Pages/Dashboard/TeacherDashboard/StudentProfile/StudentProfile";
+import { StudentAssignmentStatus } from "../Pages/Dashboard/TeacherDashboard/StudentAssignmentStatus/StudentAssignmentStatus";
 
 type Props = {};
 
@@ -35,6 +36,7 @@ const Routers = (props: Props) => {
         <Route path="/profile_setting" element={<ProfileSetting />} />
         <Route path="/Syllabus" element={<Syllabus />} />
         <Route path="/student" element={<StudentProfile />} />
+        <Route path="/StudentAssignmentStatus" element={<StudentAssignmentStatus />} />
       </Routes>
     </Router>
   );

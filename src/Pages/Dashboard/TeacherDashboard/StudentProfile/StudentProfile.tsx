@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import styles from "../Dashboard/TeacherHomePage/Teacher.module.scss";
-import DashboardSidebar from "../../Components/SideBar/DashboardSidebar";
-import TableData from "../../Components/Table/TableData";
-import studentData from "../../utils/studentData.json";
-import { BtnDashboard } from "../../Components/CommonComp/BtnDashboard";
-import { Navbar } from "../../Components/Navbar/Navbar";
+import styles from "../../TeacherHomePage/Teacher.module.scss";
+import DashboardSidebar from "../../../../Components/SideBar/DashboardSidebar";
+import TableData from "../../../../Components/Table/TableData";
+import studentData from "../../../../utils/studentData.json";
+import { BtnDashboard } from "../../../../Components/CommonComp/BtnDashboard";
+import { Navbar } from "../../../../Components/Navbar/Navbar";
 //@ts-ignore
 import { Pagination } from "technogetic-iron-smart-ui";
 
@@ -34,13 +34,12 @@ export function StudentProfile() {
   return (
     <>
       <div className={styles.main_container}>
-        <Navbar />
-        <div className={styles.wrapper_main}>
+        <DashboardSidebar />
+        <div className={styles.abcd}>
           <div className={styles.sidebar_wrapper}>
-            <DashboardSidebar />
+            <Navbar />
           </div>
           <div className={styles.dashboard_content}>
-
             <div className={styles.content_wrapper}>
               <h2>Students</h2>
               <BtnDashboard />

@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
 import styles from "./Teacher.module.scss";
-import DashboardSidebar from '../../../Components/SideBar/DashboardSidebar';
-import TableData from '../../../Components/Table/TableData';
+import DashboardSidebar from "../../../Components/SideBar/DashboardSidebar";
+import TableData from "../../../Components/Table/TableData";
 import studentData from "../../../utils/data.json";
 import { Navbar } from "../../../Components/Navbar/Navbar";
 import { BtnDashboard } from "../../../Components/CommonComp/BtnDashboard";
 // @ts-ignore
 import { Pagination } from "technogetic-iron-smart-ui";
 
-export interface IAppProps {
-}
+export interface IAppProps { }
 
 export function Teacher() {
   const [currentPage, setCurrentPage] = useState(1);
-  const [paginated, setPaginatedData] = useState<any[]>([])
+  const [paginated, setPaginatedData] = useState<any[]>([]);
   const rowPerPage = 10;
 
   const columns = ["StudentName", "Student", "studentID", "Mobile", "Course"];
@@ -30,24 +29,24 @@ export function Teacher() {
     const startIndex = (currentPage - 1) * rowPerPage;
     const endIndex = startIndex + rowPerPage;
     const paginatedData = transformedStudentData.slice(startIndex, endIndex);
-    setPaginatedData(paginatedData)
-  }, [])
+    setPaginatedData(paginatedData);
+  }, []);
 
   const onPageChange = (page: number) => {
     setCurrentPage(page);
     const startIndex = (page - 1) * rowPerPage;
     const endIndex = startIndex + rowPerPage;
     const paginatedData = transformedStudentData.slice(startIndex, endIndex);
-    setPaginatedData(paginatedData)
+    setPaginatedData(paginatedData);
   };
 
   return (
     <>
       <div className={styles.main_container}>
-        <Navbar />
-        <div className={styles.wrapper_main}>
+        <DashboardSidebar />
+        <div className={styles.abcd}>
           <div className={styles.sidebar_wrapper}>
-            <DashboardSidebar />
+            <Navbar />
           </div>
           <div className={styles.dashboard_content}>
             <h2>Assignment</h2>

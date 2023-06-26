@@ -6,12 +6,11 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 92vh;
+  height: 90%;
   padding: 2rem;
   box-shadow: 2px 3px 8px rgba(0, 148, 218, 0.25);
   overflow: hidden;
   background-color: rgba(205, 239, 255, 0.6);
-  margin-top: -60px;
 }
 
 .wide_sidebar {
@@ -47,6 +46,6 @@
 }
 
 .toggleSideBar {
-  position: absolute;
-  margin-left: 12rem;
+  position: fixed;
+  margin-left: 13rem;
 }

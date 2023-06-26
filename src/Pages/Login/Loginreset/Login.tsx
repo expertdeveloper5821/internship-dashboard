@@ -46,7 +46,6 @@ const Login = (props: Props) => {
         Cookies.set("email", values.email, { expires: 30 });
         Cookies.set("password", values.password, { expires: 30 });
       }
-
     },
   });
 
@@ -72,7 +71,7 @@ const Login = (props: Props) => {
       })
 
       console.log(response.data);
-      
+
       navigate("/teacher_dashboard");
     }
     catch (error) {
