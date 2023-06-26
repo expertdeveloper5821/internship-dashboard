@@ -1,54 +1,61 @@
+import { useEffect, useState } from "react";
 import styles from "../Dashboard/TeacherHomePage/Teacher.module.scss";
 import DashboardSidebar from "../../Components/SideBar/DashboardSidebar";
 import TableData from "../../Components/Table/TableData";
 import studentData from "../../utils/studentData.json";
+import { BtnDashboard } from "../../Components/CommonComp/BtnDashboard";
+import { Navbar } from "../../Components/Navbar/Navbar";
 //@ts-ignore
-import { Select, Button, Input } from "technogetic-iron-smart-ui";
-
-export interface IAppProps {}
+import { Pagination } from "technogetic-iron-smart-ui";
 
 export function StudentProfile() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [paginated, setPaginatedData] = useState<any[]>([])
+  const rowPerPage = 10;
   const transformedStudentData = studentData.studentData;
+
+  useEffect(() => {
+    const startIndex = (currentPage - 1) * rowPerPage;
+    const endIndex = startIndex + rowPerPage;
+    const paginatedData = transformedStudentData.slice(startIndex, endIndex);
+    setPaginatedData(paginatedData)
+  }, [])
+
+  const onPageChange = (page: number) => {
+    setCurrentPage(page);
+    const startIndex = (page - 1) * rowPerPage;
+    const endIndex = startIndex + rowPerPage;
+    const paginatedData = transformedStudentData.slice(startIndex, endIndex);
+    setPaginatedData(paginatedData)
+  };
+
+  const columns = ["StudentName", "Student", "studentID", "Mobile", "Course"];
 
   return (
     <>
-      <DashboardSidebar />
-      <div className={styles.dashboard_content}>
-        <h2>Students</h2>
-        <div className={styles.content_wrapper}>
-          <div className={styles.input_desc}>
-            <Input placeholder="Assignment Name" type="text"></Input>
-            <Input placeholder="Student Name" type="text"></Input>
-            <div className={styles.select_wrapper}>
-              <Select
-                className={styles.select_content}
-                option={[
-                  "HTML",
-                  "CSS",
-                  "Material UI",
-                  "Bootstrap",
-                  "Javascript",
-                  "React Js",
-                  "Node Js",
-                  "Express Js",
-                  "MongoDB",
-                  "MySQL",
-                  "Git",
-                ]}
-                padding="8px"
-                placeholder="Courses"
-                width="200px"
-              />
+      <div className={styles.main_container}>
+        <Navbar />
+        <div className={styles.wrapper_main}>
+          <div className={styles.sidebar_wrapper}>
+            <DashboardSidebar />
+          </div>
+          <div className={styles.dashboard_content}>
+
+            <div className={styles.content_wrapper}>
+              <h2>Students</h2>
+              <BtnDashboard />
             </div>
-            <div className={styles.button_wrapper}>
-              <Button className={styles.searchbutton} varient="contained">
-                Search
-              </Button>
+            <div className={styles.table_wrapper}>
+              <TableData studentData={transformedStudentData} columns={columns} />
+              <div className={styles.pagination}>
+                <Pagination
+                  currentPage={currentPage}
+                  totalPages={Math.ceil(transformedStudentData.length / rowPerPage)}
+                  onPageChange={onPageChange}
+                />
+              </div>
             </div>
           </div>
-        </div>
-        <div className={styles.table_wrapper}>
-          <TableData studentData={transformedStudentData} />
         </div>
       </div>
     </>

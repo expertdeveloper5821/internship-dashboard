@@ -16,6 +16,8 @@ export function Teacher() {
   const [paginated, setPaginatedData] = useState<any[]>([])
   const rowPerPage = 10;
 
+  const columns = ["StudentName", "Student", "studentID", "Mobile", "Course"];
+
   const transformedStudentData = studentData.studentData.map((item) => ({
     StudentName: item.StudentName,
     Student: item.Student,
@@ -48,11 +50,12 @@ export function Teacher() {
             <DashboardSidebar />
           </div>
           <div className={styles.dashboard_content}>
+            <h2>Assignment</h2>
             <div>
               <BtnDashboard />
             </div>
             <div className={styles.table_wrapper}>
-              <TableData studentData={paginated} />
+              <TableData studentData={paginated} columns={columns} />
               <div className={styles.pagination}>
                 <Pagination
                   currentPage={currentPage}

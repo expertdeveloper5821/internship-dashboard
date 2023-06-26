@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Cookies } from "typescript-cookie";
 //@ts-ignore
 import { Button, Input } from "technogetic-iron-smart-ui";
+import axios from "axios";
 
 type Props = {};
 
@@ -45,7 +46,7 @@ const Login = (props: Props) => {
         Cookies.set("email", values.email, { expires: 30 });
         Cookies.set("password", values.password, { expires: 30 });
       }
-      navigate("/teacher_dashboard");
+
     },
   });
 
@@ -61,8 +62,23 @@ const Login = (props: Props) => {
     }
   }, [storedemail, storedPassword, setFieldValue]);
 
-  const handleSignIn = () => {
-    handleSubmit();
+  const handleSignIn = async () => {
+    try {
+      await handleSubmit();
+
+      const response = await axios.post("https://tg-auth-vhx0.onrender.com/auth/login", {
+        username: values.email,
+        password: values.password
+      })
+
+      console.log(response.data);
+      
+      navigate("/teacher_dashboard");
+    }
+    catch (error) {
+      console.error(error);
+    }
+    console.log("Handle Submit clicked")
   };
 
   return (

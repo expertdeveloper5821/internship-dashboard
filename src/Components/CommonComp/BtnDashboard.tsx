@@ -8,7 +8,7 @@ export function BtnDashboard() {
   return (
     <>
       <div className={styles.dashboard_content}>
-        <h2>Assignments</h2>
+
         <div className={styles.content_wrapper}>
           <div className={styles.input_desc}>
             <Input placeholder="Assignment Name" type="text"></Input>
