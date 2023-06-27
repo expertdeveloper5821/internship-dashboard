@@ -1,0 +1,60 @@
+{
+  "studentData": [
+    {
+      "StudentName": "What is the use of GitHub?",
+      "Student": "",
+      "Course": "",
+      "Mobile": "",
+      "studentID": ""
+    },
+    {
+      "StudentName": "What is the use of HTML?",
+      "Student": "",
+      "Course": "",
+      "Mobile": "",
+      "studentID": ""
+    },
+    {
+      "StudentName": "What is the use of CSS?",
+      "Student": "",
+      "Course": "",
+      "Mobile": "",
+      "studentID": ""
+    },
+    {
+      "StudentName": "What is the use of Node JS?",
+      "Student": "",
+      "Course": "",
+      "Mobile": "",
+      "studentID": ""
+    },
+    {
+      "StudentName": "What is the use of Figma?",
+      "Student": "",
+      "Course": "",
+      "Mobile": "",
+      "studentID": ""
+    },
+    {
+      "StudentName": "What is the use of React js?",
+      "Student": "",
+      "Course": "",
+      "Mobile": "",
+      "studentID": ""
+    },
+    {
+      "StudentName": "What is the use of React js?",
+      "Student": "",
+      "Course": "",
+      "Mobile": "",
+      "studentID": ""
+    },
+    {
+      "StudentName": "What is the use of React js?",
+      "Student": "",
+      "Course": "",
+      "Mobile": "",
+      "studentID": ""
+    }
+  ]
+}

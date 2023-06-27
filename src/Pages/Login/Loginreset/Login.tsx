@@ -8,11 +8,10 @@ import { Cookies } from "typescript-cookie";
 import { Button, Input } from "technogetic-iron-smart-ui";
 import axios from "axios";
 
-type Props = {};
-
-const Login = (props: Props) => {
+const Login = () => {
   const [rememberMe, setRememberMe] = useState(false);
-  const passwordShown = false;
+  const [isLoading, setIsLoading] = useState(false);
+
 
   function handleRememberMe(event: { target: any }) {
     setRememberMe(event.target.checked);
@@ -26,7 +25,7 @@ const Login = (props: Props) => {
   const navigate = useNavigate();
 
   const initialValues = {
-    email: "",
+    username: "",
     password: "",
   };
 
@@ -41,44 +40,48 @@ const Login = (props: Props) => {
   } = useFormik({
     initialValues,
     validationSchema: SignupSchema,
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
+      setIsLoading(true);
       if (rememberMe) {
-        Cookies.set("email", values.email, { expires: 30 });
+        Cookies.set("username", values.username, { expires: 30 });
         Cookies.set("password", values.password, { expires: 30 });
+      }
+      try {
+        const response = await axios.post(
+          `${process.env.REACT_APP_AUTH_URL}${process.env.REACT_APP_API_KEY}`,
+          {
+            username: values.username,
+            password: values.password,
+          }
+        );
+        const role = response.data.role;
+        if (role === "teacher") {
+          navigate("/teacher_dashboard");
+        }
+        else if (role === "student") {
+          navigate("/student_dashboard");
+        }
+      }
+      catch (error) {
+        console.error("Error", error)
+      }
+      finally {
+        setIsLoading(false);
       }
     },
   });
 
-  let storedemail = Cookies.get("email");
+  let storedusername = Cookies.get("username");
   let storedPassword = Cookies.get("password");
 
   useEffect(() => {
-    if (storedemail) {
-      setFieldValue("email", storedemail);
+    if (storedusername) {
+      setFieldValue("username", storedusername);
     }
     if (storedPassword) {
       setFieldValue("password", storedPassword);
     }
-  }, [storedemail, storedPassword, setFieldValue]);
-
-  const handleSignIn = async () => {
-    try {
-      await handleSubmit();
-
-      const response = await axios.post("https://tg-auth-vhx0.onrender.com/auth/login", {
-        username: values.email,
-        password: values.password
-      })
-
-      console.log(response.data);
-
-      navigate("/teacher_dashboard");
-    }
-    catch (error) {
-      console.error(error);
-    }
-    console.log("Handle Submit clicked")
-  };
+  }, [storedusername, storedPassword, setFieldValue]);
 
   return (
     <div className={styles.main_container}>
@@ -94,32 +97,32 @@ const Login = (props: Props) => {
               Welcome back! Please enter your details
             </p>
           </div>
-
           <div>
             <form onSubmit={handleSubmit}>
               <div className={styles.input_box}>
-                <label className={styles.email}>Email</label>
+                <label className={styles.email}>User Name</label>
                 <Input
                   className={styles.email_wrapper}
-                  type="email"
-                  name="email"
+                  type="text"
+                  name="username"
                   autoComplete="off"
-                  placeholder="Enter Email"
-                  value={values.email}
+                  placeholder="Enter Username"
+                  value={values.username}
                   onChange={handleChange}
                   onBlur={handleBlur}
                 ></Input>
                 <div className={styles.error}>
-                  {errors.email && touched.email ? (
-                    <p>{(errors.email = "Please enter a valid email")}</p>
+                  {errors.username && touched.username ? (
+                    <p>{(errors.username = "Please enter a valid user name")}</p>
                   ) : null}
                 </div>
               </div>
+
               <div className={styles.input_box}>
                 <label className={styles.password}>Password</label>
                 <Input
                   className={styles.password_wrapper}
-                  type={passwordShown ? "text" : "password"}
+                  type="password"
                   name="password"
                   autoComplete="off"
                   placeholder="Enter password"
@@ -141,11 +144,14 @@ const Login = (props: Props) => {
 
               <div className={styles.button_wrapper}>
                 <Button
+                  disabled={isLoading}
                   className={styles.forgetbutton}
                   varient="contained"
-                  onClick={handleSignIn}
+                  onClick={() => {
+                    handleSubmit()
+                  }}
                 >
-                  Sign in
+                  {isLoading ? "Loading..." : "Sign in"}
                 </Button>
               </div>
 
@@ -166,3 +172,4 @@ const Login = (props: Props) => {
 };
 
 export default Login;
+
