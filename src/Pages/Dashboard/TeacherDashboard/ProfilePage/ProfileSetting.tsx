@@ -9,7 +9,7 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { Navbar } from "../../../../Components/Navbar/Navbar";
 import DashboardSidebar from "../../../../Components/SideBar/DashboardSidebar";
 
-export interface IAppProps {}
+export interface IAppProps { }
 
 export function ProfileSetting() {
   const [editorState, setEditorState] = useState(() =>
@@ -45,14 +45,14 @@ export function ProfileSetting() {
               <div className={styles.block1}>
                 <div className={styles.circle}>
                   <Avatar
-                    onClick={() => {}}
+                    onClick={() => { }}
                     size={32}
                     className={styles.avatar}
                     src="./assets/avatar.png"
                   />
                   <div className={styles.addicon}>
                     <Button
-                      onClick={function noRefCheck() {}}
+                      onClick={function noRefCheck() { }}
                       type="file"
                       variant="contained"
                       className={styles.addicon}
@@ -91,7 +91,7 @@ export function ProfileSetting() {
                     {userDetails[0].label}
                   </div>
                   <Input
-                    onChange={function noRefCheck() {}}
+                    onChange={function noRefCheck() { }}
                     placeholder={userDetails[0].placeholder}
                     className={styles.user_input}
                     type="text"
@@ -102,7 +102,7 @@ export function ProfileSetting() {
                     {userDetails[1].label}
                   </div>
                   <Input
-                    onChange={function noRefCheck() {}}
+                    onChange={function noRefCheck() { }}
                     placeholder={userDetails[1].placeholder}
                     className={styles.user_input}
                     type="text"
@@ -116,7 +116,7 @@ export function ProfileSetting() {
                     {userDetails[2].label}
                   </div>
                   <Input
-                    onChange={function noRefCheck() {}}
+                    onChange={function noRefCheck() { }}
                     placeholder={userDetails[2].placeholder}
                     className={styles.user_input}
                     type="text"
@@ -127,7 +127,7 @@ export function ProfileSetting() {
                     {userDetails[3].label}
                   </div>
                   <Input
-                    onChange={function noRefCheck() {}}
+                    onChange={function noRefCheck() { }}
                     placeholder={userDetails[3].placeholder}
                     className={styles.user_input}
                     type="text"

@@ -1,44 +1,35 @@
 import { useEffect, useState } from "react";
-import styles from "./Teacher.module.scss";
-import DashboardSidebar from "../../../Components/SideBar/DashboardSidebar";
-import TableData from "../../../Components/Table/TableData";
-import studentData from "../../../utils/data.json";
-import { Navbar } from "../../../Components/Navbar/Navbar";
-import { BtnDashboard } from "../../../Components/CommonComp/BtnDashboard";
-// @ts-ignore
+import styles from "../../TeacherHomePage/Teacher.module.scss";
+import DashboardSidebar from "../../../../Components/SideBar/DashboardSidebar";
+import TableData from "../../../../Components/Table/TableData";
+import studentData from "../../../../utils/studentData.json";
+import { BtnDashboard } from "../../../../Components/CommonComp/BtnDashboard";
+import { Navbar } from "../../../../Components/Navbar/Navbar";
+//@ts-ignore
 import { Pagination } from "technogetic-iron-smart-ui";
 
-export interface IAppProps { }
-
-export function Teacher() {
+export function StudentProfile() {
   const [currentPage, setCurrentPage] = useState(1);
-  const [paginated, setPaginatedData] = useState<any[]>([]);
+  const [paginated, setPaginatedData] = useState<any[]>([])
   const rowPerPage = 10;
-
-  const columns = ["StudentName", "Student", "studentID", "Mobile", "Course"];
-
-  const transformedStudentData = studentData.studentData.map((item) => ({
-    StudentName: item.StudentName,
-    Student: item.Student,
-    studentID: item.studentID,
-    Mobile: item.Mobile,
-    Course: item.Course,
-  }));
+  const transformedStudentData = studentData.studentData;
 
   useEffect(() => {
     const startIndex = (currentPage - 1) * rowPerPage;
     const endIndex = startIndex + rowPerPage;
     const paginatedData = transformedStudentData.slice(startIndex, endIndex);
-    setPaginatedData(paginatedData);
-  }, []);
+    setPaginatedData(paginatedData)
+  }, [])
 
   const onPageChange = (page: number) => {
     setCurrentPage(page);
     const startIndex = (page - 1) * rowPerPage;
     const endIndex = startIndex + rowPerPage;
     const paginatedData = transformedStudentData.slice(startIndex, endIndex);
-    setPaginatedData(paginatedData);
+    setPaginatedData(paginatedData)
   };
+
+  const columns = ["StudentName", "Student", "studentID", "Mobile", "Course"];
 
   return (
     <>
@@ -49,12 +40,12 @@ export function Teacher() {
             <Navbar />
           </div>
           <div className={styles.dashboard_content}>
-            <h2>Assignment</h2>
-            <div>
+            <div className={styles.content_wrapper}>
+              <h2>Students</h2>
               <BtnDashboard />
             </div>
             <div className={styles.table_wrapper}>
-              <TableData studentData={paginated} columns={columns} />
+              <TableData studentData={transformedStudentData} columns={columns} />
               <div className={styles.pagination}>
                 <Pagination
                   currentPage={currentPage}

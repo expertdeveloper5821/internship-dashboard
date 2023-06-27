@@ -5,14 +5,14 @@
   width: 100%;
   display: flex;
 }
+
 .abcd {
   width: 100%;
+  height: auto;
 }
 
 .dashboard_content {
-  // margin-top: -25px;
   padding: 0px 15px;
-  // flex: 1 1 100%;
 }
 
 .wrapper_main {
@@ -54,10 +54,8 @@
 }
 
 .table_wrapper {
-  // margin-top: 1.5rem;
   margin: 1rem 0rem;
   font-size: 10px;
-  // height: auto;
 
   @media (max-width: $breakpoint-sm) {
     font-size: 10px !important;

@@ -13,27 +13,32 @@ interface StudentProfile {
 }
 
 interface StudentProfilePropsType {
-  studentData: StudentProfile[];
+  studentData: StudentProfile[]
+  showAdditionalButton?: boolean;
+  columns: string[]
 }
 
 interface studentData {
-  StudentName: string;
-  Student: string;
-  studentID: string;
-  Mobile: string;
-  Course: string;
+  // StudentName: string;
+  // Student: string;
+  // studentID: string;
+  // Mobile: string;
+  // Course: string;
+  [key: string]: string;
 }
 
 const TableData = (props: StudentProfilePropsType) => {
   const location = useLocation();
 
-  const [sortedData, setSortedData] = useState(props.studentData);
+  const [sortedData, setSortedData] = useState(props?.studentData);
   const [isDescending, setIsDescending] = useState(false);
   const [sortKey, setSortKey] = useState("");
 
+  const shouldShowAdditionalButton = true;
+
   useEffect(() => {
-    setSortedData(props.studentData);
-  }, [props.studentData]);
+    setSortedData(props?.studentData)
+  }, [props?.studentData])
 
   const handleSort = (key: keyof studentData) => {
     let sorted = [];
@@ -50,7 +55,7 @@ const TableData = (props: StudentProfilePropsType) => {
       setIsDescending(false);
     }
     setSortedData(sorted);
-    setSortKey(key);
+    setSortKey(String(key));
   };
 
   const handleDelete = (studentData: studentData) => {
@@ -58,88 +63,31 @@ const TableData = (props: StudentProfilePropsType) => {
       (data: any) => data.studentID !== studentData.studentID
     );
     setSortedData(updatedData);
+    console.log("updatedData", updatedData)
   };
 
   const handleEdit = (studentData: studentData) => {
     const handleEdit = sortedData;
-  };
-  console.log(sortedData);
+  }
+
+  console.log(sortedData)
+  const tableHeads = ["Assignment Name", "Assignment ID", "Student", "Assigned Date", "Deadline", "Actions"]
   return (
     <div>
       <Table className={styles.table_content}>
         <TableHeader className={styles.tableHeader}>
           <TableRow className={styles.tableRow}>
-            <TableHead className={styles.table_head}>
-              <div className={styles.filter}>
-                Assignment Name
-                <div>
-                  <img
-                    src="./assets/upArrow.svg"
-                    alt="filterup"
-                    onClick={() => handleSort("StudentName")}
-                  ></img>
-                  <img
-                    src="./assets/downArrow.svg"
-                    alt="filterdown"
-                    onClick={() => handleSort("StudentName")}
-                  ></img>
+            {props.columns.map((columnName) => (
+              <TableHead className={styles.table_head} key={columnName}>
+                <div className={styles.filter}>
+                  {columnName}
+                  <div>
+                    <img src="./assets/upArrow.svg" alt="filterup" onClick={() => handleSort(columnName)}></img>
+                    <img src="./assets/downArrow.svg" alt="filterdown" onClick={() => handleSort(columnName)}></img>
+                  </div>
                 </div>
-              </div>
-            </TableHead>
-            <TableHead className={styles.table_head}>
-              <div className={styles.filter}>
-                Assignment ID
-                <div>
-                  <img
-                    src="./assets/upArrow.svg"
-                    alt="filterup"
-                    onClick={() => handleSort("studentID")}
-                  ></img>
-                  <img
-                    src="./assets/downArrow.svg"
-                    alt="filterdown"
-                    onClick={() => handleSort("studentID")}
-                  ></img>
-                </div>
-              </div>
-            </TableHead>
-            <TableHead className={styles.table_head}>
-              <div className={styles.filter}>Student</div>
-            </TableHead>
-            <TableHead className={styles.table_head}>
-              <div className={styles.filter}>
-                Assigned Date
-                <div>
-                  <img
-                    src="./assets/upArrow.svg"
-                    alt="filterup"
-                    onClick={() => handleSort("Mobile")}
-                  ></img>
-                  <img
-                    src="./assets/downArrow.svg"
-                    alt="filterdown"
-                    onClick={() => handleSort("Mobile")}
-                  ></img>
-                </div>
-              </div>
-            </TableHead>
-            <TableHead className={styles.table_head}>
-              <div className={styles.filter}>
-                Deadline
-                <div>
-                  <img
-                    src="./assets/upArrow.svg"
-                    alt="filterup"
-                    onClick={() => handleSort("Course")}
-                  ></img>
-                  <img
-                    src="./assets/downArrow.svg"
-                    alt="filterdown"
-                    onClick={() => handleSort("Course")}
-                  ></img>
-                </div>
-              </div>
-            </TableHead>
+              </TableHead>
+            ))}
             <TableHead className={styles.table_head}>
               <div className={styles.filter}>Actions</div>
             </TableHead>
@@ -156,21 +104,11 @@ const TableData = (props: StudentProfilePropsType) => {
 
             return (
               <TableRow className={styles.table_rowdata} key={index}>
-                <TableCell className={styles.table_cell}>
-                  {studentData.StudentName}
-                </TableCell>
-                <TableCell className={styles.table_cell}>
-                  {studentData.Student}
-                </TableCell>
-                <TableCell className={styles.table_cell}>
-                  {studentData.studentID}
-                </TableCell>
-                <TableCell className={styles.table_cell}>
-                  {studentData.Mobile}
-                </TableCell>
-                <TableCell className={styles.table_cell}>
-                  {studentData.Course}
-                </TableCell>
+                {props.columns.map((columnName) => (
+                  <TableCell className={styles.table_cell} key={columnName}>
+                    {studentData[columnName]}
+                  </TableCell>
+                ))}
                 <TableCell className={styles.table_cell}>
                   {additionalImagePath ? (
                     <IconButton>

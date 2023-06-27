@@ -7,7 +7,7 @@ import studentData from "../../../../utils/Assignment.json";
 import TableData from "../../../../Components/Table/TableData";
 import DashboardSidebar from "../../../../Components/SideBar/DashboardSidebar";
 
-export interface IAppProps {}
+export interface IAppProps { }
 
 export function Syllabus() {
   const courses = [
@@ -21,6 +21,8 @@ export function Syllabus() {
   const transformedStudentData = studentData.studentData;
 
   console.log(transformedStudentData);
+
+  const columns = ["StudentName", "Student"];
 
   return (
     <>
@@ -41,7 +43,7 @@ export function Syllabus() {
 
             <div className={styles.button}>
               <Button
-                onClick={function noRefCheck() {}}
+                onClick={function noRefCheck() { }}
                 type="file"
                 variant="contained"
                 className={styles.newsyllabus}
@@ -59,7 +61,7 @@ export function Syllabus() {
               </div>
             ))}
           </div>
-          <TableData studentData={transformedStudentData} />
+          <TableData studentData={transformedStudentData} columns={columns} />
         </div>
       </div>
     </>
