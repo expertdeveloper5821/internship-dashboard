@@ -1,28 +1,26 @@
+import axios from "axios";
 import styles from "./auth.module.scss";
 import { useState, useEffect } from "react";
 import { useFormik } from "formik";
 import { SignupSchema } from "../../../Schemas/SignupSchemas";
-import { useNavigate } from "react-router-dom";
-import { Cookies } from "typescript-cookie";
+import { useNavigate, Link } from "react-router-dom";
 //@ts-ignore
 import { Button, Input } from "technogetic-iron-smart-ui";
-import axios from "axios";
 
 const Login = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
+  const navigate = useNavigate();
 
   function handleRememberMe(event: { target: any }) {
     setRememberMe(event.target.checked);
   }
 
   useEffect(() => {
-    const rememberMeValue = Cookies.get("rememberMe") === "true";
+    const rememberMeValue = document.cookie.includes("rememberMe === true");
     setRememberMe(rememberMeValue);
   }, []);
-
-  const navigate = useNavigate();
 
   const initialValues = {
     username: "",
@@ -37,14 +35,19 @@ const Login = () => {
     handleChange,
     handleBlur,
     setFieldValue,
+    setFieldError,
   } = useFormik({
     initialValues,
     validationSchema: SignupSchema,
     onSubmit: async (values) => {
       setIsLoading(true);
       if (rememberMe) {
-        Cookies.set("username", values.username, { expires: 30 });
-        Cookies.set("password", values.password, { expires: 30 });
+        const expirationDate = new Date();
+        expirationDate.setDate(expirationDate.getDate() + 30);
+        document.cookie = `username = ${values.username
+          }; expires = ${expirationDate.toUTCString()}`;
+        document.cookie = `password = ${values.password
+          }; expires = ${expirationDate.toUTCString()}`;
       }
       try {
         const response = await axios.post(
@@ -57,22 +60,32 @@ const Login = () => {
         const role = response.data.role;
         if (role === "teacher") {
           navigate("/teacher_dashboard");
-        }
-        else if (role === "student") {
+        } else if (role === "student") {
           navigate("/student_dashboard");
+        } else {
+          setFieldError("password", "Invalid username or password");
+          setFieldError("username", "Invalid username or password");
         }
-      }
-      catch (error) {
-        console.error("Error", error)
-      }
-      finally {
+      } catch (error) {
+        setFieldError("username", "Invalid username or password");
+        setFieldError("password", "Invalid username or password");
+      } finally {
         setIsLoading(false);
       }
     },
   });
 
-  let storedusername = Cookies.get("username");
-  let storedPassword = Cookies.get("password");
+  let storedusername = "";
+  let storedPassword = "";
+
+  document.cookie.split(";").forEach((cookie) => {
+    const [name, value] = cookie.trim().split("=");
+    if (name === "username") {
+      storedusername = value;
+    } else if (name === "password") {
+      storedPassword = value;
+    }
+  });
 
   useEffect(() => {
     if (storedusername) {
@@ -88,7 +101,7 @@ const Login = () => {
       <div className={styles.background_container}>
         <div className={styles.container}>
           <div className={styles.logo}>
-            <img src="./assets/technogeticlogo.svg" alt="Tg-logo"></img>
+            <img src="./assets/technogeticlogo.svg" alt="Tg-logo" />
           </div>
 
           <div>
@@ -100,8 +113,11 @@ const Login = () => {
           <div>
             <form onSubmit={handleSubmit}>
               <div className={styles.input_box}>
-                <label className={styles.email}>User Name</label>
+                <label className={styles.email} htmlFor="username">
+                  User Name
+                </label>
                 <Input
+                  id="username"
                   className={styles.email_wrapper}
                   type="text"
                   name="username"
@@ -110,17 +126,22 @@ const Login = () => {
                   value={values.username}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                ></Input>
+                />
                 <div className={styles.error}>
                   {errors.username && touched.username ? (
-                    <p>{(errors.username = "Please enter a valid user name")}</p>
+                    <p>
+                      {(errors.username = "Please enter a valid username")}
+                    </p>
                   ) : null}
                 </div>
               </div>
 
               <div className={styles.input_box}>
-                <label className={styles.password}>Password</label>
+                <label className={styles.password} htmlFor="password">
+                  Password
+                </label>
                 <Input
+                  id="password"
                   className={styles.password_wrapper}
                   type="password"
                   name="password"
@@ -129,7 +150,7 @@ const Login = () => {
                   value={values.password}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                ></Input>
+                />
                 <div className={styles.error}>
                   {errors.password && touched.password ? (
                     <p>{(errors.password = "Please enter a valid password")}</p>
@@ -138,7 +159,7 @@ const Login = () => {
               </div>
 
               <div className={styles.checkbox_wrapper}>
-                <input type="checkbox" onChange={handleRememberMe}></input>
+                <input type="checkbox" onChange={handleRememberMe} />
                 <span>Remember for 30 days</span>
               </div>
 
@@ -148,7 +169,7 @@ const Login = () => {
                   className={styles.forgetbutton}
                   varient="contained"
                   onClick={() => {
-                    handleSubmit()
+                    handleSubmit();
                   }}
                 >
                   {isLoading ? "Loading..." : "Sign in"}
@@ -157,19 +178,18 @@ const Login = () => {
 
               <div className={styles.signin}>
                 <span>
-                  <a href="/resetpassword"> Forget your Password?</a>
+                  <Link to="/resetpassword"> Forget your Password?</Link>
                 </span>
               </div>
             </form>
           </div>
         </div>
         <div className={styles.girlImg_wrapper}>
-          <img src="./assets/GirlImg.png" alt="girl-img"></img>
+          <img src="./assets/GirlImg.png" alt="girl-img" />
         </div>
-      </div >
-    </div >
+      </div>
+    </div>
   );
 };
 
 export default Login;
-
