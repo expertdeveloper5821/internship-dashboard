@@ -1,5 +1,5 @@
-import { render, fireEvent, screen, waitFor } from "@testing-library/react";
-import Login from "./Login";
+import { render, fireEvent, screen } from "@testing-library/react";
+import Login from "../Login";
 import { BrowserRouter as Router, useNavigate } from "react-router-dom";
 import axios, { AxiosResponse } from "axios";
 import { act } from "react-dom/test-utils";
@@ -36,7 +36,7 @@ describe("<Login />", () => {
 
     // Fill the form
     fireEvent.change(screen.getByLabelText("User Name"), {
-      target: { value: "rk001" },
+      target: { value: "rk00" },
     });
     fireEvent.change(screen.getByLabelText("Password"), {
       target: { value: "rajesh1234" },
@@ -76,8 +76,10 @@ describe("<Login />", () => {
 
   it("should navigate to the teacher role if the role received as teacher", async () => {
     const navigateMock = jest.fn();
+    const useNavigateMock = jest.fn(() => navigateMock);
 
     (useNavigate as jest.Mock).mockImplementation(() => navigateMock);
+    jest.spyOn(require("react-router-dom"), "useNavigate").mockImplementation(useNavigateMock);
 
     render(
       <Router>
@@ -85,11 +87,23 @@ describe("<Login />", () => {
       </Router>
     )
 
+    fireEvent.change(screen.getByLabelText("User Name"), {
+      target: { value: "rk001" },
+    });
+    fireEvent.change(screen.getByLabelText("Password"), {
+      target: { value: "rajesh1234" },
+    });
+
     //Navigating to the teacher dashboard
     const mockAxiosPost = axios.post as jest.MockedFunction<typeof axios.post>;
     mockAxiosPost.mockResolvedValueOnce({ data: { role: "teacher" } });
 
-    fireEvent.click(screen.getByText("Sign in"));
+    //Submit form
+    await act(async () => {
+      fireEvent.click(screen.getByText("Sign in"));
+    });
+
+    expect(useNavigateMock).toHaveBeenCalled(); 
     expect(navigateMock).toHaveBeenCalledWith("/teacher_dashboard");
   });
 
@@ -104,9 +118,17 @@ describe("<Login />", () => {
         <Login />
       </Router>
     );
+
+    fireEvent.change(screen.getByLabelText("User Name"), {
+      target: { value: "rk0" },
+    });
+    fireEvent.change(screen.getByLabelText("Password"), {
+      target: { value: "rajesh1234" },
+    });
   
     const mockAxiosPost = axios.post as jest.MockedFunction<typeof axios.post>;
     mockAxiosPost.mockResolvedValueOnce({ data: { role: "student" } });
+    
   
     // Submit the form
     await act(async () => {

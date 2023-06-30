@@ -7,9 +7,9 @@ import { Button, Input } from "technogetic-iron-smart-ui";
 
 type Props = {};
 
-const UpdateCredential = (props: Props) => {
-  const newPasswordShown = false
-  const confirmPasswordShown = false
+const UpdateCredential = () => {
+  const newPasswordShown = false;
+  const confirmPasswordShown = false;
 
   const navigate = useNavigate();
 
@@ -30,14 +30,14 @@ const UpdateCredential = (props: Props) => {
     validationSchema: ResetPasswordSchema,
     onSubmit: (values) => {
       if (values.newPassword === values.confirmPassword) {
-        navigate("/user_credential_success")
+        navigate("/user_credential_success");
       }
-    }
+    },
   });
 
   const onclickHandler = () => {
     handleSubmit();
-  }
+  };
 
   return (
     <div className={styles.main_container}>
@@ -57,9 +57,12 @@ const UpdateCredential = (props: Props) => {
           <div>
             <form onSubmit={handleSubmit}>
               <div className={styles.input_box}>
-                <label className={styles.password}>New password</label>
+                <label htmlFor="newPassword" className={styles.password}>
+                  New password
+                </label>
 
                 <Input
+                  id="newPassword"
                   className={styles.password_wrapper}
                   type={newPasswordShown ? "text" : "password"}
                   name="newPassword"
@@ -71,14 +74,20 @@ const UpdateCredential = (props: Props) => {
                 ></Input>
                 <div className={styles.error}>
                   {errors.newPassword && touched.newPassword ? (
-                    <p>{(errors.newPassword = "Password must be atleast 6 characters")}</p>
+                    <p>{(errors.newPassword = "Password must be at least 6 characters")}</p>
                   ) : null}
                 </div>
               </div>
 
               <div className={styles.input_box}>
-                <label className={styles.password}>Confirm New Password</label>
+                <label
+                  htmlFor="confirmPassword"
+                  className={styles.password}
+                >
+                  Confirm New Password
+                </label>
                 <Input
+                  id="confirmPassword"
                   className={styles.password_wrapper}
                   type={confirmPasswordShown ? "text" : "password"}
                   name="confirmPassword"
@@ -90,13 +99,17 @@ const UpdateCredential = (props: Props) => {
                 ></Input>
                 <div className={styles.error}>
                   {errors.confirmPassword && touched.confirmPassword ? (
-                    <p>{(errors.confirmPassword = "Both password must match")}</p>
+                    <p>{(errors.confirmPassword = "Both passwords must match")}</p>
                   ) : null}
                 </div>
               </div>
 
               <div className={styles.button_wrapper}>
-                <Button varient="contained" className={styles.forgetbutton} onClick={onclickHandler}>
+                <Button
+                  varient="contained"
+                  className={styles.forgetbutton}
+                  onClick={onclickHandler}
+                >
                   Update
                 </Button>
               </div>
