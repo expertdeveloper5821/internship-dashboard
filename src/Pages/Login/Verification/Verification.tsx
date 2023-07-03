@@ -1,13 +1,11 @@
 import { useState } from "react";
 import styles from "../Verification/verification.module.scss";
 import OtpInput from "react-otp-input";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 //@ts-ignore
 import { Button } from "technogetic-iron-smart-ui";
 
-type Props = {};
-
-const Verification = (props: Props) => {
+const Verification = () => {
     const [otp, setOtp] = useState("");
     const [error, setError] = useState(false);
 
@@ -52,10 +50,9 @@ const Verification = (props: Props) => {
                             <div className={styles.errors}>Please enter a valid OTP</div>
                         )}
                         <div className={styles.signin}>
-                            <a href="/resetpassword">
-                                {" "}
+                            <Link to="/resetpassword">
                                 If you did not receive code? <span>&nbsp;Resend</span>
-                            </a>
+                            </Link>
                         </div>
                         <div>
                             <div className={styles.button_wrapper}>

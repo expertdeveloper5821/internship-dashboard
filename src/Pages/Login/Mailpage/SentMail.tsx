@@ -1,4 +1,3 @@
-// import styles from "./mail.module.scss";
 import styles from "../Mailpage/mail.module.scss";
 // @ts-ignore
 import { Button } from "technogetic-iron-smart-ui";
