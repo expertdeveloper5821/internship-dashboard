@@ -1,0 +1,19 @@
+@import "../../../../styles/mixins.scss";
+
+.main_container {
+  width: 100%;
+  display: flex;
+  background-image: linear-gradient(#F5F5F5, #CDEFFF);
+  border: 2px solid;
+}
+.abcd {
+  width: 100%;
+  height: 100vh;
+}
+
+.description_box {
+    width: auto;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.05);
+    background-color: #FFFFFF;
+    border-radius: 8px;
+  }

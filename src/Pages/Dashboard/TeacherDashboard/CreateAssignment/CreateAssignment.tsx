@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
-import styles from "../../TeacherHomePage/Teacher.module.scss";
+import styles from "./CreateAssignment.module.scss";
 import DashboardSidebar from "../../../../Components/SideBar/DashboardSidebar";
 import TableData from "../../../../Components/Table/TableData";
 import studentData from "../../../../utils/CreateAssignment.json";
 import { Navbar } from "../../../../Components/Navbar/Navbar";
+import { Editor } from "react-draft-wysiwyg";
+import { EditorState } from "draft-js";
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { BtnDashboard } from "../../../../Components/CommonComp/BtnDashboard";
 // @ts-ignore
 import { Pagination } from "technogetic-iron-smart-ui";
@@ -14,6 +17,9 @@ export function CreateAssignment() {
 
     const [currentPage, setCurrentPage] = useState(1);
     const [paginated, setPaginatedData] = useState<any[]>([]);
+    const [editorState, setEditorState] = useState(() =>
+        EditorState.createEmpty()
+    );
     const rowPerPage = 10;
 
     const columns = ["StudentName"];
@@ -44,6 +50,7 @@ export function CreateAssignment() {
     return (
         <>
             <div className={styles.main_container}>
+                <div>
                 <DashboardSidebar />
                 <div className={styles.abcd}>
                     <div className={styles.sidebar_wrapper}>
@@ -62,6 +69,46 @@ export function CreateAssignment() {
                                     totalPages={Math.ceil(transformedStudentData.length / rowPerPage)}
                                     onPageChange={onPageChange}
                                 />
+                            </div>
+                            <div className={styles.description_box}>
+                                <Editor
+                                    editorState={editorState}
+                                    onEditorStateChange={setEditorState}
+                                    toolbar={{
+                                        options: [
+                                            "inline",
+                                            "blockType",
+                                            "list",
+                                            "textAlign",
+                                            "link",
+                                            "embedded",
+                                        ],
+                                        inline: {
+                                            options: ["bold", "italic", "underline", "strikethrough"],
+                                        },
+                                        blockType: {
+                                            options: [
+                                                "Normal",
+                                                "H1",
+                                                "H2",
+                                                "H3",
+                                                "H4",
+                                                "H5",
+                                                "H6",
+                                                "Blockquote",
+                                                "Code",
+                                            ],
+                                        },
+                                        list: {
+                                            options: ["unordered", "ordered"],
+                                        },
+                                        textAlign: {
+                                            options: ["left", "center", "right", "justify"],
+                                        },
+                                    }}
+                                    placeholder="Enter text here..."
+                                />
+                            </div>
                             </div>
                         </div>
                     </div>
