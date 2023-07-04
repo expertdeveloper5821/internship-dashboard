@@ -1,0 +1,58 @@
+@import "../../styles/mixins";
+@import "../../styles/variable";
+.main_container {
+  width: 100%;
+  display: flex;
+  background-image: linear-gradient(#f5f5f5, #cdefff);
+}
+
+.abcd {
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.Notification {
+  font-size: 32px;
+  font-family: var(--bs-body-font-family);
+  line-height: 38px;
+  font-weight: 500;
+}
+.sort {
+  display: flex;
+  align-items: center;
+}
+.sort img {
+  height: 29px;
+  width: 29px;
+  padding: 10px 25px;
+}
+.text {
+  color: var(--bs-darkblue);
+  width: 51px;
+}
+
+.notificationbar {
+  width: 92%;
+  background-color: #f5f5f5;
+  display: flex;
+  margin: 0.3rem 1rem;
+  gap: 20px;
+  align-items: center;
+  padding: 0rem 2rem;
+  filter: drop-shadow(1px 1px (rgba(0, 148, 218, 0.25)));
+}
+
+.dateandtime {
+  display: flex;
+  flex-direction: column;
+}
+
+.date {
+  color: var(--bs-grey);
+  font-size: 12px;
+}

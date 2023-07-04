@@ -16,6 +16,7 @@ import { Syllabus } from "../Pages/Dashboard/TeacherDashboard/Syllabus/Syllabus"
 import { StudentProfile } from "../Pages/Dashboard/TeacherDashboard/StudentProfile/StudentProfile";
 import { StudentAssignmentStatus } from "../Pages/Dashboard/TeacherDashboard/StudentAssignmentStatus/StudentAssignmentStatus";
 import { CreateAssignment } from "../Pages/Dashboard/TeacherDashboard/CreateAssignment/CreateAssignment";
+import { Notification } from "../Components/Notification/Notification";
 
 type Props = {};
 
@@ -39,6 +40,7 @@ const Routers = (props: Props) => {
         <Route path="/student" element={<StudentProfile />} />
         <Route path="/StudentAssignmentStatus" element={<StudentAssignmentStatus />} />
         <Route path="/CreateAssignment" element={<CreateAssignment />} />
+        <Route path="Notification" element={<Notification />} />
       </Routes>
     </Router>
   );

@@ -40,113 +40,78 @@ export function CreateAssignment() {
         setPaginatedData(paginatedData);
     };
     return (
-        <>
-            <div className={styles.main_container}>
-                
-                <DashboardSidebar />
-                <div className={styles.abcd}>
-                    <Navbar />
-                    <div className={styles.sidebar_wrapper}>
 
+        <div className={styles.main_container}>
+
+            <DashboardSidebar />
+            <div className={styles.abcd}>
+                <Navbar />
+                <div className={styles.sidebar_wrapper}>
+
+                </div>
+                <div className={styles.dashboard_content}>
+                    <h2>Profile</h2>
+                    <div>
+                        <BtnDashboard />
                     </div>
-                    <div className={styles.dashboard_content}>
-                        <h2>Profile</h2>
-                        <div>
-                            <BtnDashboard />
-                        </div>
-                        <div className={styles.table_wrapper}>
-                            <TableData studentData={paginated} columns={columns} />
+                    <div className={styles.table_wrapper}>
+                        <TableData studentData={paginated} columns={columns} />
 
-                            <div className={styles.description_box}>
-                                <Editor
-                                    editorState={editorState}
-                                    onEditorStateChange={setEditorState}
-                                    toolbar={{
+                        <div className={styles.description_box}>
+                            <Editor
+                                editorState={editorState}
+                                onEditorStateChange={setEditorState}
+                                toolbar={{
+                                    options: [
+                                        "inline",
+                                        "blockType",
+                                        "list",
+                                        "textAlign",
+                                        "link",
+                                        "embedded",
+                                    ],
+                                    inline: {
+                                        options: ["bold", "italic", "underline", "strikethrough"],
+                                    },
+                                    blockType: {
                                         options: [
-                                            "inline",
-                                            "blockType",
-                                            "list",
-                                            "textAlign",
-                                            "link",
-                                            "embedded",
+                                            "Normal",
+                                            "H1",
+                                            "H2",
+                                            "H3",
+                                            "H4",
+                                            "H5",
+                                            "H6",
+                                            "Blockquote",
+                                            "Code",
                                         ],
-                                        inline: {
-                                            options: ["bold", "italic", "underline", "strikethrough"],
-                                        },
-                                        blockType: {
-                                            options: [
-                                                "Normal",
-                                                "H1",
-                                                "H2",
-                                                "H3",
-                                                "H4",
-                                                "H5",
-                                                "H6",
-                                                "Blockquote",
-                                                "Code",
-                                            ],
-                                        },
-                                        list: {
-                                            options: ["unordered", "ordered"],
-                                        },
-                                        textAlign: {
-                                            options: ["left", "center", "right", "justify"],
-                                        },
-                                    }}
-                                    placeholder="Enter text here..."
-                                />
-                            </div>
-                            <div className={styles.pagination}>
-                                <Pagination
-                                    currentPage={currentPage}
-                                    totalPages={Math.ceil(transformedStudentData.length / rowPerPage)}
-                                    onPageChange={onPageChange}
-                                />
-                            </div>
-                            <div className={styles.description_box}>
-                                <Editor
-                                    editorState={editorState}
-                                    onEditorStateChange={setEditorState}
-                                    toolbar={{
-                                        options: [
-                                            "inline",
-                                            "blockType",
-                                            "list",
-                                            "textAlign",
-                                            "link",
-                                            "embedded",
-                                        ],
-                                        inline: {
-                                            options: ["bold", "italic", "underline", "strikethrough"],
-                                        },
-                                        blockType: {
-                                            options: [
-                                                "Normal",
-                                                "H1",
-                                                "H2",
-                                                "H3",
-                                                "H4",
-                                                "H5",
-                                                "H6",
-                                                "Blockquote",
-                                                "Code",
-                                            ],
-                                        },
-                                        list: {
-                                            options: ["unordered", "ordered"],
-                                        },
-                                        textAlign: {
-                                            options: ["left", "center", "right", "justify"],
-                                        },
-                                    }}
-                                    placeholder="Enter text here..."
-                                />
-                            </div>
-                            </div>
+                                    },
+                                    list: {
+                                        options: ["unordered", "ordered"],
+                                    },
+                                    textAlign: {
+                                        options: ["left", "center", "right", "justify"],
+                                    },
+                                }}
+                                placeholder="Enter text here..."
+                            />
                         </div>
+                        <div className={styles.pagination}>
+                            <Pagination
+                                currentPage={currentPage}
+                                totalPages={Math.ceil(transformedStudentData.length / rowPerPage)}
+                                onPageChange={onPageChange}
+                            />
+                        </div>
+
                     </div>
                 </div>
+            </div>
+        </div>
 
-        </>
+
+
     );
 }
+
+
