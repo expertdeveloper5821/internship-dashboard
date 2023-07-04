@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import styles from "./Teacher.module.scss";
-import DashboardSidebar from "../../../Components/SideBar/DashboardSidebar";
-import TableData from "../../../Components/Table/TableData";
-import studentData from "../../../utils/data.json";
-import { Navbar } from "../../../Components/Navbar/Navbar";
-import { BtnDashboard } from "../../../Components/CommonComp/BtnDashboard";
+import DashboardSidebar from "../../../../Components/SideBar/DashboardSidebar";
+import TableData from "../../../../Components/Table/TableData";
+import studentData from "../../../../utils/data.json";
+import { Navbar } from "../../../../Components/Navbar/Navbar";
+import { BtnDashboard } from "../../../../Components/CommonComp/BtnDashboard";
 // @ts-ignore
 import { Pagination } from "technogetic-iron-smart-ui";
 

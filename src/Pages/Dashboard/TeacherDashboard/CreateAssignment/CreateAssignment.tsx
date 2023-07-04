@@ -50,7 +50,7 @@ export function CreateAssignment() {
     return (
         <>
             <div className={styles.main_container}>
-                <div>
+                
                 <DashboardSidebar />
                 <div className={styles.abcd}>
                     <div className={styles.sidebar_wrapper}>
@@ -113,7 +113,7 @@ export function CreateAssignment() {
                         </div>
                     </div>
                 </div>
-            </div>
+            
         </>
     );
 }
