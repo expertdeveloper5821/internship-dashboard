@@ -115,6 +115,7 @@ export function CreateAssignment() {
     return (
         <>
             <div className={styles.main_container}>
+                <div>
                 <DashboardSidebar />
                 <div className={styles.abcd}>
                     <Navbar />
@@ -174,6 +175,46 @@ export function CreateAssignment() {
                                     totalPages={Math.ceil(transformedStudentData.length / rowPerPage)}
                                     onPageChange={onPageChange}
                                 />
+                            </div>
+                            <div className={styles.description_box}>
+                                <Editor
+                                    editorState={editorState}
+                                    onEditorStateChange={setEditorState}
+                                    toolbar={{
+                                        options: [
+                                            "inline",
+                                            "blockType",
+                                            "list",
+                                            "textAlign",
+                                            "link",
+                                            "embedded",
+                                        ],
+                                        inline: {
+                                            options: ["bold", "italic", "underline", "strikethrough"],
+                                        },
+                                        blockType: {
+                                            options: [
+                                                "Normal",
+                                                "H1",
+                                                "H2",
+                                                "H3",
+                                                "H4",
+                                                "H5",
+                                                "H6",
+                                                "Blockquote",
+                                                "Code",
+                                            ],
+                                        },
+                                        list: {
+                                            options: ["unordered", "ordered"],
+                                        },
+                                        textAlign: {
+                                            options: ["left", "center", "right", "justify"],
+                                        },
+                                    }}
+                                    placeholder="Enter text here..."
+                                />
+                            </div>
                             </div>
                         </div>
                     </div>

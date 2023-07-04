@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import styles from "./Profile.module.scss";
-// @ts-ignore
-import { Avatar, Switch, Input, Button } from "technogetic-iron-smart-ui";
-
 import { Editor } from "react-draft-wysiwyg";
 import { EditorState } from "draft-js";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { Navbar } from "../../../../Components/Navbar/Navbar";
 import DashboardSidebar from "../../../../Components/SideBar/DashboardSidebar";
+// @ts-ignore
+import { Avatar, Switch, Input, Button, Alert } from "technogetic-iron-smart-ui";
 
 export interface IAppProps { }
 
@@ -21,6 +20,10 @@ export function ProfileSetting() {
     setNotificationEnabled(!notificationEnabled);
   };
 
+  const handleFormSubmit = () => {
+    setNotificationEnabled(true);
+  };
+
   const userDetails = [
     { label: "Username", placeholder: "Your name" },
     { label: "Email Id", placeholder: "Enter Email" },
@@ -30,6 +33,15 @@ export function ProfileSetting() {
 
   return (
     <>
+      {notificationEnabled && (
+        <Alert onClose={() => setNotificationEnabled(true)}
+          className={styles.alert_container}
+          isClosable
+          message="Your Profile has been updated successfully!"
+          timeout={3000}
+          type="success">
+        </Alert>
+      )}
       <div className={styles.main_container}>
         <DashboardSidebar />
         <div className={styles.abcd}>
@@ -45,14 +57,12 @@ export function ProfileSetting() {
               <div className={styles.block1}>
                 <div className={styles.circle}>
                   <Avatar
-                    onClick={() => { }}
                     size={32}
                     className={styles.avatar}
                     src="./assets/avatar.png"
                   />
                   <div className={styles.addicon}>
                     <Button
-                      onClick={function noRefCheck() { }}
                       type="file"
                       variant="contained"
                       className={styles.addicon}
@@ -91,10 +101,10 @@ export function ProfileSetting() {
                     {userDetails[0].label}
                   </div>
                   <Input
-                    onChange={function noRefCheck() { }}
                     placeholder={userDetails[0].placeholder}
                     className={styles.user_input}
                     type="text"
+                    required
                   />
                 </div>
                 <div className={styles.user_name}>
@@ -102,10 +112,10 @@ export function ProfileSetting() {
                     {userDetails[1].label}
                   </div>
                   <Input
-                    onChange={function noRefCheck() { }}
                     placeholder={userDetails[1].placeholder}
                     className={styles.user_input}
                     type="text"
+                    required
                   />
                 </div>
               </div>
@@ -116,10 +126,10 @@ export function ProfileSetting() {
                     {userDetails[2].label}
                   </div>
                   <Input
-                    onChange={function noRefCheck() { }}
                     placeholder={userDetails[2].placeholder}
                     className={styles.user_input}
                     type="text"
+                    required
                   />
                 </div>
                 <div className={styles.user_name}>
@@ -127,10 +137,10 @@ export function ProfileSetting() {
                     {userDetails[3].label}
                   </div>
                   <Input
-                    onChange={function noRefCheck() { }}
                     placeholder={userDetails[3].placeholder}
                     className={styles.user_input}
                     type="text"
+                    required
                   />
                 </div>
               </div>
@@ -184,7 +194,7 @@ export function ProfileSetting() {
               </div>
             </div>
             <div className={styles.buttons}>
-              <Button variant="contained" className={styles.submitbutton}>
+              <Button variant="contained" className={styles.submitbutton} onClick={handleFormSubmit}>
                 Submit
               </Button>
               <Button variant="contained" className={styles.cancelbutton}>
@@ -194,6 +204,7 @@ export function ProfileSetting() {
           </div>
         </div>
       </div>
+
     </>
   );
 }

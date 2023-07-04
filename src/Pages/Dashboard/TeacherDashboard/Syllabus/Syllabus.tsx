@@ -55,7 +55,7 @@ export function Syllabus() {
           <div className={styles.document_upload}>
             {courses.map((course, index) => (
               <div className={styles.uploaddocs} key={index}>
-                <img src=". /assets/docs.svg" alt="document" />
+                <img src="./assets/docs.svg" alt="document" />
                 <div className={styles.course_name}>{course.name}</div>
                 <div className={styles.quantity}>{course.quantity}</div>
               </div>
