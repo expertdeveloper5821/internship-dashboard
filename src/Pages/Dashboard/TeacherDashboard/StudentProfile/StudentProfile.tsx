@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from "../../TeacherHomePage/Teacher.module.scss";
+import styles from "../TeacherHomePage/Teacher.module.scss";
 import DashboardSidebar from "../../../../Components/SideBar/DashboardSidebar";
 import TableData from "../../../../Components/Table/TableData";
 import studentData from "../../../../utils/studentData.json";
