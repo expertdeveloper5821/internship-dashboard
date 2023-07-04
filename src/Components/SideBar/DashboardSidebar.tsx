@@ -159,7 +159,7 @@ const DashboardSidebar = (props: Props) => {
             </div>
           </>
         )}
-      </div>
+      </div >
     </>
   );
 };
