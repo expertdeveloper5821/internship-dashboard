@@ -1,9 +1,12 @@
-import axios from "axios";
 import styles from "./auth.module.scss";
+import { useDispatch } from "react-redux";
+import { fetchData } from "./LoginApi/LoginAction";
+import apiServicesMethod from "../../../Services/api/apiSevices";
 import { useState, useEffect } from "react";
 import { useFormik } from "formik";
 import { SignupSchema } from "../../../Schemas/SignupSchemas";
 import { useNavigate, Link } from "react-router-dom";
+import { AppDispatch } from "../../../app/store";
 //@ts-ignore
 import { Button, Input } from "technogetic-iron-smart-ui";
 
@@ -11,6 +14,7 @@ const Login = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
+  const dispatch: AppDispatch = useDispatch();
   const navigate = useNavigate();
 
   function handleRememberMe(event: { target: any }) {
@@ -44,20 +48,42 @@ const Login = () => {
       if (rememberMe) {
         const expirationDate = new Date();
         expirationDate.setDate(expirationDate.getDate() + 30);
-        document.cookie = `username = ${values.username
-          }; expires = ${expirationDate.toUTCString()}`;
-        document.cookie = `password = ${values.password
-          }; expires = ${expirationDate.toUTCString()}`;
+        document.cookie = `username = ${
+          values.username
+        }; expires = ${expirationDate.toUTCString()}`;
+        document.cookie = `password = ${
+          values.password
+        }; expires = ${expirationDate.toUTCString()}`;
       }
+      // try {
+      //   const response = await axios.post(
+      //     `${process.env.REACT_APP_AUTH_URL}${process.env.REACT_APP_API_KEY}`,
+      //     {
+      //       username: values.username,
+      //       password: values.password,
+      //     }
+      //   );
+      //   const role = response.data.role;
+      //   if (role === "teacher") {
+      //     navigate("/teacher_dashboard");
+      //   } else if (role === "student") {
+      //     navigate("/student_dashboard");
+      //   } else {
+      //     setFieldError("password", "Invalid username or password");
+      //     setFieldError("username", "Invalid username or password");
+      //   }
+      // } catch (error) {
+      //   setFieldError("username", "Invalid username or password");
+      //   setFieldError("password", "Invalid username or password");
+      // } finally {
+      //   setIsLoading(false);
+      // }
+
       try {
-        const response = await axios.post(
-          `${process.env.REACT_APP_AUTH_URL}${process.env.REACT_APP_API_KEY}`,
-          {
-            username: values.username,
-            password: values.password,
-          }
-        );
-        const role = response.data.role;
+        const response = await apiServicesMethod.post("/data", {});
+        dispatch(fetchData(values));
+        console.log("response", response);
+        const role = response.data;
         if (role === "teacher") {
           navigate("/teacher_dashboard");
         } else if (role === "student") {
@@ -129,9 +155,7 @@ const Login = () => {
                 />
                 <div className={styles.error}>
                   {errors.username && touched.username ? (
-                    <p>
-                      {(errors.username = "Please enter a valid username")}
-                    </p>
+                    <p>{(errors.username = "Please enter a valid username")}</p>
                   ) : null}
                 </div>
               </div>

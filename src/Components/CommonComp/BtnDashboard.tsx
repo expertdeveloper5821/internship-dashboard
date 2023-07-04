@@ -1,4 +1,4 @@
-import styles from "../../Pages/Dashboard/TeacherHomePage/Teacher.module.scss";
+import styles from "../../Pages/Dashboard/TeacherDashboard/TeacherHomePage/Teacher.module.scss";
 //@ts-ignore
 import { Select, Button, Input } from "technogetic-iron-smart-ui";
 
