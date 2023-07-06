@@ -40,7 +40,7 @@ const Routers = (props: Props) => {
         <Route path="/student" element={<StudentProfile />} />
         <Route path="/StudentAssignmentStatus" element={<StudentAssignmentStatus />} />
         <Route path="/CreateAssignment" element={<CreateAssignment />} />
-        <Route path="Notification" element={<Notification />} />
+        <Route path="/Notification" element={<Notification />} />
       </Routes>
     </Router>
   );

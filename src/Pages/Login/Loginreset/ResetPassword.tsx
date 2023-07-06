@@ -3,12 +3,18 @@ import { useNavigate, Link } from "react-router-dom";
 import styles from "../../Login/Loginreset/auth.module.scss";
 //@ts-ignore
 import { Button, Input } from "technogetic-iron-smart-ui";
+import { useDispatch } from "react-redux";
+import { fetchApiData } from "../Loginreset/ResetpasswordApi/resetPasswordActions";
+import { AppDispatch } from "../../../app/store";
 
 export function ResetPassword(): JSX.Element {
   const [email, setEmail] = useState("");
   const [isEmailValid, setIsEmailValid] = useState(true);
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
   const navigate = useNavigate();
+  const dispatch: AppDispatch = useDispatch();
+
+
 
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -24,7 +30,10 @@ export function ResetPassword(): JSX.Element {
   };
 
   const handleRecoverPassword = () => {
+    const payload = { email, };
+    dispatch(fetchApiData(payload));
     navigate("/mailsent");
+    console.log("payload", payload)
   };
 
   return (
@@ -90,3 +99,6 @@ export function ResetPassword(): JSX.Element {
     </div>
   );
 }
+
+
+

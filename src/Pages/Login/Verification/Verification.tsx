@@ -1,23 +1,64 @@
-import { useState } from "react";
+
+// import React, { useState } from "react";
+// import { connect, useDispatch, useSelector } from "react-redux";
+// import OtpInput from "react-otp-input";
+// import { verifyOTP } from "../../Login/Loginreset/VerificationApi/verificationAction";
+// import { Link } from "react-router-dom";
+// import styles from "./verification.module.scss";
+// //@ts-ignore
+// import { Button } from "technogetic-iron-smart-ui";
+
+// const Verification = () => {
+//     const [otp, setOtp] = useState("");
+//     const dispatch: any = useDispatch();
+//     const { error, loading } = useSelector((state: any) => state.verification)
+
+//     const handleSubmit = () => {
+//         if (otp.length !== 4) {
+//             return;
+//         }
+//         dispatch(verifyOTP(otp));
+//     };
+
+//     return (
+//         <>
+//             <div className={styles.main_container}>
+
+//             </div>
+//         </>
+//     );
+// };
+
+
+
+// export default Verification;
+
+import React, { useState } from "react";
 import styles from "../Verification/verification.module.scss";
 import OtpInput from "react-otp-input";
 import { useNavigate, Link } from "react-router-dom";
 //@ts-ignore
 import { Button } from "technogetic-iron-smart-ui";
+import { useDispatch, useSelector } from "react-redux";
+import { verifyOTP } from "../Loginreset/VerificationApi/verificationAction";
+import { AppDispatch } from "../../../app/store";
 
-const Verification = () => {
+const Verification = (): JSX.Element => {
     const [otp, setOtp] = useState("");
-    const [error, setError] = useState(false);
-
+    const [otpError, setOtpError] = useState(false);
     const navigate = useNavigate();
+    const dispatch: AppDispatch = useDispatch();
+    const { error, loading } = useSelector((state: any) => state.verification)
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         if (otp.length !== 4) {
-            setError(true);
+            setOtpError(true);
             return;
         } else {
-            setError(false);
-            navigate("/success");
+            setOtpError(false);
+            const email = "shivangigupta@technogetic.com"; // Replace with the actual email address
+            dispatch(verifyOTP({ otp, email }));
+            navigate("/user_credential"); // Replace "/next-page" with the actual next page URL
         }
     };
 
@@ -35,9 +76,7 @@ const Verification = () => {
                                 Please enter the code we just sent to email ***given mail***
                             </p>
                         </div>
-                        <div
-                            className={`${styles.otp_input} ${error ? styles.errors : ""}`}
-                        >
+                        <div className={`${styles.otp_input} ${error ? styles.errors : ""}`}>
                             <OtpInput
                                 value={otp}
                                 onChange={setOtp}
@@ -46,9 +85,7 @@ const Verification = () => {
                                 renderInput={(props) => <input {...props} />}
                             />
                         </div>
-                        {error && (
-                            <div className={styles.errors}>Please enter a valid OTP</div>
-                        )}
+                        {error && <div className={styles.errors}>Please enter a valid OTP</div>}
                         <div className={styles.signin}>
                             <Link to="/resetpassword">
                                 If you did not receive code? <span>&nbsp;Resend</span>
@@ -57,7 +94,7 @@ const Verification = () => {
                         <div>
                             <div className={styles.button_wrapper}>
                                 <Button
-                                    varient="contained"
+                                    variant="contained"
                                     onClick={handleSubmit}
                                     className={styles.forgetbutton}
                                 >
@@ -76,3 +113,5 @@ const Verification = () => {
 };
 
 export default Verification;
+
+
