@@ -30,9 +30,10 @@ export function ResetPassword(): JSX.Element {
   };
 
   const handleRecoverPassword = () => {
-    const payload = { email };
+    const payload = { email, };
     dispatch(fetchApiData(payload));
     navigate("/mailsent");
+    console.log("payload", payload)
   };
 
   return (
@@ -98,4 +99,6 @@ export function ResetPassword(): JSX.Element {
     </div>
   );
 }
+
+
 

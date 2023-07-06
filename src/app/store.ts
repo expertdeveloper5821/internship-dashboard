@@ -3,13 +3,15 @@ import apiReducer from '.././Pages/Login/Loginreset/ResetpasswordApi/resetPasswo
 import counterReducer from '../features/counter/counterSlice';
 import dataReducer from '../Pages/Login/Loginreset/LoginApi/LoginSlice';
 import resetPasswordSlice from '.././Pages/Login/Loginreset/ResetpasswordApi/resetPasswordSlice';
+import verificationSlice from '../Pages/Login/Loginreset/VerificationApi/verificationSlice'; // Import the verificationSlice
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     api: apiReducer, // Add the apiSlice reducer to the store
     data: dataReducer,
-    resetPassword: resetPasswordSlice
+    resetPassword: resetPasswordSlice,
+    verification: verificationSlice, 
   },
 });
 
@@ -21,4 +23,3 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   unknown,
   Action<string>
 >;
-

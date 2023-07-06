@@ -30,7 +30,7 @@ const dataSlice = createSlice({
       .addCase(fetchData.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
-      });
+      })
   },
 });
 
