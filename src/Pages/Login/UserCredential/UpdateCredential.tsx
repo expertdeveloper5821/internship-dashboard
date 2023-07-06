@@ -1,16 +1,17 @@
 import styles from "./credential.module.scss";
+import { updatepassword } from "./UpdateCredentialApi/UpdateCredAction";
 import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
 import { ResetPasswordSchema } from "../../../Schemas/SignupSchemas";
 //@ts-ignore
 import { Button, Input } from "technogetic-iron-smart-ui";
-
-type Props = {};
+import { AppDispatch } from "../../../app/store";
+import { useDispatch } from "react-redux";
 
 const UpdateCredential = () => {
   const newPasswordShown = false;
   const confirmPasswordShown = false;
-
+  const dispatch: AppDispatch = useDispatch();
   const navigate = useNavigate();
 
   const initialValues = {
@@ -18,6 +19,12 @@ const UpdateCredential = () => {
     confirmPassword: "",
   };
 
+  const onSubmit = async (values: any) => {
+    if (values.newPassword === values.confirmPassword) {
+      await dispatch(updatepassword(values));
+      navigate("/user_credential_success");
+    }
+  }
   const {
     values,
     touched,
@@ -28,11 +35,7 @@ const UpdateCredential = () => {
   } = useFormik({
     initialValues,
     validationSchema: ResetPasswordSchema,
-    onSubmit: (values) => {
-      if (values.newPassword === values.confirmPassword) {
-        navigate("/user_credential_success");
-      }
-    },
+    onSubmit: onSubmit
   });
 
   const onclickHandler = () => {

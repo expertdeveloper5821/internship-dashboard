@@ -1,12 +1,11 @@
 import styles from "./auth.module.scss";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "./LoginApi/LoginAction";
-import apiServicesMethod from "../../../Services/api/apiSevices";
 import { useState, useEffect } from "react";
 import { useFormik } from "formik";
 import { SignupSchema } from "../../../Schemas/SignupSchemas";
 import { useNavigate, Link } from "react-router-dom";
-import { AppDispatch } from "../../../app/store";
+import { AppDispatch, selectUserRole, selectUserLogged } from "../../../app/store";
 //@ts-ignore
 import { Button, Input } from "technogetic-iron-smart-ui";
 
@@ -16,6 +15,8 @@ const Login = () => {
 
   const dispatch: AppDispatch = useDispatch();
   const navigate = useNavigate();
+  const userRole = useSelector(selectUserRole);
+  const isLoggedIn = useSelector(selectUserLogged)
 
   function handleRememberMe(event: { target: any }) {
     setRememberMe(event.target.checked);
@@ -48,53 +49,42 @@ const Login = () => {
       if (rememberMe) {
         const expirationDate = new Date();
         expirationDate.setDate(expirationDate.getDate() + 30);
-        document.cookie = `username = ${
-          values.username
-        }; expires = ${expirationDate.toUTCString()}`;
-        document.cookie = `password = ${
-          values.password
-        }; expires = ${expirationDate.toUTCString()}`;
+        document.cookie = `username=${values.username
+          }; expires=${expirationDate.toUTCString()}`;
+        document.cookie = `password=${values.password
+          }; expires=${expirationDate.toUTCString()}`;
       }
-      // try {
-      //   const response = await axios.post(
-      //     `${process.env.REACT_APP_AUTH_URL}${process.env.REACT_APP_API_KEY}`,
-      //     {
-      //       username: values.username,
-      //       password: values.password,
-      //     }
-      //   );
-      //   const role = response.data.role;
-      //   if (role === "teacher") {
-      //     navigate("/teacher_dashboard");
-      //   } else if (role === "student") {
-      //     navigate("/student_dashboard");
-      //   } else {
-      //     setFieldError("password", "Invalid username or password");
-      //     setFieldError("username", "Invalid username or password");
-      //   }
-      // } catch (error) {
-      //   setFieldError("username", "Invalid username or password");
-      //   setFieldError("password", "Invalid username or password");
-      // } finally {
-      //   setIsLoading(false);
-      // }
 
       try {
-        const response = await apiServicesMethod.post("/data", {});
-        dispatch(fetchData(values));
-        console.log("response", response);
-        const role = response.data;
-        if (role === "teacher") {
-          navigate("/teacher_dashboard");
-        } else if (role === "student") {
-          navigate("/student_dashboard");
+        let response = await dispatch(fetchData(values));
+        if (
+          response.payload.message &&
+          response.payload.message.message &&
+          response.payload.message.message.includes("username")
+        ) {
+          setFieldError("username", "Invalid username");
         } else {
-          setFieldError("password", "Invalid username or password");
-          setFieldError("username", "Invalid username or password");
+          if (userRole === "teacher") {
+            navigate("/teacher_dashboard");
+          } else if (userRole === "student") {
+            navigate("/student_dashboard");
+          }
         }
-      } catch (error) {
-        setFieldError("username", "Invalid username or password");
-        setFieldError("password", "Invalid username or password");
+      } catch (error: any) {
+        if (error.response && error.response.data) {
+          const { message } = error.response.data;
+          if (message.includes("username")) {
+            setFieldError("username", "Invalid username");
+          } else if (message.includes("password")) {
+            setFieldError("password", "Invalid password");
+          } else {
+            setFieldError("username", "Invalid username or password");
+            setFieldError("password", "Invalid username or password");
+          }
+        } else {
+          setFieldError("username", "Invalid username or password");
+          setFieldError("password", "Invalid username or password");
+        }
       } finally {
         setIsLoading(false);
       }
@@ -121,6 +111,18 @@ const Login = () => {
       setFieldValue("password", storedPassword);
     }
   }, [storedusername, storedPassword, setFieldValue]);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      if (userRole) {
+        if (userRole === "teacher") {
+          navigate("/teacher_dashboard");
+        } else if (userRole === "student") {
+          navigate("/student_dashboard");
+        }
+      }
+    }
+  }, [userRole, navigate, isLoggedIn]);
 
   return (
     <div className={styles.main_container}>

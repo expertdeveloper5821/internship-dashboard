@@ -1,6 +1,8 @@
 import styles from "./DashboardSidebar.module.scss";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logOut } from "../../Pages/Login/Loginreset/LoginApi/LoginSlice";
 //@ts-ignore
 import { Drawer, MenuItem, Button, Menu } from "technogetic-iron-smart-ui";
 
@@ -10,11 +12,12 @@ const DashboardSidebar = (props: Props) => {
   const isSidebarOpen = true;
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [wideSidebar, setWideSidebar] = useState(false);
-
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleLogout = () => {
     sessionStorage.clear();
+    dispatch(logOut())
     navigate("/login");
     setIsLoggedIn(false);
   };
