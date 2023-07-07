@@ -3,12 +3,19 @@ import { useNavigate, Link } from "react-router-dom";
 import styles from "../../Login/Loginreset/auth.module.scss";
 //@ts-ignore
 import { Button, Input } from "technogetic-iron-smart-ui";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchApiData, } from "./ForgotpasswordApi/resetPasswordActions";
+import { AppDispatch, RootState } from "../../../app/store";
+import { isSetEmail } from "./ForgotpasswordApi/resetPasswordSlice";
 
 export function ResetPassword(): JSX.Element {
   const [email, setEmail] = useState("");
   const [isEmailValid, setIsEmailValid] = useState(true);
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
+
   const navigate = useNavigate();
+  const dispatch: any = useDispatch();
+  const error = useSelector((state: RootState) => state.resetPassword.error);
 
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -24,8 +31,27 @@ export function ResetPassword(): JSX.Element {
   };
 
   const handleRecoverPassword = () => {
+    const payload = { email }
+   
+    dispatch(fetchApiData(payload));
     navigate("/mailsent");
+    console.log("payload", payload)
   };
+
+  /*
+ try {
+      const response = await dispatch(verifyOTP({ otp, email }));
+      if (response.payload) {
+        navigate("/user_credential");
+      } else {
+        setOtpError(true);
+      }
+    } catch (error) {
+      setOtpError(true);
+    }
+  };
+
+  */
 
   return (
     <div className={styles.main_container}>
@@ -56,7 +82,7 @@ export function ResetPassword(): JSX.Element {
             />
 
             {!isEmailValid && (
-              <p className={styles.error_message}>Please enter a valid email</p>
+              <p className={styles.errResetpasswordApior_message}>Please enter a valid email</p>
             )}
           </div>
           <div className={styles.checkbox_wrapper}>
@@ -74,6 +100,9 @@ export function ResetPassword(): JSX.Element {
               Recover Password
             </Button>
           </div>
+          {error && (
+            <div className={styles.error_message}> {error === "Email id not registered"}</div>
+          )}
           <div className={styles.signin}>
             <span>
               <Link to="/">

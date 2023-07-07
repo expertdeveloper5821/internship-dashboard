@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 export interface IAppProps { }
 
 export function SentMail() {
+  
   const navigate = useNavigate();
 
   const handleClick = () => {

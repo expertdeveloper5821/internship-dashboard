@@ -6,25 +6,26 @@ import { ResetPasswordSchema } from "../../../Schemas/SignupSchemas";
 //@ts-ignore
 import { Button, Input } from "technogetic-iron-smart-ui";
 import { AppDispatch } from "../../../app/store";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const UpdateCredential = () => {
   const newPasswordShown = false;
   const confirmPasswordShown = false;
   const dispatch: AppDispatch = useDispatch();
   const navigate = useNavigate();
-
+  const { verification: { otp }, resetPassword, resetPassword: { email } } = useSelector((state: any) => state)
   const initialValues = {
     newPassword: "",
     confirmPassword: "",
   };
-
+  console.log(resetPassword)
   const onSubmit = async (values: any) => {
     if (values.newPassword === values.confirmPassword) {
-      await dispatch(updatepassword(values));
+      await dispatch(updatepassword({ ...values, otp, email }));
       navigate("/user_credential_success");
     }
   }
+
   const {
     values,
     touched,

@@ -29,7 +29,6 @@ const dataSlice = createSlice({
       state.data = null;
     }
   },
-  
   extraReducers: (builder) => {
     builder
       .addCase(fetchData.pending, (state) => {
