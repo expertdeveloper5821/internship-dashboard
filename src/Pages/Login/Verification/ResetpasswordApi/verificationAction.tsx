@@ -10,7 +10,7 @@ export const verifyOTP = createAsyncThunk(
       console.log("response", response.data)
       return response.data;
     } catch (error: any) {
-      return rejectWithValue(error.message.message);
+      return rejectWithValue(error.message);
     }
   }
 );

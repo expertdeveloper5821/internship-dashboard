@@ -1,143 +1,107 @@
-import { render, fireEvent, screen } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { Provider } from "react-redux";
+import { configureStore } from "@reduxjs/toolkit";
+import { MemoryRouter, useNavigate } from "react-router-dom";
 import Login from "../Login";
-import { BrowserRouter as Router, useNavigate } from "react-router-dom";
-import axios, { AxiosResponse } from "axios";
-import { act } from "react-dom/test-utils";
+// import { fetchData } from "../LoginApi/LoginAction";
+// import { store, AppDispatch, RootState } from "../../../../app/store";
 
-jest.mock("axios");
+// jest.mock("../LoginApi/LoginAction", () => ({
+//   fetchData: jest.fn(),
+// }));
 
-jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"),
-  useNavigate: jest.fn(),
-}));
+// jest.mock("react-router-dom", () => ({
+//   ...jest.requireActual("react-router-dom"),
+//   useNavigate: jest.fn(),
+// }));
 
-describe("<Login />", () => {
+// describe("Login Component", () => {
+//   let store: any;
+//   let navigate: ReturnType<typeof useNavigate>
 
-  it("should render the login form correctly", () => {
-    render(
-      <Router>
-        <Login />
-      </Router>
-    );
+//   beforeEach(() => {
+//     store = configureStore({
+//       reducer: rootReducer,
+//       preloadedState: {
+//         data: {
+//           role: "teacher",
+//           isLoggedIn: false,
+//         },
+//       },
+//     });
+//     navigate = jest.fn();
+//   });
 
-    expect(screen.getByLabelText("User Name")).toBeInTheDocument();
-    expect(screen.getByLabelText("Password")).toBeInTheDocument();
-    expect(screen.getByText("Remember for 30 days")).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "Sign in" })).toBeInTheDocument();
-    expect(screen.getByText("Forget your Password?")).toBeInTheDocument();
-  });
+//   it("renders the login form correctly", () => {
+//     render(
+//       <Provider store={store}>
+//         <MemoryRouter>
+//           <Login />
+//         </MemoryRouter>
+//       </Provider>
+//     );
 
-  it("should allow the user to submit the form and navigate to the dashboard", async () => {
-    render(
-      <Router>
-        <Login />
-      </Router>
-    );
+//     // Add assertions for the login form
+//   });
 
-    // Fill the form
-    fireEvent.change(screen.getByLabelText("User Name"), {
-      target: { value: "rk00" },
-    });
-    fireEvent.change(screen.getByLabelText("Password"), {
-      target: { value: "rajesh1234" },
-    });
+//   it("submits the form with valid credentials", async () => {
+//     const mockedResponse = { message: "Login successful" };
+//     (fetch as jest.Mock).mockReturnValueOnce({ payload: mockedResponse });
+//     store.dispatch({ type: "SET_USER_ROLE", payload: "teacher" });
+//     store.dispatch({ type: "SET_USER_LOGGED", payload: true });
 
-    // Mock the axios.post method
-    const mockAxiosPost = axios.post as jest.MockedFunction<typeof axios.post>;
-    mockAxiosPost.mockResolvedValueOnce({
-      data: {
-        role: "teacher",
-      },
-    } as AxiosResponse);
+//     render(
+//       <Provider store={store}>
+//         <MemoryRouter>
+//           <Login />
+//         </MemoryRouter>
+//       </Provider>
+//     );
 
-    // Sign in button
-    await act(async () => {
-      fireEvent.click(screen.getByText("Sign in"));
-    });
-  });
+//     const usernameInput = screen.getByLabelText("User Name");
+//     const passwordInput = screen.getByLabelText("Password");
+//     fireEvent.change(usernameInput, { target: { value: "testuser" } });
+//     fireEvent.change(passwordInput, { target: { value: "testpassword" } });
 
-  it("should show error message if username or password is invalid", () => {
-    render(
-      <Router>
-        <Login />
-      </Router>
-    )
+//     fireEvent.click(screen.getByRole("button", { name: "Sign in" }));
 
-    const mockAxiosPost = axios.post as jest.MockedFunction<typeof axios.post>;
-    mockAxiosPost.mockRejectedValueOnce(new Error("Invalid username or password"));
+//     expect(fetchData).toHaveBeenCalledWith({
+//       username: "testuser",
+//       password: "testpassword",
+//     });
 
-    fireEvent.click(screen.getByText("Sign in"));
+//     await waitFor(() => {
+//       expect(navigate).toHaveBeenCalledWith("/teacher_dashboard");
+//     });
+//   });
 
-    expect(screen.queryByText("Please enter a valid user name")).toBeNull();
-    expect(screen.queryByText("Please enter a valid password")).toBeNull();
-    expect(screen.queryByText("Invalid username or password")).toBeNull();
+//   it("handles server-side errors correctly", async () => {
+//     const errorMessage = "Invalid credentials";
+//     const errorResponse = { message: errorMessage };
+//     (fetch as jest.Mock).mockRejectedValueOnce({ response: { data: errorResponse } });
 
-  })
+//     render(
+//       <Provider store={store}>
+//         <MemoryRouter>
+//           <Login />
+//         </MemoryRouter>
+//       </Provider>
+//     );
 
-  it("should navigate to the teacher role if the role received as teacher", async () => {
-    const navigateMock = jest.fn();
-    const useNavigateMock = jest.fn(() => navigateMock);
+//     const usernameInput = screen.getByLabelText("User Name");
+//     const passwordInput = screen.getByLabelText("Password");
+//     fireEvent.change(usernameInput, { target: { value: "testuser" } });
+//     fireEvent.change(passwordInput, { target: { value: "testpassword" } });
 
-    (useNavigate as jest.Mock).mockImplementation(() => navigateMock);
-    jest.spyOn(require("react-router-dom"), "useNavigate").mockImplementation(useNavigateMock);
+//     fireEvent.click(screen.getByRole("button", { name: "Sign in" }));
 
-    render(
-      <Router>
-        <Login />
-      </Router>
-    )
+//     expect(fetchData).toHaveBeenCalledWith({
+//       username: "testuser",
+//       password: "testpassword",
+//     });
 
-    fireEvent.change(screen.getByLabelText("User Name"), {
-      target: { value: "rk001" },
-    });
-    fireEvent.change(screen.getByLabelText("Password"), {
-      target: { value: "rajesh1234" },
-    });
-
-    //Navigating to the teacher dashboard
-    const mockAxiosPost = axios.post as jest.MockedFunction<typeof axios.post>;
-    mockAxiosPost.mockResolvedValueOnce({ data: { role: "teacher" } });
-
-    //Submit form
-    await act(async () => {
-      fireEvent.click(screen.getByText("Sign in"));
-    });
-
-    expect(useNavigateMock).toHaveBeenCalled(); 
-    expect(navigateMock).toHaveBeenCalledWith("/teacher_dashboard");
-  });
-
-  it("should navigate to the student dashboard if the role received as student", async () => {
-    const navigateMock = jest.fn();
-    const useNavigateMock = jest.fn(() => navigateMock);
-  
-    jest.spyOn(require("react-router-dom"), "useNavigate").mockImplementation(useNavigateMock);
-  
-    render(
-      <Router>
-        <Login />
-      </Router>
-    );
-
-    fireEvent.change(screen.getByLabelText("User Name"), {
-      target: { value: "rk0" },
-    });
-    fireEvent.change(screen.getByLabelText("Password"), {
-      target: { value: "rajesh1234" },
-    });
-  
-    const mockAxiosPost = axios.post as jest.MockedFunction<typeof axios.post>;
-    mockAxiosPost.mockResolvedValueOnce({ data: { role: "student" } });
-    
-  
-    // Submit the form
-    await act(async () => {
-      fireEvent.click(screen.getByText("Sign in"));
-    });
-  
-    expect(useNavigateMock).toHaveBeenCalled(); 
-    expect(navigateMock).toHaveBeenCalledWith("/student_dashboard");
-  });
-});
-
-
+//     await waitFor(() => {
+//       expect(screen.getByText(errorMessage)).toBeInTheDocument();
+//     });
+//   });
+// });

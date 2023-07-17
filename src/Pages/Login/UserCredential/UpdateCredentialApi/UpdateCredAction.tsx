@@ -11,7 +11,7 @@ export const updatepassword = createAsyncThunk(
       );
       return response.data;
     } catch (error: any) {
-      return rejectWithValue(error.message);
+      return rejectWithValue(error.message.message);
     }
   }
 );

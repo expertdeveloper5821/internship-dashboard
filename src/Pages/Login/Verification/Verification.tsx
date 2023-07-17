@@ -12,7 +12,6 @@ import { setOTP } from "./ResetpasswordApi/verificationSlice";
 const Verification = (): JSX.Element => {
   const [otp, setOtp] = useState("");
   const [otpError, setOtpError] = useState(false);
-  const [email, setEmail] = useState("");
 
   const navigate = useNavigate();
   const dispatch: AppDispatch = useDispatch();
@@ -20,9 +19,11 @@ const Verification = (): JSX.Element => {
   console.log(userEmail);
   const handleSubmit = async () => {
     if (otp.length !== 4) {
-      setOtpError(true);
+      setOtpError(false);
       return;
     }
+
+    console.log("verified clicked")
     dispatch(setOTP(otp));
     try {
       const response = await dispatch(verifyOTP({ otp, email: userEmail }));
